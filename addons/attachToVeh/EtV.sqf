@@ -1,8 +1,3 @@
-/*
-	Stealthstick's "Explosive-To-Vehicle" Script
-	-Allows players to attach their explosive charges to any vehicle.
-*/
-
 EtV_ChargeCheck =
 {
 	_charge = _this select 0;
