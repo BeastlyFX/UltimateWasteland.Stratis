@@ -262,6 +262,14 @@ _spawnedCustom = 0;
 		_player addBackpack "B_Carryall_oli";
 	};
     
+    //Ninjor
+	if (_uid == "76561197961966022") then {
+		_player forceAddUniform "U_B_GhillieSuit";
+        _player addHeadgear "H_HelmetLeaderO_ocamo";
+        _player addVest "V_PlateCarrierGL_rgr";
+		_player addBackpack "B_Carryall_khk";
+	};
+	
 //##########################################
 //Donator Uniform Gifts - Loadouts END
 //##########################################	
