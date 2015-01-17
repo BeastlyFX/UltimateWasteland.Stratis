@@ -1,4 +1,3 @@
-
 //	@file Name: WastelandServClean.sqf
 //	@file Author: AgentRev, Wiking, JoSchaap
 
