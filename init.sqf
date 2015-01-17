@@ -24,8 +24,9 @@ A3W_scriptThreads = [];
 
 //init Wasteland Core
 [] execVM "config.sqf";
-[] execVM "storeConfig.sqf"; // Separated as its now v large
+[] execVM "storeConfig.sqf";
 [] execVM "briefing.sqf";
+[] execVM "addons\attachToVeh\init.sqf";
 
 if (!isDedicated) then
 {
