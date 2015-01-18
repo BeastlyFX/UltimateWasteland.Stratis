@@ -1,4 +1,4 @@
 waitUntil {time > 0};
-execVM "addons\attachToVeh\EtV.sqf";
+execVM "addons\EtV\EtV.sqf";
 waitUntil {!isNil "EtVInitialized"};
 [player] call EtV_Actions;

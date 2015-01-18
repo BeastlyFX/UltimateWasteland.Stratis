@@ -481,6 +481,8 @@ genObjectsArray = compileFinal str
 [
 	["Empty Ammo Crate", "Box_NATO_Ammo_F", 200, "ammocrate"],
 	["Lamp Post (Harbour)", "Land_LampHarbour_F", 100, "object"],
+	["Shoot House Objects", "Land_Shoot_House_ Objects", 100, "object"],
+	["Concrete Block", "BlockConcrete_F", 100, "object"],
 	["Lamp Post (Shabby)", "Land_LampShabby_F", 100, "object"],
 	["Boom Gate", "Land_BarGate_F", 150, "object"],
 	["Pipes", "Land_Pipes_Large_F", 200, "object"],
