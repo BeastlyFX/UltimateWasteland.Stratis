@@ -270,6 +270,14 @@ _spawnedCustom = 0;
 		_player addBackpack "B_Carryall_khk";
 	};
 	
+	//TRevor
+	if (_uid == "76561198026003663") then {
+		_player forceAddUniform "U_B_CombatUniform_mcam";
+        _player addHeadgear "H_HelmetLeaderO_ocamo";
+        _player addVest "V_PlateCarrierH_CTRG";
+		_player addBackpack "B_Carryall_mcamo";
+	};
+	
 //##########################################
 //Donator Uniform Gifts - Loadouts END
 //##########################################	
