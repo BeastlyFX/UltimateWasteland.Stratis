@@ -24,7 +24,7 @@ addMissionEventHandler ["HandleDisconnect",
 	{
 		if (!(_unit getVariable ["playerSpawning", false]) && typeOf _unit != "HeadlessClient_F") then
 		{
-			[_uid, [["BankMoney", _unit getVariable ["bmoney", 0]]], [_unit, false] call fn_getPlayerData] spawn fn_saveAccount;
+			[_uid, [], [_unit, false] call fn_getPlayerData] spawn fn_saveAccount;
 		};
 
 		deleteVehicle _unit;
@@ -138,8 +138,8 @@ if (_playerSavingOn || _serverSavingOn) then
 		{
 			A3W_savingMethodName = compileFinal "'extDB'";
 			A3W_savingMethodDir = compileFinal "'extDB'";
-			A3W_extDB_ConfigName = compileFinal str (["A3W_extDB_ConfigName", "A3W"] call getPublicVar);
-			A3W_extDB_IniName = compileFinal str (["A3W_extDB_IniName", "a3wasteland"] call getPublicVar);
+			A3W_extDB_ConfigName = compileFinal str (["A3W_extDB_ConfigName", "UltimateWasteland"] call getPublicVar);
+			A3W_extDB_IniName = compileFinal str (["A3W_extDB_IniName", "UltimateWasteland"] call getPublicVar);
 		}
 		else
 		{

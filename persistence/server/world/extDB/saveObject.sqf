@@ -1,4 +1,3 @@
-
 //	@file Name: saveObject.sqf
 //	@file Author: AgentRev
 
@@ -9,6 +8,8 @@ _obj = _this select 0;
 _manual = if (count _this > 2) then { _this select 2 } else { false };
 
 _objectID = _obj getVariable "A3W_objectID";
+
+if (!alive _obj) exitWith {nil};
 
 if (isNil "_objectID") then
 {

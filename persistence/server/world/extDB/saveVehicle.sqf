@@ -1,4 +1,3 @@
-
 //	@file Name: saveVehicle.sqf
 //	@file Author: AgentRev
 
@@ -8,6 +7,8 @@ private ["_veh", "_vehicleID", "_spawningTime", "_lastUse", "_flying", "_updateV
 _veh = _this select 0;
 
 _vehicleID = _veh getVariable "A3W_vehicleID";
+
+if (!alive _veh) exitWith {nil};
 
 if (isNil "_vehicleID") then
 {
