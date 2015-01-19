@@ -23,7 +23,7 @@ A3W_bleedingTime = 60;             // Time in seconds for which to allow revive 
 
 // ATM settings
 A3W_atmEnabled = 1;
-A3W_atmMaxBalance = 10000000;       // Maximum amount of money that can be stored in a bank account (recommended: 1 million)
+A3W_atmMaxBalance = 500000;       // Maximum amount of money that can be stored in a bank account (recommended: 1 million)
 A3W_atmTransferFee = 5;            // Fee in percent charged to players for money transfers to other players (0 to 50)
 A3W_atmTransferAllTeams = 1;       // Allow money transfers between players of all teams/sides (0 = same team only, 1 = all teams)
 A3W_atmEditorPlacedOnly = 0;       // Only allow access via ATMs placed from the mission editor (0 = all ATMs from towns & editor allowed, 1 = ATMs from editor only) Note: Stratis has no town ATMs, only editor ones.
@@ -44,7 +44,7 @@ A3W_spawnBeaconSaving = 0;         // Save spawn beacons between server restarts
 A3W_objectLifetime = 0;         // Maximum lifetime in hours for saved objects (baseparts, crates, etc. except vehicles) across server restarts (0 = no time limit)
 A3W_vehicleLifetime = 0;           // Maximum lifetime in hours for saved vehicles across server restarts, regardless of usage (0 = no time limit)
 A3W_vehicleMaxUnusedTime = 2;   // Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
-A3W_serverSavingInterval = 60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
+A3W_serverSavingInterval = 5*60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
 
 // iniDB settings
 PDB_PlayerFileID = "PUW_";         // Player savefile prefix (if you run multiple servers, keep it the same for all of them)
@@ -53,9 +53,9 @@ PDB_ObjectFileID = "OUW_";         // Object savefile prefix (if you run multipl
 // extDB settings
 A3W_extDB_ServerID = 1;            // Server ID to use in the database for the particular server running off this config file; if you have multiple servers, they all need different IDs
 A3W_extDB_Environment = "normal";  // Value used to separate player & object data from multiple environments running on the same map (e.g. "normal", "hardcore", "dev", etc. can be whatever you want)
-A3W_extDB_SaveUnlockedObjects = 1; // Save and restore unlocked baseparts that were locked at least once during their lifetime (0 = no, 1 = yes)
-A3W_extDB_ConfigName = "A3W";      // Name of the connection config from extdb-conf.ini to be used (the one within [brackets])
-A3W_extDB_IniName = "a3wasteland"; // Name of the INI file in extDB\db_custom to be used
+A3W_extDB_SaveUnlockedObjects = 0; // Save and restore unlocked baseparts that were locked at least once during their lifetime (0 = no, 1 = yes)
+A3W_extDB_ConfigName = "UltimateWasteland";      // Name of the connection config from extdb-conf.ini to be used (the one within [brackets])
+A3W_extDB_IniName = "UltimateWasteland"; // Name of the INI file in extDB\db_custom to be used
 A3W_extDB_Debug = 0;               // Log all queries to server RPT (0 = no, 1 = yes)
 
 // Spawning settings

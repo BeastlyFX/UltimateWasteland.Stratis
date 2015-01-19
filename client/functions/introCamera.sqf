@@ -2,7 +2,7 @@ private ["_camera", "_camDistance","_randCamX","_randCamY","_camTime"];
 _camDistance = 100;
 _randCamX = 75 - floor(random 150);
 _randCamY = 75 - floor(random 150);
-_camTime = 20;
+_camTime = 10;
 
 playSound ["WelcomeToWasteland",true];
 

@@ -26,7 +26,7 @@ A3W_scriptThreads = [];
 [] execVM "config.sqf";
 [] execVM "storeConfig.sqf";
 [] execVM "briefing.sqf";
-[] execVM "addons\attachToVeh\init.sqf";
+[] execVM "addons\EtV\init.sqf";
 
 if (!isDedicated) then
 {
