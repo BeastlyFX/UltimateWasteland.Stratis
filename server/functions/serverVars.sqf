@@ -16,7 +16,6 @@ currentStaticHelis = []; // Storage for the heli marker numbers so that we don't
 //Civilian Vehicle List - Random Spawns
 civilianVehicles =
 [
-	"C_Quadbike_01_F",
 	"C_Hatchback_01_F",
 	"C_Hatchback_01_sport_F",
 	"C_SUV_01_F",
@@ -33,10 +32,6 @@ lightMilitaryVehicles =
 	"O_Quadbike_01_F",
 	"I_Quadbike_01_F",
 	"I_G_Quadbike_01_F",
-//	"O_Truck_02_covered_F",
-//	"I_Truck_02_covered_F",
-//	"O_Truck_02_transport_F",
-//	"I_Truck_02_transport_F",
 	"I_G_Offroad_01_armed_F"
 ];
 
@@ -55,16 +50,6 @@ mediumMilitaryVehicles =
 //Water Vehicles - Random Spawns
 waterVehicles =
 [
-//	"B_Lifeboat",
-//	"O_Lifeboat",
-//	"C_Rubberboat",
-//	"B_SDV_01_F",
-//	"O_SDV_01_F",
-//	"I_SDV_01_F",
-//	"B_Boat_Transport_01_F",
-//	"O_Boat_Transport_01_F",
-//	"I_Boat_Transport_01_F",
-//	"I_G_Boat_Transport_01_F",
 	"B_Boat_Armed_01_minigun_F",
 	"O_Boat_Armed_01_hmg_F",
 	"I_Boat_Armed_01_minigun_F",
@@ -109,7 +94,7 @@ objectList =
 	"Land_HBarrierWall6_F",
 	"Land_MetalBarrel_F",
 	"Land_Mil_ConcreteWall_F",
-//	"Land_Mil_WallBig_4m_F",
+	"Land_Mil_WallBig_4m_F",
 	"Land_Pipes_large_F",
 	"Land_RampConcrete_F",
 	"Land_RampConcreteHigh_F",
@@ -147,10 +132,6 @@ staticPlaneList =
 //Random Weapon List - Change this to what you want to spawn in cars.
 vehicleWeapons =
 [
-//	"hgun_P07_F",
-//	"hgun_Rook40_F",
-//	"hgun_ACPC2_F",
-//	"arifle_SDAR_F",
 	"SMG_01_F",	// Vermin .45 ACP
 	"SMG_02_F",	// Sting 9mm
 	"hgun_PDW2000_F",
