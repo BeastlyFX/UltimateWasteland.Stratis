@@ -106,11 +106,10 @@ _spawnedCustom = 0;
 	
     //LARRYDAVID (George)
 	if (_uid == "76561197965073283") then {
-		_player forceAddUniform "U_BG_Guerrilla_6_1";
-		_player addHeadgear "H_Booniehat_oli";
-        _player addVest "V_PlateCarrierH_CTRG";
-		_player addBackpack "B_Carryall_oli";
-        _player addGoggles "G_Bandanna_khk";
+		_player forceAddUniform "U_C_Poloshirt_blue";
+		_player addHeadgear "H_Cap_police";
+        _player addVest "V_TacVest_blk_POLICE";
+        _player addGoggles "G_Bandanna_shades";
 	};
     
     //Five Worlds (Jared)
