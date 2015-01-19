@@ -1,4 +1,3 @@
-
 //@file Version: 1.1
 //@file Name: init.sqf
 //@file Author: [404] Deadbeat, [GoT] JoSchaap, AgentRev, [KoS] Bewilderbeest
