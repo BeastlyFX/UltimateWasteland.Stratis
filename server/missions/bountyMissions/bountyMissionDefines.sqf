@@ -2,7 +2,6 @@
 //	@file Name: bountyMissionDefines.sqf
 //	@file Author: His_Shadow
 //	@file Created: 07/09/2013 15:19
-#include "defines.hpp"
 
 #define bountyMissionTimeout 15*60
 #define bountyMissionDelayTime 15*60

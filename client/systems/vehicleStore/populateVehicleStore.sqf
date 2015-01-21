@@ -1,4 +1,3 @@
-
 //	@file Version: 1.0
 //	@file Name: populateVehicleStore.sqf
 //	@file Author: [KoS] His_Shadow, AgentRev
@@ -25,9 +24,10 @@ _vehArray = switch (_switch) do
 	case 0: { call landArray };
 	case 1: { call armoredArray };
 	case 2: { call tanksArray };
-	case 3: { call helicoptersArray };
-	case 4: { call planesArray };
-	case 5: { call boatsArray };
+	case 3: { call artilleryArray };
+	case 4: { call helicoptersArray };
+	case 5: { call planesArray };
+	case 6: { call boatsArray };
 	default { [] };
 };
 

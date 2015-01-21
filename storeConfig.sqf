@@ -615,6 +615,12 @@ tanksArray = compileFinal str
 	["MBT-52 Kuma", "I_MBT_03_cannon_F", 50000, "vehicle"]
 ];
 
+artilleryArray = compileFinal str
+[
+	["2S9 Sochor", "O_MBT_02_arty_F", 95000, "vehicle"],
+	["M4 Scorcher", "B_MBT_01_arty_F", 105000, "vehicle"],
+	["M5 Sandstorm MLRS", "B_MBT_01_mlrs_F", 110000, "vehicle"]
+];
 
 helicoptersArray = compileFinal str
 [
@@ -681,7 +687,7 @@ boatsArray = compileFinal str
 	["SDV Submarine (AAF)", "I_SDV_01_F", 1000, "submarine"]
 ];
 
-allVehStoreVehicles = compileFinal str (call landArray + call armoredArray + call tanksArray + call helicoptersArray + call planesArray + call boatsArray);
+allVehStoreVehicles = compileFinal str (call landArray + call armoredArray + call artilleryArray + call tanksArray + call helicoptersArray + call planesArray + call boatsArray);
 
 uavArray = compileFinal str
 [

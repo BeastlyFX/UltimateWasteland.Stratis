@@ -1,4 +1,3 @@
-
 //	@file Name: bountyMissionProcessor.sqf
 //	@file Author: Centrifugal
 

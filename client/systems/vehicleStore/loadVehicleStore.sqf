@@ -1,4 +1,3 @@
-
 //	@file Version: 1.0
 //	@file Name: loadVehicleStore.sqf
 //	@file Author: His_Shadow
@@ -18,10 +17,10 @@ _playerMoney = _Dialog displayCtrl vehshop_money;
 _landButton = _Dialog displayCtrl vehshop_button0;
 _armorButton = _Dialog displayCtrl vehshop_button1;
 _tankButton = _Dialog displayCtrl vehshop_button2;
-_heliButton = _Dialog displayCtrl vehshop_button3;
-_planeButton = _Dialog displayCtrl vehshop_button4;
-_boatButton = _Dialog displayCtrl vehshop_button5;
-//_subButton = _Dialog displayCtrl vehshop_button6;
+_artyButton = _Dialog displayCtrl vehshop_button3;
+_heliButton = _Dialog displayCtrl vehshop_button4;
+_planeButton = _Dialog displayCtrl vehshop_button5;
+_boatButton = _Dialog displayCtrl vehshop_button6;
 _playerMoney ctrlSetText format["Cash: $%1", [player getVariable ["cmoney", 0]] call fn_numbersText];
 if (!isNil "_this") then { _owner = _this select 0 };
 if (!isNil "_owner") then
@@ -33,7 +32,6 @@ if (!isNil "_owner") then
 {
 	if (_x select 0 == currentOwnerName) exitWith
 	{
-		// The array of which vehicle types are unvailable at this store
 		{
 			switch (toLower _x) do
 			{
@@ -53,6 +51,10 @@ if (!isNil "_owner") then
 				{
 					_tankButton ctrlEnable false;
 				};
+				case "artillery":
+				{
+					_artyButton ctrlEnable false;
+				};
 				case "helicopters":
 				{
 					_heliButton ctrlEnable false;
@@ -65,10 +67,6 @@ if (!isNil "_owner") then
 				{
 					_boatButton ctrlEnable false;
 				};
-				/*case "submarines":
-				{
-					_subButton	ctrlShow false;
-				};*/
 			};
 		} forEach (_x select 3);
 	};
@@ -81,7 +79,7 @@ if (!isNil "_owner") then
 	while {!isNull _dialog} do
 	{
 		_escMenu = findDisplay 49;
-		if (!isNull _escMenu) exitWith { _escMenu closeDisplay 0 }; // Force close Esc menu if open
+		if (!isNull _escMenu) exitWith { _escMenu closeDisplay 0 };
 		sleep 0.1;
 	};
 };
