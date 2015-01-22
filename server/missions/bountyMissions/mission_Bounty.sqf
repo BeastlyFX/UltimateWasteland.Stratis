@@ -8,7 +8,7 @@ if (!isServer) exitwith {};
 #include "bountyMissionDefines.sqf"
 
 private ["_missionMarkerName","_missionType","_hint","_players","_marker","_count", "_foundPlayer", "_mission_state", "_playerName", "_playerSide", "_startTime", "_currTime","_missionEndStateNames","_alivePlayerCount"
-,"_finished","_p", "_destPlayerUID", "_playerSideName", "_iterations", "_timeLeftIterations", "_killerSideName", "_playerMoney", "_randomIndex","_ignoreAiDeaths"];
+,"_finished","_p", "_destPlayerUID", "_playerSideName", "_iterations", "_timeLeftIterations", "_killerSideName", "_playerMoney", "_randomIndex","_ignoreAiDeaths","_isPlayerOnServer"];
 
 
 _setupVars =
@@ -33,7 +33,7 @@ _count = count _players;
 
 // Find out how many players are currently alive
 _alivePlayerCount = 0;
-for "_x" from 0 to (_count -1) do {
+for "_x" from 0 to (_count - 1) do {
 	_p = _players select _x;
 	if (alive _p) then {
 		_alivePlayerCount = _alivePlayerCount + 1;
@@ -52,7 +52,7 @@ for "_x" from 0 to (_count -1) do {
 //};
 
 // Fuck this language - seconded by s3kshun61 XD
-//if (_alivePlayerCount == 0) exitWith {};
+if (_alivePlayerCount == 0) exitWith {};
 
 // Keep looping over players until we find an alive one
 _finished = 0;
@@ -109,10 +109,14 @@ _mission_state = BOUNTY_MISSION_ACTIVE;
 //failed conditions 0 - null, 1-pass, 2-timeout, 3-tk, 4-suic
 
 _startTime = floor(time);
+
+[format ["addBounty:%1:%2:%3:%4:%5:%6:%7:%8", call A3W_extDB_ServerID, call A3W_extDB_MapID, 'SYSTEM', getPlayerUID _foundPlayer, '0', _mission_state, 5000, 50000]] call extDB_Database_async;
+
 };
 
 _waitUntilMarkerPos = 
 {
+		sleep 2;
 		if(vehicle _foundPlayer == _foundplayer) then { _foundplayer = vehicle _foundplayer;};
 		
 		position _foundPlayer
@@ -120,7 +124,7 @@ _waitUntilMarkerPos =
 _waitUntilExec = nil;
 _waitUntilCondition =
 {
-	diag_log format["WASTELAND SERVER - Bounty Mission '%1' Wait Until Failed Condition Start", _missionType];
+	//diag_log format["WASTELAND SERVER - Bounty Mission '%1' Wait Until Failed Condition Start", _missionType];
 //Mission Failed Condition
 _currTime = (floor time);
 if (_currTime - _startTime >= bountyMissionTimeout) then { _mission_state = BOUNTY_MISSION_END_SURVIVED; };
@@ -129,23 +133,57 @@ if (_currTime - _startTime >= bountyMissionTimeout) then { _mission_state = BOUN
 	if(!isNil "bKiller") then
 	{ 
 		_mission_state = BOUNTY_MISSION_END_KILLED;
-		if(bKillerName == _playerName) then { _mission_state = BOUNTY_MISSION_END_SUICIDE;};
-		if(bKillerSide == _playerSide) then { 
-		if(bkillerSide == independent) then {_mission_state = BOUNTY_MISSION_END_KILLED;} else {_mission_state = BOUNTY_MISSION_END_TEAMKILLED;};
+		if(bKillerName == _playerName) then 
+		{ 
+			_mission_state = BOUNTY_MISSION_END_SUICIDE;
+		};
+		if(bKillerSide == _playerSide) then 
+		{ 
+			if(bkillerSide == independent) then 
+			{
+				_mission_state = BOUNTY_MISSION_END_KILLED;
+			} 
+			else 
+			{
+				_mission_state = BOUNTY_MISSION_END_TEAMKILLED;
+			};
 		};
 	};
 	
-	diag_log format["WASTELAND SERVER - Bounty Mission '%1' Wait Until Failed Condition End", _missionType];
-	diag_log format["WASTELAND SERVER - Bounty Mission Failed Status '%1'", ((_mission_state == BOUNTY_MISSION_END_SUICIDE) || (_mission_state == BOUNTY_MISSION_END_TEAMKILLED) || (_mission_state == BOUNTY_MISSION_END_SURVIVED))];
 	
-	((_mission_state == BOUNTY_MISSION_END_SUICIDE) || (_mission_state == BOUNTY_MISSION_END_TEAMKILLED) || (_mission_state == BOUNTY_MISSION_END_SURVIVED))
+	
+		
+		_isPlayerOnServer = 0;
+		{
+			if(name _x == _playerName) then
+			{
+				_isPlayerOnServer = 1;
+			};
+		}foreach playableUnits;
+	
+	
+		if(_isPlayerOnServer == 0) then
+		{
+			_mission_state = BOUNTY_MISSION_END_DISCONNECT;
+		};
+	
+	
+	
+	//diag_log format["WASTELAND SERVER - Bounty Mission '%1' Wait Until Failed Condition End", _missionType];
+	//diag_log format["WASTELAND SERVER - Bounty Mission Failed Status '%1'", ((_mission_state == BOUNTY_MISSION_END_SUICIDE) || (_mission_state == BOUNTY_MISSION_END_TEAMKILLED) || (_mission_state == BOUNTY_MISSION_END_SURVIVED))];
+	
+	
+	
+	
+	
+	((_mission_state == BOUNTY_MISSION_END_SUICIDE) || (_mission_state == BOUNTY_MISSION_END_TEAMKILLED) || (_mission_state == BOUNTY_MISSION_END_SURVIVED) || (_mission_state == BOUNTY_MISSION_END_DISCONNECT))
 	
 	
 };
 
 _waitUntilSuccessCondition =
 {
-	diag_log format["WASTELAND SERVER - Bounty Mission '%1' Wait Until Success Condition Start", _missionType];
+	//diag_log format["WASTELAND SERVER - Bounty Mission '%1' Wait Until Success Condition Start", _missionType];
 //Mission Success Condition
 _currTime = (floor time);
 if(!isNil "bKiller") then
@@ -157,8 +195,8 @@ if(!isNil "bKiller") then
 		};
 	};
 	
-	diag_log format["WASTELAND SERVER - Bounty Mission '%1' Wait Until Success Condition End", _missionType];
-	diag_log format["WASTELAND SERVER - Bounty Mission Success Status '%1'", (_mission_state == BOUNTY_MISSION_END_KILLED)];
+	//diag_log format["WASTELAND SERVER - Bounty Mission '%1' Wait Until Success Condition End", _missionType];
+	//diag_log format["WASTELAND SERVER - Bounty Mission Success Status '%1'", (_mission_state == BOUNTY_MISSION_END_KILLED)];
 	
 	(_mission_state == BOUNTY_MISSION_END_KILLED)
 	
@@ -174,6 +212,7 @@ _failedExec =
 		// Money for survivor + extra money for team
 		_playerMoney = _foundPlayer getVariable "cmoney";
 		_playerMoney = _playerMoney + 50000;
+		[format ["updateBounty:%1:%2:%3:%4", _destPlayerUID, _destPlayerUID,'0', _mission_state]] call extDB_Database_async;
 		_foundPlayer setVariable["cmoney", _playerMoney, true];
 		{
 			if(side _x == _playerSide)then
@@ -198,6 +237,7 @@ _failedExec =
 			{
 				_x setVariable["cmoney", 0, true];
 				removeAllWeapons _x;
+				[format ["updateBounty:%1:%2:%3:%4", _destPlayerUID, '0', getPlayerUID _x, _mission_state]] call extDB_Database_async;
 			};
 		}foreach playableUnits;
 
@@ -207,7 +247,17 @@ _failedExec =
 	// Dumbass
 	if (_mission_state == BOUNTY_MISSION_END_SUICIDE) then {
 		_failedHintMessage =  format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>PUSSY!!</t><br/><br/><t align='center' color='%3'>%1 took the coward's way out and committed suicide!</t>", _playerName, failMissionColor, subTextColor];
+		[format ["updateBounty:%1:%2:%3:%4", _destPlayerUID, '0','0', _mission_state]] call extDB_Database_async;
 	};
+	
+	// Coward
+	if (_mission_state == BOUNTY_MISSION_END_DISCONNECT) then {
+		_failedHintMessage =  format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>PUSSY!!</t><br/><br/><t align='center' color='%3'>%1 took the coward's way out and disconnected! He will become the bounty when he reconnects!</t>", _playerName, failMissionColor, subTextColor];
+		[format ["updateBounty:%1:%2:%3:%4", _destPlayerUID, '0','0', _mission_state]] call extDB_Database_async;
+	};
+	
+	
+	
 	
 	//remove the event
 	_foundPlayer removeAllMPEventHandlers "mpkilled"; 
@@ -217,7 +267,7 @@ _failedExec =
 	bKillerName = nil;
 	bKillerSide = nil;
 	
-	diag_log format["WASTELAND SERVER - Bounty Mission '%1' Failed End", _missionType];
+	//diag_log format["WASTELAND SERVER - Bounty Mission '%1' Failed End", _missionType];
 	
 };
 
@@ -231,6 +281,7 @@ _successExec =
 	//the player and his team reap the rewards
 	_playerMoney = bKiller getVariable "cmoney";
 	_playerMoney = _playerMoney + 50000;
+	[format ["updateBounty:%1:%2:%3:%4", _destPlayerUID, getPlayerUID bKiller, getPlayerUID bKiller, _mission_state]] call extDB_Database_async;
 	bKiller setVariable["cmoney", _playerMoney, true];
 	{
 		if(side _x == bKillerSide) then
