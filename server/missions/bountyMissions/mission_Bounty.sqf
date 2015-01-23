@@ -213,6 +213,7 @@ _failedExec =
 		_playerMoney = _foundPlayer getVariable "cmoney";
 		_playerMoney = _playerMoney + 50000;
 		[format ["updateBounty:%1:%2:%3:%4", _destPlayerUID, _destPlayerUID,'0', _mission_state]] call extDB_Database_async;
+		[format ["setPlayerBountyDisabled:%1", _destPlayerUID]] call extDB_Database_async;
 		_foundPlayer setVariable["cmoney", _playerMoney, true];
 		{
 			if(side _x == _playerSide)then
@@ -238,6 +239,7 @@ _failedExec =
 				_x setVariable["cmoney", 0, true];
 				removeAllWeapons _x;
 				[format ["updateBounty:%1:%2:%3:%4", _destPlayerUID, '0', getPlayerUID _x, _mission_state]] call extDB_Database_async;
+				[format ["setPlayerBountyDisabled:%1", _destPlayerUID]] call extDB_Database_async;
 			};
 		}foreach playableUnits;
 
@@ -248,6 +250,7 @@ _failedExec =
 	if (_mission_state == BOUNTY_MISSION_END_SUICIDE) then {
 		_failedHintMessage =  format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>PUSSY!!</t><br/><br/><t align='center' color='%3'>%1 took the coward's way out and committed suicide!</t>", _playerName, failMissionColor, subTextColor];
 		[format ["updateBounty:%1:%2:%3:%4", _destPlayerUID, '0','0', _mission_state]] call extDB_Database_async;
+		[format ["setPlayerBountyDisabled:%1", _destPlayerUID]] call extDB_Database_async;
 	};
 	
 	// Coward
@@ -282,6 +285,8 @@ _successExec =
 	_playerMoney = bKiller getVariable "cmoney";
 	_playerMoney = _playerMoney + 50000;
 	[format ["updateBounty:%1:%2:%3:%4", _destPlayerUID, getPlayerUID bKiller, getPlayerUID bKiller, _mission_state]] call extDB_Database_async;
+	[format ["setPlayerBountyDisabled:%1", _destPlayerUID]] call extDB_Database_async;
+	
 	bKiller setVariable["cmoney", _playerMoney, true];
 	{
 		if(side _x == bKillerSide) then

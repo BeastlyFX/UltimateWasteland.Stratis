@@ -189,9 +189,10 @@ if (_playerSavingOn || _serverSavingOn) then
 	publicVariable "A3W_savingMethod";
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+	call compile preprocessFileLineNumbers "server\systems\bounties\init.sqf";
 	call compile preProcessFileLineNumbers format ["persistence\server\setup\%1\init.sqf", call A3W_savingMethodDir];
-
+   
+	
 	if (_playerSavingOn) then
 	{
 		_setupPlayerDB = [] spawn compile preprocessFileLineNumbers "persistence\server\players\setupPlayerDB.sqf"; // scriptDone stays stuck on false on Linux servers when using execVM
@@ -260,6 +261,7 @@ if (isNil "A3W_savingMethod") then
 
 call compile preprocessFileLineNumbers "server\missions\setupMissionArrays.sqf";
 call compile preprocessFileLineNumbers "server\functions\createTownMarkers.sqf";
+
 
 _createTriggers = [] spawn compile preprocessFileLineNumbers "territory\server\createCaptureTriggers.sqf"; // scriptDone stays stuck on false when using execVM on Linux
 

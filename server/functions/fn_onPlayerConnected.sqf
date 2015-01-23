@@ -15,10 +15,12 @@ if(_name != "__SERVER__") then
 	_result = [format ["checkPlayerBountyDisconnect:%1:%2:%3", 1 , 1, _uid],2] call extDB_Database_async;
 	diag_log format["WASTELAND SERVER - Bounty Disconnect Result '%1' Player - '%2'", _result, _uid];
 	_bountydisconnect = _result select 0;
+	
 	};
 
 	if(_bountydisconnect > 0) then
 	{
+		pvar_BountySystemReconnects = pvar_BountySystemReconnects + [_uid];
 		diag_log format["WASTELAND SERVER - Bounty Reconnected '%1'", _uid];
 	};
 };
