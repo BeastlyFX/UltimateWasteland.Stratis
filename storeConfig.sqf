@@ -53,20 +53,21 @@ rifleArray = compileFinal str
 	["MX Rifle", "arifle_MX_F", 200],
 	["MX Rifle (Black)", "arifle_MX_Black_F", 225],
 	["MX 3GL Rifle", "arifle_MX_GL_F", 250],
-	["MX 3GL Rifle (Black)", "arifle_MX_GL_Black_F", 275],
+	["MX 3GL Rifle (Black)", "arifle_MX_GL_Black_F", 275]
+];
 
-	// Markman Rifles
+sniperArray = compileFinal str
+[
 	["MXM Rifle", "arifle_MXM_F", 300],
 	["MXM Rifle (Black)", "arifle_MXM_Black_F", 325],
 	["DMR Rifle", "srifle_DMR_01_F", 400],
 	["Mk18 ABR Rifle", "srifle_EBR_F", 450],
-
-	// Sniper Rifles
 	["M320 LRR Sniper", "srifle_LRR_SOS_F", 1000],
 	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_SOS_F", 1150],
 	["GM6 Lynx Sniper", "srifle_GM6_SOS_F", 1100],
 	["GM6 Lynx Sniper (camo)", "srifle_GM6_camo_SOS_F", 1250]
 ];
+
 
 lmgArray = compileFinal str
 [
@@ -93,7 +94,7 @@ launcherArray = compileFinal str
 	["Titan MPRL AA (Digi)", "launch_I_Titan_F", 1950]
 ];
 
-allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call rifleArray + call lmgArray + call shotgunArray + call launcherArray);
+allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call rifleArray + call sniperArray + call lmgArray + call shotgunArray + call launcherArray);
 
 staticGunsArray = compileFinal str
 [
@@ -480,51 +481,20 @@ allStoreGear = compileFinal str (call headArray + call uniformArray + call vestA
 genObjectsArray = compileFinal str
 [
 	["Empty Ammo Crate", "Box_NATO_Ammo_F", 200, "ammocrate"],
-	["Street Lamp", "Land_LampStreet_small_F", 100, "object"],
-	["Enter Name Here", "Land_LampSolar_F", 100, "object"],
-	["Enter Name Here", "Land_LampStadium_F", 100, "object"],
-	["Enter Name Here", "Land_LampShabby_F", 100, "object"],
-	["Enter Name Here", "Land_LampHarbour_F", 100, "object"],
-	["Enter Name Here", "Land_LampHalogen_F", 100, "object"],
-	["Enter Name Here", "Land_LampDecor_F", 100, "object"],
+	["Lamp (Street)", "Land_LampStreet_small_F", 100, "object"],
+	["Lamp (Solar)", "Land_LampSolar_F", 100, "object"],
+	["Lamp (Stadium)", "Land_LampStadium_F", 100, "object"],
+	["Lamp (Shabby)", "Land_LampShabby_F", 100, "object"],
+	["Lamp (Harbor)", "Land_LampHarbour_F", 100, "object"],
+	["Lamp (Halogen)", "Land_LampHalogen_F", 100, "object"],
+	["Lamp (Decorative)", "Land_LampDecor_F", 100, "object"],
 	["Metal Barrel (Burning)", "MetalBarrel_burning_F", 100, "object"],
 	["Campfire (Burning)", "Campfire_burning_F", 100, "object"],
 	["Fireplace (Burning)", "FirePlace_burning_F", 100, "object"],
 	["Flood Light", "Land_FloodLight_F", 100, "object"],
-	["Enter Name Here", "Land_Obstacle_Bridge_F", 100, "object"],
-	["Enter Name Here", "Land_Obstacle_Climb_F", 100, "object"],
-	["Enter Name Here", "Land_Obstacle_Ramp_F", 100, "object"],
-	["Enter Name Here", "Land_PierLadder_F", 100, "object"],
-	["Enter Name Here", "Land_RampConcrete_F", 100, "object"],
-	["Enter Name Here", "Land_RampConcreteHigh_F", 100, "object"],
-	["Enter Name Here", "Land_Rampart_F", 100, "object"],
-	["Enter Name Here", "Dirthump_1_F", 100, "object"],
-	["Enter Name Here", "Dirthump_2_F", 100, "object"],
-	["Enter Name Here", "Dirthump_3_F", 100, "object"],
-	["Enter Name Here", "Dirthump_4_F", 100, "object"],
-	["Enter Name Here", "CraterLong", 100, "object"],
-	["Enter Name Here", "CraterLong_small", 100, "object"],
-	["Enter Name Here", "Land_Mound01_8m_F", 100, "object"],
-	["Enter Name Here", "Land_Mound02_8m_F", 100, "object"],
-	["Enter Name Here", "Land_Timbers_F", 100, "object"],
-	["Enter Name Here", "Land_WoodPile_large_F", 100, "object"],
-	["Enter Name Here", "Land_WoodPile_F", 100, "object"],
-	["Enter Name Here", "Land_WoodenLog_F", 100, "object"],
-	["Enter Name Here", "Land_Sea_Wall_F", 100, "object"],
-	["Enter Name Here", "Land_CratesWooden_F", 100, "object"],
-	["Enter Name Here", "Land_Sack_F", 100, "object"],
-	["Enter Name Here", "Land_WoodenBox_F", 100, "object"],
-	["Enter Name Here", "Land_BarrelSand_F", 100, "object"],
-	["Enter Name Here", "Land_Pallets_F", 100, "object"],
-	["Enter Name Here", "Land_Bricks_V1_F", 100, "object"],
-	["Enter Name Here", "Land_Bricks_V2_F", 100, "object"],
-	["Enter Name Here", "Land_Bricks_V3_F", 100, "object"],
-	["Enter Name Here", "Land_CinderBlocks_F", 100, "object"],
-	["Enter Name Here", "Land_IronPipes_F", 100, "object"],
-	["Enter Name Here", "Land_Pipes_large_F", 100, "object"],
-	["Enter Name Here", "Land_Pipes_small_F", 100, "object"],
-	["Enter Name Here", "Land_CargoBox_V1_F", 100, "object"],
-	["Enter Name Here", "Land_LandMark_F", 100, "object"],
+	["Pier Ladder", "Land_PierLadder_F", 100, "object"],
+	["Concrete Ramp", "Land_RampConcrete_F", 100, "object"],
+	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 100, "object"],
 	["Shoot House Wall", "Land_Shoot_House_Wall_F", 100, "object"],
 	["Shoot House Wall (Stand)", "Land_Shoot_House_Wall_Stand_F", 100, "object"],
 	["Shoot House Wall (Crouch)", "Land_Shoot_House_Wall_Crouch_F", 100, "object"],
@@ -549,8 +519,6 @@ genObjectsArray = compileFinal str
 	["Shoot House Tunnel (Prone)", "Land_Shoot_House_Tunnel_Prone_F", 100, "object"],
 	["Castle Wall", "Land_Castle_01_church_a_ruin_F", 100, "object"],
 	["Castle Tower", "Land_Castle_01_tower_F", 100, "object"],
-	["Enter Name Here", "Land_Ancient_Wall_4m_F", 100, "object"],
-	["Enter Name Here", "Land_Ancient_Wall_8m_F", 100, "object"],
 	["Enter Name Here", "Land_Stone_4m_F", 100, "object"],
 	["Enter Name Here", "Land_Stone_8m_F", 100, "object"],
 	["Enter Name Here", "Land_Stone_Gate_F", 100, "object"],
