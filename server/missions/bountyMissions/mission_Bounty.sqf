@@ -1,5 +1,7 @@
-//	@file Name: mission_Bounty.sqf
-//	@file Author: [s3k] Centrifugal and [s3k] Blackbeard
+
+//	@file Name: mission_TownInvasion.sqf
+//	@file Author: [404] Deadbeat, [404] Costlyy, JoSchaap, AgentRev, Zenophon
+//  @file Information: JoSchaap's Lite version of 'Infantry Occupy House' Original was made by: Zenophon
 
 if (!isServer) exitwith {};
 
@@ -20,7 +22,6 @@ _setupVars =
 _setupObjects =
 {
 	diag_log format["WASTELAND SERVER - Bounty Mission '%1' started", _missionType];
-<<<<<<< HEAD
 
 diag_log format["WASTELAND SERVER - Bounty Mission '%1' waiting to run", _missionType];
 //[bountyMissionDelayTime] call createWaitCondition;
@@ -36,79 +37,81 @@ for "_x" from 0 to (_count - 1) do {
 	_p = _players select _x;
 	if (alive _p) then {
 		_alivePlayerCount = _alivePlayerCount + 1;
-=======
-	diag_log format["WASTELAND SERVER - Bounty Mission '%1' waiting to run", _missionType];
-	diag_log format["WASTELAND SERVER - Bounty Mission '%1' resumed", _missionType];
-
-	//select a random player
-	_players = playableUnits;
-	_count = count _players;
-
-	// Find out how many players are currently alive
-	_alivePlayerCount = 0;
-	for "_x" from 0 to (_count -1) do {
-		_p = _players select _x;
-		if (alive _p) then {
-			_alivePlayerCount = _alivePlayerCount + 1;
-		};
->>>>>>> origin/master
 	};
+};
 
-<<<<<<< HEAD
+//diag_log format ["Alive player count is %1", _alivePlayerCount];
+
+// If there are literally NO alive players, bail here
+//if(_alivePlayerCount == 0) then
+//{
+//	_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>Trouble Finding Bounty!</t><br/><br/><t align='center' color='%3'>Maybe we'll play next time!</t>", failMissionColor, subTextColor];
+//	messageSystem = _hint;
+ //   if (!isDedicated) then { call serverMessage };
+//    publicVariable "messageSystem";
+//};
+
 // Fuck this language - seconded by s3kshun61 XD
 if (_alivePlayerCount == 0) exitWith {};
-=======
->>>>>>> origin/master
 
-	_finished = 0;
+// Keep looping over players until we find an alive one
+_finished = 0;
 	scopeName "main";
-	while {true} do {
-		_random = floor(random _count);
-		_potentialPlayer = _players select _random;
+while {true} do {
+	_random = floor(random _count);
+	_potentialPlayer = _players select _random;
 
-		if (alive _potentialPlayer) then {
-			_foundPlayer = _potentialPlayer;
-			_finished = 1;
-		};
-
-		if (_finished == 1) then {breakTo "main"}; // Breaks all scopes and return to "main"
-		sleep 0.1;
+	if (alive _potentialPlayer) then {
+		_foundPlayer = _potentialPlayer;
+		_finished = 1;
 	};
 
-<<<<<<< HEAD
+	if (_finished == 1) then {breakTo "main"}; // Breaks all scopes and return to "main"
+	sleep 0.1;
+};
+
+_playerSide = side _foundPlayer;
+_playerSideName = 
+switch (_playerSide) do 
+{
+	case west: {"Blufor"}; 
+	case east: {"Opfor"};
+	case civilian: {"A.I."};
+	case independent: {"Rebels"};
+	default {"Unknown"};
+};
+
+//_missionHintText = format ["Hostiles have taken over <br/><t size='1.25' color='%1'>%2</t><br/><br/>There seem to be <t color='%1'>%3 enemies</t> hiding inside or on top of buildings. Get rid of them all, and take their supplies!<br/>Watch out for those windows!", sideMissionColor, _townName, _nbUnits];
+
+_missionHintText = format ["<t align='center' color='%2' shadow='2' size='1.75'>Bounty Hunt</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>%1 on %4 has a bounty on his head. You have 30 minutes to kill him! Killer gets $50,000 and his side gets $5,000 per person. If he's protected he gets the $50,000 and his side gets $5,000 per person.</t>", name _foundPlayer, bountyMissionColor, subTextColor, _playerSideName];
+//messageSystem = _hint;
+//if (!isDedicated) then { call serverMessage };
+//publicVariable "messageSystem";
+
+
+_missionPos = position _foundPlayer;
+
+//_marker = createMarker [_missionMarkerName, position _foundPlayer];
+//_marker setMarkerType "mil_destroy";
+//_marker setMarkerSize [1.25, 1.25];
+//_marker setMarkerColor "ColorRed";
+//_marker setMarkerText "Bounty Target";
+
+//add the MP died event
+_foundPlayer addMPEventHandler ["mpkilled", {[_this] call server_BountyDied;}];
+
+//get the variables so that if _foundPlayer instance changes we aren't fucked
+_playerName = name _foundPlayer;
+_destPlayerUID = getPlayerUID _foundPlayer;
+_iterations = 0;
+_timeLeftIterations = 0;
+_mission_state = BOUNTY_MISSION_ACTIVE;
+//failed conditions 0 - null, 1-pass, 2-timeout, 3-tk, 4-suic
+
 _startTime = floor(time);
 
 [format ["addBounty:%1:%2:%3:%4:%5:%6:%7:%8", call A3W_extDB_ServerID, call A3W_extDB_MapID, 'SYSTEM', getPlayerUID _foundPlayer, '0', _mission_state, 5000, 50000]] call extDB_Database_async;
 
-=======
-	_playerSide = side _foundPlayer;
-	_playerSideName = 
-	switch (_playerSide) do 
-	{
-		case west: {"Blufor"}; 
-		case east: {"Opfor"};
-		case civilian: {"A.I."};
-		case independent: {"Rebels"};
-		default {"Unknown"};
-	};
-	
-	_missionHintText = format ["<t color='%3' size='1.0'>%1 on %4 has a bounty on his head. You have 30 minutes to kill him! Killer gets $50,000 and his side gets $5,000 per person. If he's protected he gets the $50,000 and his side gets $5,000 per person.</t>", name _foundPlayer, bountyMissionColor, subTextColor, _playerSideName];
-	
-	
-	_missionPos = position _foundPlayer;
-	
-	
-	//add the MP died event
-	_foundPlayer addMPEventHandler ["mpkilled", {[_this] call server_BountyDied;}];
-	
-	_playerName = name _foundPlayer;
-	_destPlayerUID = getPlayerUID _foundPlayer;
-	_iterations = 0;
-	_timeLeftIterations = 0;
-	_mission_state = BOUNTY_MISSION_ACTIVE;
-	
-	_startTime = floor(time);
->>>>>>> origin/master
 };
 
 _waitUntilMarkerPos = 
@@ -224,7 +227,7 @@ _failedExec =
 			};
 		}foreach playableUnits;
 
-		_failedHintMessage = format ["<t align='center' color='%2' size='1.25'>%1 lives!</t><br/><br/><t align='center' color='%3'>%1 gets $10,000 and every member of %4 get $1,000!</t>", _playerName, failMissionColor, subTextColor, _playerSideName];
+		_failedHintMessage = format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%2' size='1.25'>%1 lives!</t><br/><br/><t align='center' color='%3'>%1 gets $10,000 and every member of %4 get $1,000!</t>", _playerName, failMissionColor, subTextColor, _playerSideName];
 	};
 
 	// Unlucky
@@ -240,12 +243,11 @@ _failedExec =
 			};
 		}foreach playableUnits;
 
-		_failedHintMessage = format ["<t align='center' color='%3' size='1.25'>%1 was teamkilled!</t><br/><br/><t align='center' color='%3'>Naughty naughty team players. As a penalty %4 has lost all their weapons and money!</t>", _playerName, failMissionColor, subTextColor, _playerSideName];
+		_failedHintMessage = format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1 was teamkilled!</t><br/><br/><t align='center' color='%3'>Naughty naughty team players. As a penalty %4 has lost all their weapons and money!</t>", _playerName, failMissionColor, subTextColor, _playerSideName];
 	};
 
 	// Dumbass
 	if (_mission_state == BOUNTY_MISSION_END_SUICIDE) then {
-<<<<<<< HEAD
 		_failedHintMessage =  format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>PUSSY!!</t><br/><br/><t align='center' color='%3'>%1 took the coward's way out and committed suicide!</t>", _playerName, failMissionColor, subTextColor];
 		[format ["updateBounty:%1:%2:%3:%4", _destPlayerUID, '0','0', _mission_state]] call extDB_Database_async;
 		[format ["setPlayerBountyDisabled:%1", _destPlayerUID]] call extDB_Database_async;
@@ -255,9 +257,6 @@ _failedExec =
 	if (_mission_state == BOUNTY_MISSION_END_DISCONNECT) then {
 		_failedHintMessage =  format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>PUSSY!!</t><br/><br/><t align='center' color='%3'>%1 took the coward's way out and disconnected! He will become the bounty when he reconnects!</t>", _playerName, failMissionColor, subTextColor];
 		[format ["updateBounty:%1:%2:%3:%4", _destPlayerUID, '0','0', _mission_state]] call extDB_Database_async;
-=======
-		_failedHintMessage =  format ["<t align='center' color='%3' size='1.25'>PUSSY!!</t><br/><br/><t align='center' color='%3'>%1 took the coward's way out and committed suicide!</t>", _playerName, failMissionColor, subTextColor];
->>>>>>> origin/master
 	};
 	
 	
@@ -310,7 +309,7 @@ _successExec =
 	bKillerName = nil;
 	bKillerSide = nil;
 	
-	_successHintMessage = format ["<t align='center' color='%6' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%3'>%1 has been killed by %4! %5 has earned $5,000 for each member and %4 has earned $50,000!</t>", _playerName, successMissionColor, subTextColor, bKillerName, _killerSideName, failMissionColor];
+	_successHintMessage = format ["<br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%6' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%3'>%1 has been killed by %4! %5 has earned $5,000 for each member and %4 has earned $50,000!</t>", _playerName, successMissionColor, subTextColor, bKillerName, _killerSideName, failMissionColor];
 
 	diag_log format["WASTELAND SERVER - Bounty Mission '%1' Success End", _missionType];
 };
