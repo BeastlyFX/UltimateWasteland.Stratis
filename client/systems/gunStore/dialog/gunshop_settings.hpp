@@ -75,19 +75,6 @@ class gunshopd
 			w = GunStoreMainBG_W;
 			h = GunStoreTopBar_H;
 		};
-
-		/*
-		class PlayerMoneyText: w_RscText
-		{
-			idc = gunshop_money;
-			text = "Cash:";
-			sizeEx = 0.04 * TEXT_SCALE;
-			x = GunStoreMainBG_X + (0.6033 * SZ_SCALE);
-			y = GunStoreMainBG_Y + (0.005 * SZ_SCALE);
-			w = 0.1126 * SZ_SCALE;
-			h = 0.0448 * SZ_SCALE;
-		};
-		*/
 	};
 
 	class Controls
@@ -194,12 +181,12 @@ class gunshopd
 			w = 0.1173 * SZ_SCALE;
 			h = 0.040 * SZ_SCALE;
 		};
-
+		
 		class StoreButton3: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "[3] execVM 'client\systems\gunStore\populateGunStore.sqf'";
-			text = "LMGs";
+			text = "Snipers";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
@@ -208,19 +195,18 @@ class gunshopd
 			h = 0.040 * SZ_SCALE;
 		};
 
-		//when BI releases shotguns we can uncomment this line
-		/*class StoreButton4: w_RscButton
+		class StoreButton4: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "[4] execVM 'client\systems\gunStore\populateGunStore.sqf'";
-			text = "Shotguns";
+			text = "LMGs";
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
-			y = GunStoreMainBG_Y + (0.300 * SZ_SCALE);
+			y = GunStoreMainBG_Y + (0.275 * SZ_SCALE);
 			w = 0.1173 * SZ_SCALE;
 			h = 0.040 * SZ_SCALE;
-		};*/
+		};
 
 		class StoreButton5: w_RscButton
 		{
@@ -230,7 +216,7 @@ class gunshopd
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
-			y = GunStoreMainBG_Y + (0.275 * SZ_SCALE);
+			y = GunStoreMainBG_Y + (0.325 * SZ_SCALE);
 			w = 0.1173 * SZ_SCALE;
 			h = 0.040 * SZ_SCALE;
 		};
@@ -243,7 +229,7 @@ class gunshopd
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
-			y = GunStoreMainBG_Y + (0.325 * SZ_SCALE);
+			y = GunStoreMainBG_Y + (0.375 * SZ_SCALE);
 			w = 0.1173 * SZ_SCALE;
 			h = 0.040 * SZ_SCALE;
 		};
@@ -256,7 +242,7 @@ class gunshopd
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
-			y = GunStoreMainBG_Y + (0.375 * SZ_SCALE);
+			y = GunStoreMainBG_Y + (0.425 * SZ_SCALE);
 			w = 0.1173 * SZ_SCALE;
 			h = 0.040 * SZ_SCALE;
 
@@ -270,7 +256,7 @@ class gunshopd
 			sizeEx = GunStoreButton_textSize;
 
 			x = GunStoreMainBG_X + (0.0167 * SZ_SCALE);
-			y = GunStoreMainBG_Y + (0.425 * SZ_SCALE);
+			y = GunStoreMainBG_Y + (0.475 * SZ_SCALE);
 			w = 0.1173 * SZ_SCALE;
 			h = 0.040 * SZ_SCALE;
 		};

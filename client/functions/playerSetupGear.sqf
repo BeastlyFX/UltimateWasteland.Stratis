@@ -64,11 +64,12 @@ _spawnedCustom = 0;
     
     //Nemesis (Michael)
 	if (_uid == "76561198115796338") then {
-		_player forceAddUniform "U_C_WorkerCoveralls";
-		_player addHeadgear "H_Booniehat_mcamo";
+		_player forceAddUniform "U_O_CombatUniform_oucamo";
+		_player addHeadgear "H_HelmetLeaderO_oucamo";
         _player addVest "V_PlateCarrierH_CTRG";
-		_player addBackpack "B_Carryall_mcamo";
-        _player addGoggles "G_Bandanna_tan";
+		_player addBackpack "B_Carryall_oucamo";
+        _player addGoggles "G_Bandanna_aviator";
+		_player addItemToBackpack "Medikit";
 	};
     
     //Zeppelin (Justin)
