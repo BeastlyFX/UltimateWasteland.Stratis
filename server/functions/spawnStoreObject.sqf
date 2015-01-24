@@ -57,7 +57,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					_marker = _marker + "_landSpawn";
 				};
 			} forEach (call _x);
-		} forEach [landArray ,artilleryArray ,armoredArray, tanksArray];
+		} forEach [landArray ,armoredArray, tanksArray];
 
 		// SEA VEHICLES
 		if (isNil "_itemEntry") then

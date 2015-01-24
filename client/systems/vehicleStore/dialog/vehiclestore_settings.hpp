@@ -156,24 +156,11 @@ class vehshopd
 			w = 0.1173 * SZ_SCALE;
 			h = 0.040 * SZ_SCALE;
 		};
-		
+
 		class StoreButton3: w_RscButton
 		{
 			idc = vehshop_button3;
 			onButtonClick = "[3] execVM 'client\systems\vehicleStore\populateVehicleStore.sqf'";
-			text = "Artillery";
-			sizeEx = VehStoreButton_textSize;
-
-			x = VehStoreMainBG_X + (0.0167 * SZ_SCALE);
-			y = VehStoreMainBG_Y + (0.225 * SZ_SCALE);
-			w = 0.1173 * SZ_SCALE;
-			h = 0.040 * SZ_SCALE;
-		};
-
-		class StoreButton4: w_RscButton
-		{
-			idc = vehshop_button4;
-			onButtonClick = "[4] execVM 'client\systems\vehicleStore\populateVehicleStore.sqf'";
 			text = "Helicopters";
 			sizeEx = VehStoreButton_textSize;
 
@@ -183,10 +170,10 @@ class vehshopd
 			h = 0.040 * SZ_SCALE;
 		};
 
-		class StoreButton5: w_RscButton
+		class StoreButton4: w_RscButton
 		{
-			idc = vehshop_button5;
-			onButtonClick = "[5] execVM 'client\systems\vehicleStore\populateVehicleStore.sqf'";
+			idc = vehshop_button4;
+			onButtonClick = "[4] execVM 'client\systems\vehicleStore\populateVehicleStore.sqf'";
 			text = "Planes";
 			sizeEx = VehStoreButton_textSize;
 
@@ -196,10 +183,10 @@ class vehshopd
 			h = 0.040 * SZ_SCALE;
 		};
 
-		class StoreButton6: w_RscButton
+		class StoreButton5: w_RscButton
 		{
-			idc = vehshop_button6;
-			onButtonClick = "[6] execVM 'client\systems\vehicleStore\populateVehicleStore.sqf'";
+			idc = vehshop_button5;
+			onButtonClick = "[5] execVM 'client\systems\vehicleStore\populateVehicleStore.sqf'";
 			text = "Boats";
 			sizeEx = VehStoreButton_textSize;
 
