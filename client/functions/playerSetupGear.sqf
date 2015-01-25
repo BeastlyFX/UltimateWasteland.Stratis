@@ -278,6 +278,24 @@ _spawnedCustom = 0;
 		_player addBackpack "B_Carryall_mcamo";
 	};
 	
+	//Voodoo
+	if (_uid == "76561198067036226") then {
+		_player forceAddUniform "U_B_CombatUniform_mcam_worn";
+        _player addHeadgear "H_Booniehat_tan";
+        _player addVest "V_PlateCarrierGL_rgr";
+		_player addBackpack "B_Kitbag_cbr";
+		_player addGoggles "G_Bandanna_beast";
+	};
+	
+	//Infamous
+	if (_uid == "76561198077259055") then {
+		_player forceAddUniform "U_BG_Guerrilla_6_1";
+        _player addHeadgear "H_HelmetCrew_B";
+        _player addVest "V_PlateCarrierH_CTRG";
+		_player addBackpack "B_Carryall_oli";
+		_player addGoggles "G_Bandanna_aviator";
+	};
+	
 //##########################################
 //Donator Uniform Gifts - Loadouts END
 //##########################################	
