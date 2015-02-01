@@ -294,7 +294,7 @@ R3F_LOG_CFG_objets_transportables =
 	["Flag_BI_F", 3],
 	["Flag_FD_Blue_F", 3],
 	["Flag_FD_Green_F", 3],
-	["Flag_FD_Red_F", 3],
+	["Flag_FD_Red_F", 3]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
