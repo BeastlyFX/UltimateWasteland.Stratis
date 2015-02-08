@@ -484,6 +484,7 @@ genObjectsArray = compileFinal str
 	["Lamp (Street)", "Land_LampStreet_small_F", 150, "object"],
 	["Concrete Ramp", "Land_RampConcrete_F", 400, "object"],
 	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 450, "object"],
+	["Concrete Block", "BlockConcrete_F", 450, "object"],
 	["Castle Wall", "Land_Castle_01_church_a_ruin_F", 2375, "object"],
 	["Castle Tower", "Land_Castle_01_tower_F", 2450, "object"],
 	["Stone Wall (4m)", "Land_Stone_4m_F", 250, "object"],
