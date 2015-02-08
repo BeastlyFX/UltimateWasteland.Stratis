@@ -91,11 +91,11 @@ _spawnedCustom = 0;
     
     //Marine By God (Edgar)
 	if (_uid == "76561198102097569") then {
-		_player forceAddUniform "U_B_HeliPilotCoveralls";
-		_player addHeadgear "H_HelmetSpecB_blk";
-        _player addVest "V_PlateCarrierIAGL_dgtl";
-		_player addBackpack "B_Carryall_oli";
-        _player addGoggles "G_Bandanna_beast";
+		_player forceAddUniform "U_B_CTRG_3";
+		_player addHeadgear "H_HelmetSpecB_paint2";
+        _player addVest "V_PlateCarrierGL_rgr";
+		_player addBackpack "B_Carryall_mcamo";
+        _player addGoggles "G_Bandanna_khk";
 	};
     
     //Bruh (Ryan)
@@ -110,7 +110,8 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_C_Poloshirt_blue";
 		_player addHeadgear "H_Cap_police";
         _player addVest "V_TacVest_blk_POLICE";
-        _player addGoggles "G_Bandanna_shades";
+		_player addBackpack "B_Carryall_cbr";
+        _player addGoggles "G_Balaclava_oli";
 	};
     
     //Five Worlds (Jared)
@@ -294,6 +295,14 @@ _spawnedCustom = 0;
         _player addVest "V_PlateCarrierH_CTRG";
 		_player addBackpack "B_Carryall_oli";
 		_player addGoggles "G_Bandanna_aviator";
+	};
+	
+	//Firestorm
+	if (_uid == "76561198127665431") then {
+		_player forceAddUniform "U_I_GhillieSuit";
+        _player addHeadgear "H_HelmetLeaderO_ocamo";
+        _player addVest "V_PlateCarrierH_CTRG";
+		_player addBackpack "B_Carryall_oli";
 	};
 	
 //##########################################
