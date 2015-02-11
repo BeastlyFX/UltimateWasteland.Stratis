@@ -5409,7 +5409,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=158;
+		items=162;
 		class Item0
 		{
 			position[]={4339.3457,226.45149,3824.2236};
@@ -6630,6 +6630,38 @@ class Mission
 			name="GunStore5_objSpawn";
 			type="Empty";
 			colorName="ColorBlack";
+		};
+		class Item158
+		{
+			position[]={3738.4275,0.01907748,8406.8418};
+			name="1";
+			text="Welcome to Ultimate Wasteland!";
+			type="mil_box";
+			colorName="ColorWhite";
+		};
+		class Item159
+		{
+			position[]={1028.4478,0.26410106,8406.8418};
+			name="1_1";
+			text="Teamspeak: voice.s3k.us";
+			type="mil_box";
+			colorName="ColorWhite";
+		};
+		class Item160
+		{
+			position[]={1028.4482,-0.17838115,8675.7705};
+			name="1_2";
+			text="Website: www.s3k.us";
+			type="mil_box";
+			colorName="ColorWhite";
+		};
+		class Item161
+		{
+			position[]={1034.2822,-0.2615414,8939.4707};
+			name="1_3";
+			text="Visit our Altis Wasteland server too!";
+			type="mil_box";
+			colorName="ColorWhite";
 		};
 	};
 	class Sensors
