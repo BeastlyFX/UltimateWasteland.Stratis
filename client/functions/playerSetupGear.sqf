@@ -111,7 +111,7 @@ _spawnedCustom = 0;
 		_player addHeadgear "H_Cap_police";
         _player addVest "V_TacVest_blk_POLICE";
 		_player addBackpack "B_Carryall_cbr";
-        _player addGoggles "G_Balaclava_oli";
+        _player addGoggles "G_Balaclava_lowprofile";
 	};
     
     //Five Worlds (Jared)
@@ -165,10 +165,10 @@ _spawnedCustom = 0;
     
     //Frank648
 	if (_uid == "76561198121217668") then {
-		_player forceAddUniform "U_B_HeliPilotCoveralls";
-		_player addHeadgear "H_HelmetCrew_I";
-        _player addVest "V_PlateCarrier3_rgr";
-		_player addBackpack "B_Carryall_mcamo";
+		_player forceAddUniform "U_I_pilotCoveralls";
+		_player addHeadgear "H_HelmetLeaderO_ocamo";
+        _player addVest "V_PlateCarrierIA2_dgtl";
+		_player addBackpack "B_Carryall_oli";
 	};
     
     //CDSMITH
