@@ -42,6 +42,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "UU_B_CTRG_3";
 		_player addHeadgear "H_Helmet_Kerry";
         _player addVest "V_PlateCarrierIAGL_dgtl";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
         _player addGoggles "G_Bandanna_aviator";
         [_player,"GryffinRegiment"] call bis_fnc_setUnitInsignia;
@@ -52,6 +53,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_B_CombatUniform_mcam_worn";
 		_player addHeadgear "H_Booniehat_tan";
         _player addVest "V_PlateCarrierSpec_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_ocamo";
 	};
     
@@ -59,6 +61,7 @@ _spawnedCustom = 0;
 	if (_uid == "76561198059394219") then {
 		_player forceAddUniform "U_B_CombatUniform_mcam_vest";
     	_player addVest "V_PlateCarrierH_CTRG";
+		removeBackpack _player;
         _player addBackpack "B_Carryall_mcamo";
 	};
     
@@ -67,6 +70,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_O_CombatUniform_oucamo";
 		_player addHeadgear "H_HelmetLeaderO_oucamo";
         _player addVest "V_PlateCarrierH_CTRG";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oucamo";
         _player addGoggles "G_Bandanna_aviator";
 		_player addItemToBackpack "Medikit";
@@ -78,6 +82,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_I_G_resistanceLeader_F";
 		_player addHeadgear "H_MilCap_dgtl";
         _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
         _player addGoggles "G_Bandanna_beast";
 	};
@@ -86,6 +91,7 @@ _spawnedCustom = 0;
 	if (_uid == "76561198042025926") then {
 		_player forceAddUniform "U_O_GhillieSuit";
         _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_ocamo";
 	};
     
@@ -94,6 +100,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_B_CTRG_3";
 		_player addHeadgear "H_HelmetSpecB_paint2";
         _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_mcamo";
         _player addGoggles "G_Bandanna_khk";
 	};
@@ -102,6 +109,7 @@ _spawnedCustom = 0;
 	if (_uid == "76561198039459039") then {
 		_player forceAddUniform "U_B_CTRG_1";
         _player addVest "V_PlateCarrierH_CTRG";
+		removeBackpack _player;
 		_player addBackpack "B_FieldPack_cbr";
 	};
 	
@@ -110,6 +118,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_C_Poloshirt_blue";
 		_player addHeadgear "H_Cap_police";
         _player addVest "V_TacVest_blk_POLICE";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_cbr";
         _player addGoggles "G_Balaclava_lowprofile";
 	};
@@ -119,6 +128,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_I_CombatUniform";
 		_player addHeadgear "H_Watchcap_blk";
         _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
 	};
     
@@ -128,6 +138,7 @@ _spawnedCustom = 0;
 		_player addHeadgear "H_Watchcap_blk";
         _player addVest "V_PlateCarrierH_CTRG";
 		_player addBackpack "B_Carryall_cbr";
+		removeBackpack _player;
         _player addGoggles "G_Bandanna_beast";
 	};
     
@@ -136,6 +147,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_IG_Guerilla3_1";
 		_player addHeadgear "H_Bandanna_surfer";
         _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_khk";
 	};
     
@@ -144,6 +156,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_BG_Guerilla3_1";
 		_player addHeadgear "H_Cap_blk_CMMG";
         _player addVest "V_TacVestIR_blk";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_cbr";
 	};
     
@@ -152,6 +165,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_B_HeliPilotCoveralls";
 		_player addHeadgear "H_CrewHelmetHeli_I";
         _player addVest "V_PlateCarrierSpec_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_khk";
 	};
     
@@ -160,6 +174,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_I_pilotCoveralls";
 		_player addHeadgear "H_HelmetLeaderO_ocamo";
         _player addVest "V_PlateCarrierIA2_dgtl";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
 	};
     
@@ -168,6 +183,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_I_pilotCoveralls";
 		_player addHeadgear "H_HelmetLeaderO_ocamo";
         _player addVest "V_PlateCarrierIA2_dgtl";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
 	};
     
@@ -175,6 +191,7 @@ _spawnedCustom = 0;
 	if (_uid == "76561198042025926") then {
 		_player forceAddUniform "U_O_GhillieSuit";
         _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_ocamo";
 	};
     
@@ -182,6 +199,7 @@ _spawnedCustom = 0;
 	if (_uid == "76561198136758224") then {
 		_player forceAddUniform "U_I_CombatUniform";
         _player addVest "V_PlateCarrierIAGL_dgtl";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
         _player addHeadgear "H_HelmetIA";
         _player addGoggles "G_Bandanna_oli";
@@ -192,6 +210,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_B_CTRG_3";
         _player addHeadgear "H_StrawHat";
         _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_mcamo";
         _player addGoggles "G_Shades_Green";
 	};
@@ -201,6 +220,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_I_G_Story_Protagonist_F";
         _player addHeadgear "H_HelmetB_camo";
         _player addVest "V_PlateCarrierSpec_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_cbr";
         _player addGoggles "G_Aviator";
 	};
@@ -210,6 +230,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_I_G_Story_Protagonist_F";
         _player addHeadgear "H_Booniehat_mcamo";
         _player addVest "V_TacVest_blk_POLICE";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_mcamo";
         _player addGoggles "G_Tactical_Black";
 	};
@@ -219,6 +240,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_I_G_Story_Protagonist_F";
         _player addHeadgear "H_Booniehat_mcamo";
         _player addVest "V_TacVest_blk_POLICE";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_mcamo";
 	};
     
@@ -227,6 +249,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_O_PilotCoveralls";
         _player addHeadgear "H_Watchcap_khk";
         _player addVest "V_PlateCarrier_Kerry";
+		removeBackpack _player;
 		_player addBackpack "B_FieldPack_khk";
         _player addGoggles "G_Squares";
 	};
@@ -236,6 +259,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_I_GhillieSuit";
         _player addHeadgear "H_HelmetLeaderO_oucamo";
         _player addVest "V_Rangemaster_belt";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
 	};
     
@@ -244,6 +268,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_O_CombatUniform_ocamo";
         _player addHeadgear "H_Watchcap_blk";
         _player addVest "V_TacVest_blk_POLICE";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_ocamo";
 	};
 	
@@ -252,6 +277,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_I_CombatUniform";
         _player addHeadgear "H_PilotHelmetHeli_I";
         _player addVest "V_Rangemaster_belt";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
 	};
 	
@@ -260,6 +286,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_I_G_resistanceLeader_F";
         _player addHeadgear "H_Shemag_olive_hs";
         _player addVest "V_PlateCarrierIA2_dgtl";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
 	};
     
@@ -268,6 +295,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_B_GhillieSuit";
         _player addHeadgear "H_HelmetLeaderO_ocamo";
         _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_khk";
 	};
 	
@@ -276,6 +304,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_B_CombatUniform_mcam";
         _player addHeadgear "H_HelmetLeaderO_ocamo";
         _player addVest "V_PlateCarrierH_CTRG";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_mcamo";
 	};
 	
@@ -284,6 +313,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_B_CombatUniform_mcam_worn";
         _player addHeadgear "H_Booniehat_tan";
         _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
 		_player addBackpack "B_Kitbag_cbr";
 		_player addGoggles "G_Bandanna_beast";
 	};
@@ -293,6 +323,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_BG_Guerrilla_6_1";
         _player addHeadgear "H_HelmetCrew_B";
         _player addVest "V_PlateCarrierH_CTRG";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
 		_player addGoggles "G_Bandanna_aviator";
 	};
@@ -302,6 +333,7 @@ _spawnedCustom = 0;
 		_player forceAddUniform "U_I_GhillieSuit";
         _player addHeadgear "H_HelmetLeaderO_ocamo";
         _player addVest "V_PlateCarrierH_CTRG";
+		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
 	};
 	

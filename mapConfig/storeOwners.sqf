@@ -19,7 +19,8 @@ storeOwnerConfig = compileFinal str
 
 	["VehStore1", 0, 210, ["Planes"]],
 	["VehStore2", 0, 20, []],
-	["VehStore3", 1, 245, ["Planes"]]
+	["VehStore3", 1, 245, ["Planes"]],
+	["VehStore4", 1, 245, ["Planes"]]
 ];
 
 // Outfits for store owners
@@ -37,5 +38,6 @@ storeOwnerConfigAppearance = compileFinal str
 
 	["VehStore1", [["weapon", ""], ["uniform", "U_Competitor"]]],
 	["VehStore2", [["weapon", ""], ["uniform", "U_Competitor"]]],
-	["VehStore3", [["weapon", ""], ["uniform", "U_Competitor"]]]
+	["VehStore3", [["weapon", ""], ["uniform", "U_Competitor"]]],
+	["VehStore4", [["weapon", ""], ["uniform", "U_Competitor"]]]
 ];
