@@ -117,9 +117,9 @@ staticGunsArray = compileFinal str
 	["Mk32 GMG 20mm High tripod (NATO)", "B_GMG_01_high_F", 8000],
 	["Mk32 GMG 20mm High tripod (CSAT)", "O_GMG_01_high_F", 8000],
 	["Mk32 GMG 20mm High tripod (AAF)", "I_GMG_01_high_F", 8000],
-	["Mk6 Mortar (NATO)", "B_Mortar_01_F", 15000],
-	["Mk6 Mortar (CSAT)", "O_Mortar_01_F", 15000],
-	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 15000]
+	["Mk6 Mortar (NATO)", "B_Mortar_01_F", 55000],
+	["Mk6 Mortar (CSAT)", "O_Mortar_01_F", 55000],
+	["Mk6 Mortar (AAF)", "I_Mortar_01_F", 55000]
 ];
 
 throwputArray = compileFinal str
@@ -539,13 +539,13 @@ genObjectsArray = compileFinal str
 	["Road Barrier", "RoadBarrier_F", 650, "object"],
 	["Road Barrier (Small)", "RoadBarrier_small_F", 700, "object"],
 	["Road Barrier (Long)", "RoadBarrier_long", 750, "object"],
-	["Taru Cargo Pod", "Land_Pod_Heli_Transport_04_box_F", 2500, "object"],
-	["Taru Repair Pod", "Land_Pod_Heli_Transport_04_repair_F", 2500, "object"],
-	["Taru Ammo Pod", "Land_Pod_Heli_Transport_04_ammo_F", 2500, "object"],
-	["Taru Bench Pod (Open)", "Land_Pod_Heli_Transport_04_bench_F", 2500, "object"],
-	["Taru Bench Pod (Closed)", "Land_Pod_Heli_Transport_04_covered_F", 2500, "object"],
-	["Taru Fuel Pod", "Land_Pod_Heli_Transport_04_fuel_F", 2500, "object"],
-	["Taru Medical Pod", "Land_Pod_Heli_Transport_04_medevac_F", 2500, "object"]
+	["Taru Cargo Pod", "Land_Pod_Heli_Transport_04_box_F", 17500, "object"],
+	["Taru Repair Pod", "Land_Pod_Heli_Transport_04_repair_F", 27500, "object"],
+	["Taru Ammo Pod", "Land_Pod_Heli_Transport_04_ammo_F", 27500, "object"],
+	["Taru Bench Pod (Open)", "Land_Pod_Heli_Transport_04_bench_F", 10500, "object"],
+	["Taru Bench Pod (Closed)", "Land_Pod_Heli_Transport_04_covered_F", 11500, "object"],
+	["Taru Fuel Pod", "Land_Pod_Heli_Transport_04_fuel_F", 9500, "object"],
+	["Taru Medical Pod", "Land_Pod_Heli_Transport_04_medevac_F", 9750, "object"]
 ];
 
 allGenStoreVanillaItems = compileFinal str (call genItemArray + call genObjectsArray + call allStoreGear);
