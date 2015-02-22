@@ -84,7 +84,7 @@ _path = "server\systems\bounties";
 onBountySystemPlayerDied = [_path, "onBountySystemPlayerDied.sqf"] call mf_compile;
 startPlayerBounty = [_path, "startPlayerBounty.sqf"] call mf_compile;
 startSystemBounty = [_path, "startSystemBounty.sqf"] call mf_compile;
-startSystemBounty = [_path, "startSystemBountyByName.sqf"] call mf_compile;
+startSystemBountyByName = [_path, "startSystemBountyByName.sqf"] call mf_compile;
 
 
 

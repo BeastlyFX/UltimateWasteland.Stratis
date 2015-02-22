@@ -98,10 +98,11 @@ R3F_LOG_CFG_transporteurs =
 	["I_Heli_light_03_base_F", 20],
 	["Heli_Transport_01_base_F", 25],
 	["Heli_Transport_02_base_F", 30],
-	["B_Heli_Transport_03_base_F", 30],
+	["B_Heli_Transport_03_base_F", 60],
 	["Heli_Transport_04_base_F", 30],
 	["Heli_Attack_01_base_F", 10],
-	["Heli_Attack_02_base_F", 20]
+	["Heli_Attack_02_base_F", 20],
+	["Land_Pod_Heli_Transport_04_box_F", 80]
 ];
 
 
@@ -295,7 +296,22 @@ R3F_LOG_CFG_objets_transportables =
 	["Flag_BI_F", 3],
 	["Flag_FD_Blue_F", 3],
 	["Flag_FD_Green_F", 3],
-	["Flag_FD_Red_F", 3]
+	["Flag_FD_Red_F", 3],
+	["Land_Castle_01_wall_01_F", 3],
+	["Land_Castle_01_wall_02_F", 3],
+	["Land_Castle_01_wall_03_F", 3],
+	["Land_Castle_01_wall_04_F", 3],
+	["Land_Castle_01_wall_06_F", 3],
+	["Land_Castle_01_wall_07_F", 3],
+	["Land_Castle_01_wall_08_F", 3],
+	["Land_Castle_01_wall_09_F", 3],
+	["Land_Castle_01_wall_10_F", 3],
+	["Land_Castle_01_wall_11_F", 3],
+	["Land_Castle_01_wall_12_F", 3],
+	["Land_Castle_01_wall_13_F", 3],
+	["Land_Castle_01_wall_14_F", 3],
+	["Land_Castle_01_wall_15_F", 3],
+	["Land_Castle_01_wall_16_F", 3]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
@@ -489,5 +505,21 @@ R3F_LOG_CFG_objets_deplacables =
 	"Flag_BI_F",
 	"Flag_FD_Blue_F",
 	"Flag_FD_Green_F",
-	"Flag_FD_Red_F"
+	"Flag_FD_Red_F",
+	"Land_Castle_01_wall_01_F",
+	"Land_Castle_01_wall_02_F",
+	"Land_Castle_01_wall_03_F",
+	"Land_Castle_01_wall_04_F",
+	"Land_Castle_01_wall_05_F",
+	"Land_Castle_01_wall_06_F",
+	"Land_Castle_01_wall_07_F",
+	"Land_Castle_01_wall_08_F",
+	"Land_Castle_01_wall_09_F",
+	"Land_Castle_01_wall_10_F",
+	"Land_Castle_01_wall_11_F",
+	"Land_Castle_01_wall_12_F",
+	"Land_Castle_01_wall_13_F",
+	"Land_Castle_01_wall_14_F",
+	"Land_Castle_01_wall_15_F",
+	"Land_Castle_01_wall_16_F"
 ];

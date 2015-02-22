@@ -337,6 +337,17 @@ _spawnedCustom = 0;
 		_player addBackpack "B_Carryall_oli";
 	};
 	
+	//Centrifugal (Rob)
+	if (_uid == "76561197985919742") then {
+		_player forceAddUniform "U_I_GhillieSuit";
+		_player addHeadgear "H_HelmetLeaderO_oucamo";
+        _player addVest "V_PlateCarrierH_CTRG";
+		removeBackpack _player;
+		_player addBackpack "B_Carryall_oucamo";
+        _player addGoggles "G_Bandanna_beast";
+		_player addItemToBackpack "Medikit";
+	};
+	
 //##########################################
 //Donator Uniform Gifts - Loadouts END
 //##########################################	
