@@ -71,6 +71,21 @@ if (_uid call isAdmin) then
 				{
 					execVM "client\systems\adminPanel\toggleGodMode.sqf";
 				};
+				case 8: // Create Event Arena
+				{
+					pvar_processEventAction = ["start"];
+					publicVariableServer "pvar_processEventAction";
+				};
+				case 9: // Delete Event Arena
+				{
+					pvar_processEventAction = ["end"];
+					publicVariableServer "pvar_processEventAction";
+				};
+				case 10: // Teleport To Arena
+				{
+					pvar_processEventAction = ["teleport",_uid];
+					publicVariableServer "pvar_processEventAction";
+				};
 			};
 		};
 		case (!isNull _displayDebug): //Debug panel

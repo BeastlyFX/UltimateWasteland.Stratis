@@ -23,7 +23,10 @@ if ([_uid, 3] call isAdmin) then {
 	                "Money",
 	                "Debug Menu",
 					"Object Search",
-	                "Toggle God-mode"
+	                "Toggle God-mode",
+					"Create Event Arena",
+					"Delete Event Arena",
+					"Teleport To Arena"
 	];
 
 	{

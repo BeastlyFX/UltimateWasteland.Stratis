@@ -251,6 +251,7 @@ _spawnedCustom = 0;
         _player addVest "V_PlateCarrier_Kerry";
 		removeBackpack _player;
 		_player addBackpack "B_FieldPack_khk";
+		_player addItemToBackpack "Medikit";
         _player addGoggles "G_Squares";
 	};
     

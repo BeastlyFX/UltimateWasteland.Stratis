@@ -50,5 +50,6 @@ publicVariable "currentInvites";
 	["pvar_manualObjectDelete", { if (!isNil "fn_manualObjectDelete") then { PVAL call fn_manualObjectDelete } }],
 	["pvar_manualVehicleSave", { if (!isNil "fn_manualVehicleSave") then { PVAL call fn_manualVehicleSave } }],
 	["pvar_playerRespawn", { PVAL spawn playerRespawnServer }],
-	["pvar_waitUntilBagTaken", { PVAL spawn waitUntilBagTaken }]
+	["pvar_waitUntilBagTaken", { PVAL spawn waitUntilBagTaken }],
+	["pvar_processEventAction", { PVAL spawn processEventAction }]
 ];
