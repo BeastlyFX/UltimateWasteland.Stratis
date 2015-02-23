@@ -306,11 +306,14 @@ if (_mission_state == BOUNTY_MISSION_END_SURVIVED) then {
 			if(_killerSide == independent) then
 			{
 				{
-					if(name _currentLoopPlayer == _x) then
+					if(!isnil "_x") then
 					{
-						_currentLoopPlayer setVariable["cmoney", 0, true];
-						removeAllWeapons _currentLoopPlayer;
-					};	
+						if(name _currentLoopPlayer == _x) then
+						{
+							_currentLoopPlayer setVariable["cmoney", 0, true];
+							removeAllWeapons _currentLoopPlayer;
+						};	
+					};
 				}foreach _targetFriendlies;
 			}
 			else
@@ -347,23 +350,26 @@ if (_mission_state == BOUNTY_MISSION_END_SURVIVED) then {
 	if (_mission_state == BOUNTY_MISSION_END_KILLED) then 
 	{
 		_playerMoney = _killer getVariable "cmoney";
-		_playerMoney = _playerMoney + 50000;
-		[format ["updateBounty:%1:%2:%3:%4", _targetUID, _killerUID, _killerUID, _mission_state]] call extDB_Database_async;
-		[format ["setPlayerBountyDisabled:%1", _targetUID]] call extDB_Database_async;
 		
-		_killer setVariable["cmoney", _playerMoney, true];
+		if(!isnil "_playerMoney") then
 		{
-			if(side _x == _killerSide) then
+			_playerMoney = _playerMoney + 50000;
+			[format ["updateBounty:%1:%2:%3:%4", _targetUID, _killerUID, _killerUID, _mission_state]] call extDB_Database_async;
+			[format ["setPlayerBountyDisabled:%1", _targetUID]] call extDB_Database_async;
+			
+			_killer setVariable["cmoney", _playerMoney, true];
 			{
-				if(_killerName != name _x) then
+				if(side _x == _killerSide) then
 				{
-					_playerMoney = _x getVariable "cmoney";
-					_playerMoney = _playerMoney + 5000;
-					_x setVariable["cmoney",_playerMoney,true];
+					if(_killerName != name _x) then
+					{
+						_playerMoney = _x getVariable "cmoney";
+						_playerMoney = _playerMoney + 5000;
+						_x setVariable["cmoney",_playerMoney,true];
+					};
 				};
-			};
-		}foreach playableUnits;
-	
+			}foreach playableUnits;
+		};
 		_successHintMessage = format ["<br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%6' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%3'>%1 has been killed by %4! %5 has earned $5,000 for each member and %4 has earned $50,000!</t>", _targetName, successMissionColor, subTextColor, _killerName, _killerSideName, failMissionColor];
 
 	
