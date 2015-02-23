@@ -86,6 +86,10 @@ startPlayerBounty = [_path, "startPlayerBounty.sqf"] call mf_compile;
 startSystemBounty = [_path, "startSystemBounty.sqf"] call mf_compile;
 startSystemBountyByName = [_path, "startSystemBountyByName.sqf"] call mf_compile;
 
+//Events
+_path = "server\systems\events";
+createEventArena = [_path, "createEventArena.sqf"] call mf_compile;
+processEventAction = [_path, "processEventAction.sqf"] call mf_compile;
 
 
 //Spawning Compiles

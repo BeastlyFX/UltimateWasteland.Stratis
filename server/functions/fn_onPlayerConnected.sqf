@@ -9,6 +9,17 @@ _name = _this select 2;
 
 if(_name != "__SERVER__") then
 {
+	
+
+	{
+		if(_uid == getPlayerUID _x) then
+		{
+			_x addMPEventHandler ["mprespawn", {[_x] call fn_onPlayerRespawn;}];	
+			diag_log format ["Adding Respawn Event Handler: %1 (%2)", _name, _uid];
+		};
+		
+	}foreach playableUnits;
+	
 	_bountydisconnect = 0;
 	if(!isNil "_uid") then
 	{
