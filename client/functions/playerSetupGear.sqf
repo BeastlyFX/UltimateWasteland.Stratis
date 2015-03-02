@@ -349,6 +349,27 @@ _spawnedCustom = 0;
 		_player addItemToBackpack "Medikit";
 	};
 	
+	//RaidGamer
+	if (_uid == "76561198095965942") then {
+		_player forceAddUniform "U_O_CombatUniform_ocamo";
+		_player addHeadgear "H_HelmetSpecB_paint1";
+        _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
+		_player addBackpack "B_Carryall_khk";
+        _player addGoggles "G_Balaclava_lowprofile";
+	};
+	
+	//Chugger
+	if (_uid == "76561198136050413") then {
+		_player forceAddUniform "U_BG_Guerilla2_1";
+		_player addHeadgear "H_Cap_blk";
+        _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
+		_player addBackpack "B_Carryall_oucamo";
+        _player addGoggles "G_Aviator";
+	};
+	
+	
 //##########################################
 //Donator Uniform Gifts - Loadouts END
 //##########################################	
