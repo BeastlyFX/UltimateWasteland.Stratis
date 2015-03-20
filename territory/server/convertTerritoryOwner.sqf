@@ -1,4 +1,3 @@
-
 //	@file Name: convertTerritoryOwner.sqf
 //	@file Author: AgentRev
 

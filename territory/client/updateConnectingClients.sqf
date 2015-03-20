@@ -1,4 +1,3 @@
-
 /*********************************************************#
 # @@ScriptName: updateConnectingClients.sqf
 # @@Author: Nick 'Bewilderbeest' Ludlam <bewilder@recoil.org>, AgentRev

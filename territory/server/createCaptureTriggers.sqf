@@ -1,4 +1,3 @@
-
 /*********************************************************#
 # @@ScriptName: createCaptureTriggers.sqf
 # @@Author: Nick 'Bewilderbeest' Ludlam <bewilder@recoil.org>, AgentRev
