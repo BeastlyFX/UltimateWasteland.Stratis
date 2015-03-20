@@ -369,6 +369,25 @@ _spawnedCustom = 0;
         _player addGoggles "G_Aviator";
 	};
 	
+	//Hatntops
+	if (_uid == "76561198058543846") then {
+		_player forceAddUniform "U_O_SpecopsUniform_ocamo";
+		_player addHeadgear "H_HelmetSpecB_paint1";
+        _player addVest "V_PlateCarrierGL_rgr";
+		removeBackpack _player;
+		_player addBackpack "B_Carryall_khk";
+        _player addGoggles "G_Combat";
+	};
+	
+	//Vux
+	if (_uid == "76561198136050413") then {
+		_player forceAddUniform "U_B_CombatUniform_mcam";
+		_player addHeadgear "H_HelmetB_light_desert";
+        _player addVest "V_PlateCarrier2_rgr";
+		removeBackpack _player;
+		_player addBackpack "B_TacticalPack_mcamo";
+        _player addGoggles "G_Shades_Black";
+	};
 	
 //##########################################
 //Donator Uniform Gifts - Loadouts END

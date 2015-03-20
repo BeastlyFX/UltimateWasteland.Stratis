@@ -1,4 +1,3 @@
-
 //	@file Version: 1.0
 //	@file Name: createStoreFurniture.sqf
 //	@file Author: His_Shadow
@@ -30,8 +29,6 @@ _base = getPos _storeOwner;
 //_chair enableSimulation false;
 
 _pDDirMod = _pDDirMod + 180; // desk model is inverted
-
-_bPos set [2, (_bPos select 2) + 0.05];
 
 //create the cashier station
 _desk = createVehicle ["Land_CashDesk_F", _base, [], 0, "None"];

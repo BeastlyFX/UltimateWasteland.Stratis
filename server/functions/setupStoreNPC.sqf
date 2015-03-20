@@ -147,35 +147,6 @@ if (isServer) then
 
 			_pDir = getDir _npc;
 
-			private "_bPos";
-			switch (toUpper typeName _npcPos) do
-			{
-				case "SCALAR":
-				{
-					_bPos = _npcPos;
-				};
-				case "ARRAY":
-				{
-					_bPos = _npcPos;
-				};
-			};
-
-			_bPos = _building buildingPos _npcPos;
-
-			if (!isNil "_frontOffset") then
-			{
-				_bPos = _bPos vectorAdd ([[0, _frontOffset, 0], -_pDir] call BIS_fnc_rotateVector2D);
-			};
-
-			if (_bPos isEqualTo [0,0,0]) then
-			{
-				_bPos = getPosATL _npc;
-			}
-			else
-			{
-				_npc setPosATL _bPos;
-			};
-
 			_desk = [_npc, _bPos, _pDir, _deskDirMod] call compile preprocessFileLineNumbers "server\functions\createStoreFurniture.sqf";
 			_npc setVariable ["storeNPC_cashDesk", netId _desk, true];
 
