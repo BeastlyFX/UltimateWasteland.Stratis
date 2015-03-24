@@ -380,7 +380,7 @@ _spawnedCustom = 0;
 	};
 	
 	//Vux
-	if (_uid == "76561198136050413") then {
+	if (_uid == "76561198057557006") then {
 		_player forceAddUniform "U_B_CombatUniform_mcam";
 		_player addHeadgear "H_HelmetB_light_desert";
         _player addVest "V_PlateCarrier2_rgr";
