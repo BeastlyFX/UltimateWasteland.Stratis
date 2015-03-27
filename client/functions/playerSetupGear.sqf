@@ -79,12 +79,11 @@ _spawnedCustom = 0;
     //Zeppelin (Justin)
 	if (_uid == "76561198050765378") then {
 		if (hmd _player != "") then { _player unlinkItem hmd _player };
-		_player forceAddUniform "U_I_G_resistanceLeader_F";
-		_player addHeadgear "H_MilCap_dgtl";
+		_player forceAddUniform "U_O_GhillieSuit";
+		_player addHeadgear "H_HelmetSpecB";
         _player addVest "V_PlateCarrierGL_rgr";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
-        _player addGoggles "G_Bandanna_beast";
 	};
     
     //CDSMITH (Chris)
@@ -387,6 +386,15 @@ _spawnedCustom = 0;
 		removeBackpack _player;
 		_player addBackpack "B_TacticalPack_mcamo";
         _player addGoggles "G_Shades_Black";
+	};
+	
+	//Warhalo
+	if (_uid == "76561198057557006") then {
+		_player forceAddUniform "U_O_GhillieSuit";
+		_player addHeadgear "H_HelmetO_ocamo";
+        _player addVest "V_PlateCarrierIA1_dgtl";
+		removeBackpack _player;
+		_player addBackpack "B_Carryall_khk";
 	};
 	
 //##########################################
