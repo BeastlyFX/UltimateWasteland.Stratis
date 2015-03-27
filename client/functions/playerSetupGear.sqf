@@ -389,7 +389,7 @@ _spawnedCustom = 0;
 	};
 	
 	//Warhalo
-	if (_uid == "76561198057557006") then {
+	if (_uid == "76561198046552619") then {
 		_player forceAddUniform "U_O_GhillieSuit";
 		_player addHeadgear "H_HelmetO_ocamo";
         _player addVest "V_PlateCarrierIA1_dgtl";
