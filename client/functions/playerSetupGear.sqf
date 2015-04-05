@@ -397,6 +397,15 @@ _spawnedCustom = 0;
 		_player addBackpack "B_Carryall_khk";
 	};
 	
+	//AJ Johnson
+	if (_uid == "76561198133165107") then {
+		_player forceAddUniform "U_I_G_Story_Protagonist_F";
+		_player addHeadgear "H_HelmetSpecB_paint2";
+        _player addVest "V_PlateCarrier2_rgr";
+		removeBackpack _player;
+		_player addBackpack "B_AssaultPack_blk";
+	};
+	
 //##########################################
 //Donator Uniform Gifts - Loadouts END
 //##########################################	
