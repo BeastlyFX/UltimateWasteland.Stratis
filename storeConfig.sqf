@@ -58,19 +58,23 @@ rifleArray = compileFinal str
 
 sniperArray = compileFinal str
 [
-	["Cyrus DMR Rifle (Black)", "srifle_DMR_05_blk_F", 250],
-	["Cyrus DMR Rifle (Hex)", "srifle_DMR_05_hex_F", 250],
-	["Cyrus DMR Rifle (Tan)", "srifle_DMR_05_tan_F", 250],
 	["MXM Rifle", "arifle_MXM_F", 300],
 	["MXM Rifle (Black)", "arifle_MXM_Black_F", 325],
 	["DMR Rifle", "srifle_DMR_01_F", 400],
-	["MAR-10 Rifle", "srifle_DMR_02_F", 400],
-	["MAR-10 Sniper", "srifle_DMR_02_sniper_F", 500],
-	["Mk1 EMR Rifle", "srifle_DMR_03_F", 500],
-	["Mk14 DMR Rifle (Camo)", "srifle_DMR_06_camo_F", 500],
-	["Mk14 DMR Rifle (Camo Khs)", "srifle_DMR_06_camo_F", 500],
-	["Mk14 DMR Rifle (Olive)", "srifle_DMR_06_camo_F", 500],
-	["Mk18 ABR Rifle", "srifle_EBR_F", 450],
+	["Cyrus DMR (Black)", "srifle_DMR_05_blk_F", 250],
+	["Cyrus DMR (Hex)", "srifle_DMR_05_hex_F", 250],
+	["Cyrus DMR (Tan)", "srifle_DMR_05_tan_F", 250],
+	["MAR-10 (Black)", "srifle_DMR_02_F", 400],
+	["MAR-10 (Camo)", "srifle_DMR_02_camo_F", 400],
+	["MAR-10 (Sand)", "srifle_DMR_02_sniper_F", 400],
+	["Mk1 EMR (Black)", "srifle_DMR_03_F", 500],
+	["Mk1 EMR (Camo)", "srifle_DMR_03_multicam_F", 500],
+	["Mk1 EMR (Khaki)", "srifle_DMR_03_khaki_F", 500],
+	["Mk1 EMR (Sand)", "srifle_DMR_03_tan_F", 500],
+	["Mk1 EMR (Woodland)", "srifle_DMR_03_woodland_F", 500],
+	["Mk14 DMR (Camo)", "srifle_DMR_06_camo_F", 500],
+	["Mk14 DMR (Olive)", "srifle_DMR_06_camo_F", 500],
+	["Mk18 ABR", "srifle_EBR_F", 450],
 	["M320 LRR Sniper", "srifle_LRR_SOS_F", 1000],
 	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_SOS_F", 1150],
 	["ASP-1 Kir Sniper", "srifle_DMR_04_F", 1100],
@@ -82,13 +86,11 @@ sniperArray = compileFinal str
 
 lmgArray = compileFinal str
 [
-	["Norma Magnum", "MMG_01_base_F
-	["Norma Magnum (Hex)", "MMG_01_hex_F
-	["Norma Magnum (Tan)", "MMG_01_tan_F
-	["Norma Magnum (2)", "MMG_02_base_F
-	["Norma Magnum (Black)", "MMG_02_black_F
-	["Norma Magnum (Camo)", "MMG_02_camo_F
-	["Norma Magnum (Sand)", "MMG_02_sand_F
+	["Navid (Hex)", "MMG_01_hex_F", 375],
+	["Navid (Tan)", "MMG_01_tan_F", 375],
+	["SPMG (Black)", "MMG_02_black_F", 375],
+	["SPMG (Camo)", "MMG_02_camo_F", 375],
+	["SPMG (Sand)", "MMG_02_sand_F", 375],
 	["MX SW LMG", "arifle_MX_SW_F", 300],
 	["MX SW LMG (Black)", "arifle_MX_SW_Black_F", 325],
 	["Mk200 LMG", "LMG_Mk200_F", 375],
@@ -188,10 +190,10 @@ ammoArray = compileFinal str
 	["6.5mm 100Rnd Tracer (Red) Belt Case", "100Rnd_65x39_caseless_mag_Tracer", 50],
 	["6.5mm 200Rnd Belt Case", "200Rnd_65x39_cased_Box", 150],
 	["6.5mm 200Rnd Tracer (Yellow) Belt Case", "200Rnd_65x39_cased_Box_Tracer", 125],
-	["7.62mm 10Rnd Mag", "10Rnd_762x51_Mag", 15],
+	["7.62mm 10Rnd Mag", "10Rnd_762x54_Mag", 15],
 	["7.62mm 20Rnd Mag", "20Rnd_762x51_Mag", 25],
-	["7.62mm 150Rnd Box", "150Rnd_762x51_Box", 150],
-	["7.62mm 150Rnd Tracer (Green) Box", "150Rnd_762x51_Box_Tracer", 125],
+	["7.62mm 150Rnd Box", "150Rnd_762x54_Box", 150],
+	["7.62mm 150Rnd Tracer (Green) Box", "150Rnd_762x54_Box_Tracer", 125],
 	[".408 7Rnd Cheetah Mag", "7Rnd_408_Mag", 50],
 	["12.7mm 5Rnd Mag", "5Rnd_127x108_Mag", 50],
 	["12.7mm 10Rnd Mag", "10Rnd_127x54_Mag", 50],
