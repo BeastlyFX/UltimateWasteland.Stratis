@@ -77,7 +77,7 @@ sniperArray = compileFinal str
 	["Mk18 ABR", "srifle_EBR_F", 450],
 	["M320 LRR Sniper", "srifle_LRR_SOS_F", 1000],
 	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_SOS_F", 1150],
-	["ASP-1 Kir Sniper", "srifle_DMR_04_F", 1100],
+	["ASP-1 Kir Sniper (Black)", "srifle_DMR_04_F", 1100],
 	["ASP-1 Kir Sniper (Tan)", "srifle_DMR_04_Tan_F", 1100],
 	["GM6 Lynx Sniper", "srifle_GM6_SOS_F", 1100],
 	["GM6 Lynx Sniper (camo)", "srifle_GM6_camo_SOS_F", 1250]
