@@ -509,7 +509,10 @@ backpackArray = compileFinal str
 	["Carryall (Khaki)", "B_Carryall_khk", 500, "backpack"],
 	["Carryall (MTP)", "B_Carryall_mcamo", 500, "backpack"],
 	["Carryall (Olive)", "B_Carryall_oli", 500, "backpack"],
-	["Carryall (Urban)", "B_Carryall_oucamo", 500, "backpack"]
+	["Carryall (Urban)", "B_Carryall_oucamo", 500, "backpack"],
+	
+	["Static Designator (BLUFOR)", "B_Static_Designator_01_weapon_F", 500, "backpack"],
+	["Static Designator (OPFOR)", "O_Static_Designator_02_weapon_F", 500, "backpack"]
 ];
 
 genItemArray = compileFinal str
