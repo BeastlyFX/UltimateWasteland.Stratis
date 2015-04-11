@@ -120,6 +120,7 @@ _spawnedCustom = 0;
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_cbr";
         _player addGoggles "G_Balaclava_lowprofile";
+		_player addItemToBackpack "Medikit";
 	};
     
     //Five Worlds (Jared)
@@ -152,11 +153,14 @@ _spawnedCustom = 0;
     
     //Evan
 	if (_uid == "76561197995272108") then {
-		_player forceAddUniform "U_BG_Guerilla3_1";
-		_player addHeadgear "H_Cap_blk_CMMG";
-        _player addVest "V_TacVestIR_blk";
+		_player forceAddUniform "U_I_G_resistanceLeader_F";
+		_player addHeadgear "H_HelmetSpecB_blk";
+        _player addVest "V_PlateCarrierGL_blk";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_cbr";
+		_player addItemToVest "SmokeShell";
+		_player addItemToVest "SmokeShellRed";
+		_player addGoggles "G_Bandanna_aviator";
 	};
     
     //FutbeleroR10
@@ -339,7 +343,7 @@ _spawnedCustom = 0;
 	
 	//Centrifugal (Rob)
 	if (_uid == "76561197985919742") then {
-		_player forceAddUniform "U_I_GhillieSuit";
+		_player forceAddUniform "U_I_FullGhillie_ard";
 		_player addHeadgear "H_HelmetLeaderO_oucamo";
         _player addVest "V_PlateCarrierH_CTRG";
 		removeBackpack _player;
