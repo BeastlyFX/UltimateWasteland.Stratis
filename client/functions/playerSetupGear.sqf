@@ -67,11 +67,11 @@ _spawnedCustom = 0;
     
     //Nemesis (Michael)
 	if (_uid == "76561198115796338") then {
-		_player forceAddUniform "U_O_CombatUniform_oucamo";
+		_player forceAddUniform "U_O_FullGhillie_lsh";
 		_player addHeadgear "H_HelmetLeaderO_oucamo";
-        _player addVest "V_PlateCarrierH_CTRG";
+        _player addVest "V_PlateCarrierGL_mtp";
 		removeBackpack _player;
-		_player addBackpack "B_Carryall_oucamo";
+		_player addBackpack "B_Carryall_mcamo";
         _player addGoggles "G_Bandanna_aviator";
 		_player addItemToBackpack "Medikit";
 	};
@@ -200,22 +200,24 @@ _spawnedCustom = 0;
     
     //Harry (Harrison)
 	if (_uid == "76561198136758224") then {
-		_player forceAddUniform "U_I_CombatUniform";
-        _player addVest "V_PlateCarrierIAGL_dgtl";
+		_player forceAddUniform "U_I_FullGhillie_sard";
+        _player addVest "V_PlateCarrierGL_rgr";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
         _player addHeadgear "H_HelmetIA";
         _player addGoggles "G_Bandanna_oli";
+		_player addItemToUniform "FirstAidKit";
 	};
     
     //Howitzer (Matt)
 	if (_uid == "76561197977078167") then {
-		_player forceAddUniform "U_B_CTRG_3";
+		_player forceAddUniform "U_I_FullGhillie_ard";
         _player addHeadgear "H_StrawHat";
         _player addVest "V_PlateCarrierGL_rgr";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_mcamo";
         _player addGoggles "G_Shades_Green";
+		_player addItemToBackpack "Medikit";
 	};
     
     //Sim0nSayz
@@ -345,7 +347,7 @@ _spawnedCustom = 0;
 	if (_uid == "76561197985919742") then {
 		_player forceAddUniform "U_I_FullGhillie_ard";
 		_player addHeadgear "H_HelmetLeaderO_oucamo";
-        _player addVest "V_PlateCarrierH_CTRG";
+        _player addVest "V_PlateCarrierIAGL_dgtl";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_oucamo";
         _player addGoggles "G_Bandanna_beast";
