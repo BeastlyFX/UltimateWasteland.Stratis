@@ -50,11 +50,12 @@ _spawnedCustom = 0;
     
     //Crazyhallum (Jonas)
 	if (_uid == "76561198063630406") then {
-		_player forceAddUniform "U_B_CombatUniform_mcam_worn";
-		_player addHeadgear "H_Booniehat_tan";
+		_player forceAddUniform "U_I_FullGhillie_lsh";
+		_player addHeadgear "H_HelmetB_paint";
         _player addVest "V_PlateCarrierSpec_rgr";
 		removeBackpack _player;
-		_player addBackpack "B_Carryall_ocamo";
+		_player addBackpack "B_Carryall_khk";
+		_player addGoggles "G_Bandanna_khk";
 	};
     
     //Larose R (Ryan)
@@ -114,13 +115,14 @@ _spawnedCustom = 0;
 	
     //LARRYDAVID (George)
 	if (_uid == "76561197965073283") then {
-		_player forceAddUniform "U_C_Poloshirt_blue";
-		_player addHeadgear "H_Cap_police";
-        _player addVest "V_TacVest_blk_POLICE";
+		_player forceAddUniform "U_O_FullGhillie_sard";
+        _player addVest "V_PlateCarrierIAGL_oli";
 		removeBackpack _player;
-		_player addBackpack "B_Carryall_cbr";
-        _player addGoggles "G_Balaclava_lowprofile";
+		_player addBackpack "B_Carryall_oli";
+        _player addGoggles "G_Bandanna_beast";
 		_player addItemToBackpack "Medikit";
+	
+		
 	};
     
     //Five Worlds (Jared)
@@ -174,11 +176,13 @@ _spawnedCustom = 0;
     
     //Jag648
 	if (_uid == "76561198004293015") then {
-		_player forceAddUniform "U_I_pilotCoveralls";
-		_player addHeadgear "H_HelmetLeaderO_ocamo";
-        _player addVest "V_PlateCarrierIA2_dgtl";
+		_player forceAddUniform "U_O_FullGhillie_lsh";
+		_player addHeadgear "H_HelmetLeaderO_oucamo";
+        _player addVest "V_PlateCarrierIAGL_dgtl";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
+		_player addGoggles "G_Bandanna_oli";
+		
 	};
     
     //Frank648
@@ -411,6 +415,20 @@ _spawnedCustom = 0;
 		removeBackpack _player;
 		_player addBackpack "B_AssaultPack_blk";
 	};
+	
+	//XRAY
+	if (_uid == "76561197988807693") then {	
+		_player forceAddUniform "U_B_FullGhillie_sard";
+		_player addVest "V_PlateCarrierGL_mtp";
+		removeBackpack _player;
+		_player addBackpack "B_Carryall_mcamo";
+		_player addHeadgear "H_HelmetLeaderO_ocamo";
+		_player addGoggles "G_Bandanna_oli";	
+		
+	};
+	
+	
+	
 	
 //##########################################
 //Donator Uniform Gifts - Loadouts END
