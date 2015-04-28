@@ -20,10 +20,20 @@ if !(_class isKindOf "AllVehicles") exitWith {}; // if not actual vehicle, finis
 
 clearBackpackCargoGlobal _vehicle;
 
-if !(_vehicle isKindOf "UAV_02_base_F") then
+_vehicle disableTIEquipment true;
+
+if (_vehicle isKindOf "UAV_02_base_F") then
 {
-	_vehicle disableTIEquipment true;
+	_vehicle disableTIEquipment false;
 };
+
+if (_vehicle isKindOf "StaticWeapon") then
+{
+	_vehicle disableTIEquipment false;
+};
+
+
+
 
 {
 	_vehicle setVariable ["A3W_hitPoint_" + getText (_x >> "name"), configName _x, true];

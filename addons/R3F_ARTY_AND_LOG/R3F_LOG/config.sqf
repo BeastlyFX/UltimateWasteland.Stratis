@@ -64,7 +64,8 @@ R3F_LOG_CFG_objets_heliportables =
 	"UGV_01_base_F",
 	"SDV_01_base_F",
 	"Boat_Civil_01_base_F",
-	"Boat_Armed_01_base_F"
+	"Boat_Armed_01_base_F",
+	"Land_Pod_Heli_Transport_04_box_F"
 ];
 
 
@@ -311,7 +312,16 @@ R3F_LOG_CFG_objets_transportables =
 	["Land_Castle_01_wall_13_F", 3],
 	["Land_Castle_01_wall_14_F", 3],
 	["Land_Castle_01_wall_15_F", 3],
-	["Land_Castle_01_wall_16_F", 3]
+	["Land_Castle_01_wall_16_F", 3],
+	["Land_Canal_WallSmall_10m_F", 3],
+	["Land_Canal_Wall_Stairs_F", 3],
+	["Land_Dome_Big_F",3],
+	["Land_Dome_Small_F",3],
+	["Land_Water_source_F",3],
+	["Land_LampStadium_F",3]
+	
+	
+	
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
@@ -521,5 +531,11 @@ R3F_LOG_CFG_objets_deplacables =
 	"Land_Castle_01_wall_13_F",
 	"Land_Castle_01_wall_14_F",
 	"Land_Castle_01_wall_15_F",
-	"Land_Castle_01_wall_16_F"
+	"Land_Castle_01_wall_16_F",
+	"Land_Canal_WallSmall_10m_F",
+	"Land_Canal_Wall_Stairs_F",
+	"Land_Dome_Big_F",
+	"Land_Dome_Small_F",
+	"Land_Water_source_F",
+	"Land_LampStadium_F"
 ];

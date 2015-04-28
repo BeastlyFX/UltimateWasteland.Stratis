@@ -549,6 +549,7 @@ genObjectsArray = compileFinal str
 [
 	["Empty Ammo Crate", "Box_NATO_Ammo_F", 200, "ammocrate"],
 	["Lamp (Street)", "Land_LampStreet_small_F", 150, "object"],
+	["Lamp (Stadium)", "Land_LampStadium_F", 150, "object"],
 	["Concrete Ramp", "Land_RampConcrete_F", 400, "object"],
 	["Concrete Ramp (High)", "Land_RampConcreteHigh_F", 450, "object"],
 	["Concrete Block", "BlockConcrete_F", 450, "object"],
@@ -612,7 +613,13 @@ genObjectsArray = compileFinal str
 	["Taru Bench Pod (Open)", "Land_Pod_Heli_Transport_04_bench_F", 10500, "object"],
 	["Taru Bench Pod (Closed)", "Land_Pod_Heli_Transport_04_covered_F", 11500, "object"],
 	["Taru Fuel Pod", "Land_Pod_Heli_Transport_04_fuel_F", 9500, "object"],
-	["Taru Medical Pod", "Land_Pod_Heli_Transport_04_medevac_F", 9750, "object"]
+	["Taru Medical Pod", "Land_Pod_Heli_Transport_04_medevac_F", 9750, "object"],
+	["Dome (Large)", "Land_Dome_Big_F", 1000, "object"],
+	["Dome (Small)", "Land_Dome_Small_F", 500, "object"],
+	["Water Source", "Land_Water_source_F", 500, "object"]
+	
+	
+	
 ];
 
 allGenStoreVanillaItems = compileFinal str (call genItemArray + call genObjectsArray + call allStoreGear);

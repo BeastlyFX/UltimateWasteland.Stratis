@@ -25,6 +25,9 @@ player createDiaryRecord ["rules",
 <br/> Stealing From Your Own Team/Group!
 <br/> Disrespecting Admins!
 <br/> Hacking/Cheating/Glitching!
+<br/> Building bases within 100m of stores!
+<br/> Moving base parts to damage vehicles!
+<br/> Spawning quad bikes to damage/flip other vehicles!
 <br/>
 <br/> All of those are punishable at admin discretion.
 "
@@ -89,6 +92,7 @@ player createDiaryRecord ["changelog",
 [
 "Ultimate Wasteland V1.1",
 "
+<br/> Added DLC Weapons to missions
 <br/> Added the ability to spawn a quad with the Y key once per life.
 <br/> Adjusted the territory pay amounts. They were too overpowered.
 <br/> Adjusted vehicle prices a tiny bit, some were too cheap.
