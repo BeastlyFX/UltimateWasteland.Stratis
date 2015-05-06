@@ -58,43 +58,48 @@ rifleArray = compileFinal str
 
 sniperArray = compileFinal str
 [
+	// Markman Rifles
 	["MXM Rifle", "arifle_MXM_F", 300],
 	["MXM Rifle (Black)", "arifle_MXM_Black_F", 325],
-	["DMR Rifle", "srifle_DMR_01_F", 400],
-	["Cyrus DMR (Black)", "srifle_DMR_05_blk_F", 250],
-	["Cyrus DMR (Hex)", "srifle_DMR_05_hex_F", 250],
-	["Cyrus DMR (Tan)", "srifle_DMR_05_tan_F", 250],
-	["MAR-10 (Black)", "srifle_DMR_02_F", 400],
-	["MAR-10 (Camo)", "srifle_DMR_02_camo_F", 400],
-	["MAR-10 (Sand)", "srifle_DMR_02_sniper_F", 400],
-	["Mk1 EMR (Black)", "srifle_DMR_03_F", 500],
-	["Mk1 EMR (Camo)", "srifle_DMR_03_multicam_F", 500],
-	["Mk1 EMR (Khaki)", "srifle_DMR_03_khaki_F", 500],
-	["Mk1 EMR (Sand)", "srifle_DMR_03_tan_F", 500],
-	["Mk1 EMR (Woodland)", "srifle_DMR_03_woodland_F", 500],
-	["Mk14 DMR (Camo)", "srifle_DMR_06_camo_F", 500],
-	["Mk14 DMR (Olive)", "srifle_DMR_06_camo_F", 500],
-	["Mk18 ABR", "srifle_EBR_F", 450],
-	["M320 LRR Sniper", "srifle_LRR_SOS_F", 1000],
-	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_SOS_F", 1150],
-	["ASP-1 Kir Sniper (Black)", "srifle_DMR_04_F", 1100],
-	["ASP-1 Kir Sniper (Tan)", "srifle_DMR_04_Tan_F", 1100],
-	["GM6 Lynx Sniper", "srifle_GM6_SOS_F", 1100],
-	["GM6 Lynx Sniper (camo)", "srifle_GM6_camo_SOS_F", 1250]
+	["DMR Rifle", "srifle_DMR_01_F", 375],
+	["Mk18 ABR Rifle", "srifle_EBR_F", 450],
+
+	// DLC
+	["Mk14 Rifle (Camo) [DLC]", "srifle_DMR_06_camo_F", 450],
+	["Mk14 Rifle (Olive) [DLC]", "srifle_DMR_06_olive_F", 450],
+	["Mk-I EMR Rifle (Black) [DLC]", "srifle_DMR_03_F", 500],
+	["Mk-I EMR Rifle (Camo) [DLC]", "srifle_DMR_03_multicam_F", 500],
+	["Mk-I EMR Rifle (Khaki) [DLC]", "srifle_DMR_03_khaki_F", 500],
+	["Mk-I EMR Rifle (Sand) [DLC]", "srifle_DMR_03_tan_F", 500],
+	["Mk-I EMR Rifle (Woodland) [DLC]", "srifle_DMR_03_woodland_F", 500],
+	["MAR-10 Rifle (Black) [DLC]", "srifle_DMR_02_F", 750],
+	["MAR-10 Rifle (Camo) [DLC]", "srifle_DMR_02_camo_F", 800],
+	["MAR-10 Rifle (Sand) [DLC]", "srifle_DMR_02_sniper_F", 800],
+	["Cyrus Rifle (Black) [DLC]", "srifle_DMR_05_blk_F", 750],
+	["Cyrus Rifle (Hex) [DLC]", "srifle_DMR_05_hex_F", 800],
+	["Cyrus Rifle (Tan) [DLC]", "srifle_DMR_05_tan_f", 800],
+	["ASP-1 Kir Rifle [DLC]", "srifle_DMR_04_F", 900],
+	["ASP-1 Kir Rifle (Tan) [DLC]", "srifle_DMR_04_Tan_F", 950],
+
+	// Sniper Rifles
+	["M320 LRR Sniper", "srifle_LRR_LRPS_F", 1000],
+	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_LRPS_F", 1200],
+	["GM6 Lynx Sniper", "srifle_GM6_LRPS_F", 1100],
+	["GM6 Lynx Sniper (Camo)", "srifle_GM6_camo_LRPS_F", 1300]
 ];
 
 
 lmgArray = compileFinal str
 [
-	["Navid (Hex)", "MMG_01_hex_F", 375],
-	["Navid (Tan)", "MMG_01_tan_F", 375],
-	["SPMG (Black)", "MMG_02_black_F", 375],
-	["SPMG (Camo)", "MMG_02_camo_F", 375],
-	["SPMG (Sand)", "MMG_02_sand_F", 375],
-	["MX SW LMG", "arifle_MX_SW_F", 300],
-	["MX SW LMG (Black)", "arifle_MX_SW_Black_F", 325],
-	["Mk200 LMG", "LMG_Mk200_F", 375],
-	["Zafir LMG", "LMG_Zafir_F", 450]
+ 	["MX SW LMG", "arifle_MX_SW_F", 300],
+ 	["MX SW LMG (Black)", "arifle_MX_SW_Black_F", 325],
+	["Mk200 LMG", "LMG_Mk200_F", 400],
+	["Zafir LMG", "LMG_Zafir_F", 500],
+	["Navid MMG (Tan) [DLC]", "MMG_01_tan_F", 750],
+	["Navid MMG (Hex) [DLC]", "MMG_01_hex_F", 750],
+	["SPMG MMG (Sand) [DLC]", "MMG_02_sand_F", 750],
+	["SPMG MMG (MTP) [DLC]", "MMG_02_camo_F", 750],
+	["SPMG MMG (Black) [DLC]", "MMG_02_black_F", 800]
 ];
 
 shotgunArray = compileFinal str
@@ -118,7 +123,8 @@ allGunStoreFirearms = compileFinal str (call pistolArray + call smgArray + call 
 
 staticGunsArray = compileFinal str
 [
-	["Vehicle Ammo Crate", "Box_NATO_AmmoVeh_F", 4500],
+	["Static Laser Designator (NATO)", "B_UAV_01_F", 2500],
+	["Static Laser Designator (CSAT)", "O_UAV_01_F", 2500],
 	["Static Titan AT 4Rnd (NATO)", "B_static_AT_F", 4500],
 	["Static Titan AT 4Rnd (CSAT)", "O_static_AT_F", 4500],
 	["Static Titan AT 4Rnd (AAF)", "I_static_AT_F", 4500],
@@ -169,8 +175,6 @@ ammoArray = compileFinal str
 [
 	["9mm 16Rnd Mag", "16Rnd_9x21_Mag", 10],
 	["9mm 30Rnd Mag", "30Rnd_9x21_Mag", 15],
-	["9.3mm 150Rnd Mag", "150Rnd_93x64_Mag", 75],
-	["9.3mm 10Rnd Mag", "10Rnd_93x64_DMR_05_Mag", 75],
 	[".45 ACP 6Rnd Cylinder", "6Rnd_45ACP_Cylinder", 5],
 	[".45 ACP 9Rnd Mag", "9Rnd_45ACP_Mag", 10],
 	[".45 ACP 11Rnd Mag", "11Rnd_45ACP_Mag", 15],
@@ -181,7 +185,6 @@ ammoArray = compileFinal str
 	["5.56mm 30Rnd Tracer (Green) Mag", "30Rnd_556x45_Stanag_Tracer_Green", 15],
 	["5.56mm 30Rnd Tracer (Yellow) Mag", "30Rnd_556x45_Stanag_Tracer_Yellow", 15],
 	["5.56mm 30Rnd Tracer (Red) Mag", "30Rnd_556x45_Stanag_Tracer_Red", 15],
-	[".338 10Rnd Mag", "10Rnd_338_Mag", 15],
 	["6.5mm 30Rnd STANAG Mag", "30Rnd_65x39_caseless_mag", 20],
 	["6.5mm 30Rnd Tracer (Red) Mag", "30Rnd_65x39_caseless_mag_Tracer", 15],
 	["6.5mm 30Rnd Caseless Mag", "30Rnd_65x39_caseless_green", 20],
@@ -194,10 +197,14 @@ ammoArray = compileFinal str
 	["7.62mm 20Rnd Mag", "20Rnd_762x51_Mag", 25],
 	["7.62mm 150Rnd Box", "150Rnd_762x54_Box", 150],
 	["7.62mm 150Rnd Tracer (Green) Box", "150Rnd_762x54_Box_Tracer", 125],
+	[".338 LM 10Rnd Mag", "10Rnd_338_Mag", 50],
+	[".338 NM 130Rnd Belt", "130Rnd_338_Mag", 150],
+	["9.3mm 10Rnd Mag", "10Rnd_93x64_DMR_05_Mag", 50],
+	["9.3mm 150Rnd Belt", "150Rnd_93x64_Mag", 150],
 	[".408 7Rnd Cheetah Mag", "7Rnd_408_Mag", 50],
 	["12.7mm 5Rnd Mag", "5Rnd_127x108_Mag", 50],
-	["12.7mm 10Rnd Mag", "10Rnd_127x54_Mag", 50],
 	["12.7mm 5Rnd Armor-Piercing Mag", "5Rnd_127x108_APDS_Mag", 60],
+	["12.7mm 10Rnd Subsonic Mag", "10Rnd_127x54_Mag", 50],
 	["RPG-42 Anti-Tank Rocket", "RPG32_F", 1250],              // Direct damage: high      | Splash damage: low    | Guidance: none
 	["RPG-42 High-Explosive Rocket", "RPG32_HE_F", 1375],      // Direct damage: medium    | Splash damage: medium | Guidance: none
 	["PCML Anti-Tank Missile", "NLAW_F", 1750],                // Direct damage: very high | Splash damage: low    | Guidance: laser, ground vehicles
@@ -237,24 +244,24 @@ ammoArray = compileFinal str
 accessoriesArray = compileFinal str
 [
 	["Suppressor 9mm", "muzzle_snds_L", 50, "item"],
-	["Suppressor 9.3mm", "muzzle_snds_93mmg", 50, "item"],
-	["Suppressor 9.3mm (Tan)", "muzzle_snds_93mmg_tan", 50, "item"],
 	["Suppressor .45 ACP", "muzzle_snds_acp", 75, "item"],
 	["Suppressor 5.56mm", "muzzle_snds_M", 100, "item"],
-	["Suppressor .338 (Black)", "muzzle_snds_338_black", 100, "item"],
-	["Suppressor .338 (Green)", "muzzle_snds_338_green", 100, "item"],
-	["Suppressor .338 (Sand)", "muzzle_snds_338_sand", 100, "item"],
 	["Suppressor 6.5mm", "muzzle_snds_H", 100, "item"],
 	["Suppressor 6.5mm LMG", "muzzle_snds_H_MG", 125, "item"],
 	["Suppressor 7.62mm", "muzzle_snds_B", 125, "item"],
-	["Bipod 1 (Black)", "bipod_01_F_blk", 125, "item"],
-	["Bipod 1 (MTP)", "bipod_01_F_mtp", 125, "item"],
-	["Bipod 1 (SND)", "bipod_01_F_snd", 125, "item"],
-	["Bipod 2 (Black)", "bipod_02_F_blk", 125, "item"],
-	["Bipod 2 (Hex)", "bipod_02_F_hex", 125, "item"],
-	["Bipod 2 (Tan)", "bipod_02_F_tan", 125, "item"],
-	["Bipod 3 (Black)", "bipod_03_F_blk", 125, "item"],
-	["Bipod 3 (Olive)", "bipod_03_F_oli", 125, "item"],
+	["Suppressor .338 [DLC]", "muzzle_snds_338_black", 150, "item"],
+	["Suppressor .338 (Green) [DLC]", "muzzle_snds_338_green", 150, "item"],
+	["Suppressor .338 (Sand) [DLC]", "muzzle_snds_338_sand", 175, "item"],
+	["Suppressor 9.3mm [DLC]", "muzzle_snds_93mmg", 175, "item"],
+	["Suppressor 9.3mm (Tan) [DLC]", "muzzle_snds_93mmg_tan", 175, "item"],
+	["Bipod (NATO)", "bipod_01_F_blk", 500, "item"],
+	["Bipod (CSAT)", "bipod_02_F_blk", 500, "item"],
+	["Bipod (AAF)", "bipod_03_F_blk", 500, "item"],
+	["Bipod (MTP)", "bipod_01_F_mtp", 500, "item"],
+	["Bipod (Hex)", "bipod_02_F_hex", 500, "item"],
+	["Bipod (Olive)", "bipod_03_F_oli", 500, "item"],
+	["Bipod (Sand)", "bipod_01_F_snd", 500, "item"],
+	["Bipod (Tan)", "bipod_02_F_tan", 500, "item"], 
 	["Flashlight", "acc_flashlight", 25, "item"],
 	["IR Laser Pointer", "acc_pointer_IR", 25, "item"],
 	["Yorris Sight (Zubr Revolver)", "optic_Yorris", 50, "item"],
@@ -517,12 +524,14 @@ backpackArray = compileFinal str
 
 genItemArray = compileFinal str
 [
-	["Quadrotor UAV (NATO)", "B_UAV_01_backpack_F", 500, "backpack"],
-	["Quadrotor UAV (CSAT)", "O_UAV_01_backpack_F", 500, "backpack"],
-	["Quadrotor UAV (AAF)", "I_UAV_01_backpack_F", 500, "backpack"],
 	["UAV Terminal (NATO)", "B_UavTerminal", 150, "gps"],
 	["UAV Terminal (CSAT)", "O_UavTerminal", 150, "gps"],
 	["UAV Terminal (AAF)", "I_UavTerminal", 150, "gps"],
+	["Quadrotor UAV (NATO)", "B_UAV_01_backpack_F", 500, "backpack"],
+	["Quadrotor UAV (CSAT)", "O_UAV_01_backpack_F", 500, "backpack"],
+	["Quadrotor UAV (AAF)", "I_UAV_01_backpack_F", 500, "backpack"],
+	["Remote Designator Bag (NATO) [DLC]", "B_Static_Designator_01_weapon_F", 1000, "backpack"],
+	["Remote Designator Bag (CSAT) [DLC]", "O_Static_Designator_02_weapon_F", 1000, "backpack"],
 	["GPS", "ItemGPS", 100, "gps"],
 	["First Aid Kit", "FirstAidKit", 25, "item"],
 	["Medikit", "Medikit", 150, "item"],
