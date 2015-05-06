@@ -1,4 +1,3 @@
-
 //	@file Version: 1.0
 //	@file Name: onPause.sqf
 //	@file Author: AgentRev
@@ -14,9 +13,30 @@ waitUntil {!isNull findDisplay 49}; // 49 = Esc menu
 _getPublicVar = if (!isNil "getPublicVar") then { getPublicVar } else { missionNamespace getVariable "getPublicVar" };
 _isConfigOn = if (!isNil "isConfigOn") then { isConfigOn } else { missionNamespace getVariable "isConfigOn" };
 
-if (alive player && !isNil "_getPublicVar" && !isNil "_isConfigOn") then
+if (!isNil "_getPublicVar" && !isNil "_isConfigOn") then
 {
-	if (["A3W_playerSaving"] call _isConfigOn &&
+	[] spawn
+	{
+		disableSerialization;
+		while {!isNull findDisplay 49} do
+		{
+			if (!alive player || player getVariable ["playerSpawning", false]) then
+			{
+				_respawnBtn = (findDisplay 49) displayCtrl 1010;
+				if (ctrlEnabled _respawnBtn) then
+				{
+					_respawnBtn ctrlEnable false;
+				};
+			}
+			else
+			{
+				uiSleep 0.1;
+			};
+		};
+	};
+
+	if (alive player &&
+	   {["A3W_playerSaving"] call _isConfigOn} &&
 	   {["playerSetupComplete", false] call _getPublicVar} &&
 	   {!(["playerSpawning", false] call _getPublicVar)}) then
 	{
@@ -81,7 +101,7 @@ if (alive player && !isNil "_getPublicVar" && !isNil "_isConfigOn") then
 					}
 					else
 					{
-						sleep 0.1;
+						uiSleep 0.1;
 					};
 				};
 

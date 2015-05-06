@@ -39,22 +39,23 @@ _spawnedCustom = 0;
 
 	//Blackbeard (Matt)
 	if (_uid == "76561198136978828") then {
-		_player forceAddUniform "UU_B_CTRG_3";
-		_player addHeadgear "H_Helmet_Kerry";
-        _player addVest "V_PlateCarrierIAGL_dgtl";
+		_player setFace "WhiteHead_22_l";
+		_player forceAddUniform "U_I_FullGhillie_lsh";
+		_player addHeadgear "H_Shemag_olive_hs";
+        _player addVest "V_PlateCarrierGL_rgr";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
-        _player addGoggles "G_Bandanna_aviator";
-        [_player,"GryffinRegiment"] call bis_fnc_setUnitInsignia;
+        _player addGoggles "G_Aviator";
 	};
     
     //Crazyhallum (Jonas)
 	if (_uid == "76561198063630406") then {
-		_player forceAddUniform "U_B_CombatUniform_mcam_worn";
-		_player addHeadgear "H_Booniehat_tan";
+		_player forceAddUniform "U_I_FullGhillie_lsh";
+		_player addHeadgear "H_HelmetB_paint";
         _player addVest "V_PlateCarrierSpec_rgr";
 		removeBackpack _player;
-		_player addBackpack "B_Carryall_ocamo";
+		_player addBackpack "B_Carryall_khk";
+		_player addGoggles "G_Bandanna_khk";
 	};
     
     //Larose R (Ryan)
@@ -67,11 +68,11 @@ _spawnedCustom = 0;
     
     //Nemesis (Michael)
 	if (_uid == "76561198115796338") then {
-		_player forceAddUniform "U_O_CombatUniform_oucamo";
+		_player forceAddUniform "U_O_FullGhillie_lsh";
 		_player addHeadgear "H_HelmetLeaderO_oucamo";
-        _player addVest "V_PlateCarrierH_CTRG";
+        _player addVest "V_PlateCarrierGL_mtp";
 		removeBackpack _player;
-		_player addBackpack "B_Carryall_oucamo";
+		_player addBackpack "B_Carryall_mcamo";
         _player addGoggles "G_Bandanna_aviator";
 		_player addItemToBackpack "Medikit";
 	};
@@ -114,12 +115,14 @@ _spawnedCustom = 0;
 	
     //LARRYDAVID (George)
 	if (_uid == "76561197965073283") then {
-		_player forceAddUniform "U_C_Poloshirt_blue";
-		_player addHeadgear "H_Cap_police";
-        _player addVest "V_TacVest_blk_POLICE";
+		_player forceAddUniform "U_O_FullGhillie_sard";
+        _player addVest "V_PlateCarrierIAGL_oli";
 		removeBackpack _player;
-		_player addBackpack "B_Carryall_cbr";
-        _player addGoggles "G_Balaclava_lowprofile";
+		_player addBackpack "B_Carryall_oli";
+        _player addGoggles "G_Bandanna_beast";
+		_player addItemToBackpack "Medikit";
+	
+		
 	};
     
     //Five Worlds (Jared)
@@ -152,11 +155,14 @@ _spawnedCustom = 0;
     
     //Evan
 	if (_uid == "76561197995272108") then {
-		_player forceAddUniform "U_BG_Guerilla3_1";
-		_player addHeadgear "H_Cap_blk_CMMG";
-        _player addVest "V_TacVestIR_blk";
+		_player forceAddUniform "U_I_G_resistanceLeader_F";
+		_player addHeadgear "H_HelmetSpecB_blk";
+        _player addVest "V_PlateCarrierGL_blk";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_cbr";
+		_player addItemToVest "SmokeShell";
+		_player addItemToVest "SmokeShellRed";
+		_player addGoggles "G_Bandanna_aviator";
 	};
     
     //FutbeleroR10
@@ -170,11 +176,13 @@ _spawnedCustom = 0;
     
     //Jag648
 	if (_uid == "76561198004293015") then {
-		_player forceAddUniform "U_I_pilotCoveralls";
-		_player addHeadgear "H_HelmetLeaderO_ocamo";
-        _player addVest "V_PlateCarrierIA2_dgtl";
+		_player forceAddUniform "U_O_FullGhillie_lsh";
+		_player addHeadgear "H_HelmetLeaderO_oucamo";
+        _player addVest "V_PlateCarrierIAGL_dgtl";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
+		_player addGoggles "G_Bandanna_oli";
+		
 	};
     
     //Frank648
@@ -196,22 +204,24 @@ _spawnedCustom = 0;
     
     //Harry (Harrison)
 	if (_uid == "76561198136758224") then {
-		_player forceAddUniform "U_I_CombatUniform";
-        _player addVest "V_PlateCarrierIAGL_dgtl";
+		_player forceAddUniform "U_I_FullGhillie_sard";
+        _player addVest "V_PlateCarrierGL_rgr";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
         _player addHeadgear "H_HelmetIA";
         _player addGoggles "G_Bandanna_oli";
+		_player addItemToUniform "FirstAidKit";
 	};
     
     //Howitzer (Matt)
 	if (_uid == "76561197977078167") then {
-		_player forceAddUniform "U_B_CTRG_3";
+		_player forceAddUniform "U_I_FullGhillie_ard";
         _player addHeadgear "H_StrawHat";
         _player addVest "V_PlateCarrierGL_rgr";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_mcamo";
         _player addGoggles "G_Shades_Green";
+		_player addItemToBackpack "Medikit";
 	};
     
     //Sim0nSayz
@@ -265,11 +275,12 @@ _spawnedCustom = 0;
     
 	//TheGeneral
 	if (_uid == "76561198093798174") then {
-		_player forceAddUniform "U_O_CombatUniform_ocamo";
-        _player addHeadgear "H_Watchcap_blk";
-        _player addVest "V_TacVest_blk_POLICE";
+		_player forceAddUniform "U_O_FullGhillie_lsh";
+        _player addHeadgear "H_HelmetLeaderO_ocamo";
+        _player addVest "V_PlateCarrierGL_mtp";
 		removeBackpack _player;
-		_player addBackpack "B_Carryall_ocamo";
+		_player addBackpack "B_Carryall_khk";
+		_player addGoggles "G_Bandanna_beast";
 	};
 	
     //DoctorProfPatrick
@@ -339,9 +350,9 @@ _spawnedCustom = 0;
 	
 	//Centrifugal (Rob)
 	if (_uid == "76561197985919742") then {
-		_player forceAddUniform "U_I_GhillieSuit";
+		_player forceAddUniform "U_I_FullGhillie_ard";
 		_player addHeadgear "H_HelmetLeaderO_oucamo";
-        _player addVest "V_PlateCarrierH_CTRG";
+        _player addVest "V_PlateCarrierIAGL_dgtl";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_oucamo";
         _player addGoggles "G_Bandanna_beast";
@@ -406,6 +417,33 @@ _spawnedCustom = 0;
 		_player addBackpack "B_AssaultPack_blk";
 	};
 	
+<<<<<<< HEAD
+	//Ravaidel
+	if (_uid == "76561198066769820") then {
+		_player forceAddUniform "U_B_CTRG_3";
+		_player addHeadgear "H_ShemagOpen_khk";
+        _player addVest "V_TacVest_oli";
+		removeBackpack _player;
+		_player addBackpack "B_AssaultPack_khk";
+		_player addGoggles "G_Bandanna_sport";
+	};
+	
+=======
+	//XRAY
+	if (_uid == "76561197988807693") then {	
+		_player forceAddUniform "U_B_FullGhillie_sard";
+		_player addVest "V_PlateCarrierGL_mtp";
+		removeBackpack _player;
+		_player addBackpack "B_Carryall_mcamo";
+		_player addHeadgear "H_HelmetLeaderO_ocamo";
+		_player addGoggles "G_Bandanna_oli";	
+		
+	};
+	
+	
+	
+	
+>>>>>>> origin/master
 //##########################################
 //Donator Uniform Gifts - Loadouts END
 //##########################################	
