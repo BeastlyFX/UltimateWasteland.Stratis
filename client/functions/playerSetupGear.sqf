@@ -417,7 +417,6 @@ _spawnedCustom = 0;
 		_player addBackpack "B_AssaultPack_blk";
 	};
 	
-<<<<<<< HEAD
 	//Ravaidel
 	if (_uid == "76561198066769820") then {
 		_player forceAddUniform "U_B_CTRG_3";
@@ -428,7 +427,6 @@ _spawnedCustom = 0;
 		_player addGoggles "G_Bandanna_sport";
 	};
 	
-=======
 	//XRAY
 	if (_uid == "76561197988807693") then {	
 		_player forceAddUniform "U_B_FullGhillie_sard";
@@ -439,11 +437,7 @@ _spawnedCustom = 0;
 		_player addGoggles "G_Bandanna_oli";	
 		
 	};
-	
-	
-	
-	
->>>>>>> origin/master
+
 //##########################################
 //Donator Uniform Gifts - Loadouts END
 //##########################################	
