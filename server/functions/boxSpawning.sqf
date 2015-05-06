@@ -1,3 +1,4 @@
+
 //	@file Version: 1.1
 //	@file Name: boxSpawning.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy, AgentRev
@@ -94,7 +95,7 @@ _boxList =
 						_boxItems =
 						[
 							["wep", "arifle_MXM_DMS_F", 1, 8],
-							["wep", "srifle_LRR_LRPS_F", 1, 8]
+							["wep", "srifle_LRR_SOS_F", 1, 8]
 						];
 					};
 					case (_box isKindOf "Box_East_WpsSpecial_F"):
@@ -102,7 +103,7 @@ _boxList =
 						_boxItems =
 						[
 							["wep", "srifle_DMR_01_DMS_F", 1, 8],
-							["wep", "srifle_GM6_LRPS_F", 1, 8]
+							["wep", "srifle_GM6_SOS_F", 1, 8]
 						];
 					};
 					case (_box isKindOf "Box_IND_WpsSpecial_F"):
@@ -110,7 +111,7 @@ _boxList =
 						_boxItems =
 						[
 							["wep", "srifle_EBR_DMS_F", 1, 8],
-							["wep", "srifle_GM6_LRPS_F", 1, 8]
+							["wep", "srifle_GM6_SOS_F", 1, 8]
 						];
 					};
 					default { _boxItems = [] };

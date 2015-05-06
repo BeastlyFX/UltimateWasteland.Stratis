@@ -1,3 +1,4 @@
+
 //	@file Name: oSave.sqf
 //	@file Author: AgentRev, [GoT] JoSchaap
 
@@ -90,7 +91,6 @@ while {true} do
 			if (!isNil "_objID") then 
 			{
 				_newObjectIDs pushBack _objID;
-				if !(_objID in A3W_objectIDs) then { A3W_objectIDs pushBack _objID };
 			};
 
 			sleep 0.01;
@@ -127,7 +127,6 @@ while {true} do
 				if (!isNil "_vehID") then 
 				{
 					_newVehicleIDs pushBack _vehID;
-					if !(_vehID in A3W_vehicleIDs) then { A3W_vehicleIDs pushBack _vehID };
 				};
 
 				sleep 0.01;

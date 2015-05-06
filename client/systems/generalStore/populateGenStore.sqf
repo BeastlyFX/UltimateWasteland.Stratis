@@ -108,24 +108,17 @@ _playerSideNum = switch (playerSide) do
 		{
 			case "CfgVehicles":
 			{
+				_sideCfg = _parentCfg >> _weaponClass >> "side";
+
+				if (isNumber _sideCfg) then
 				{
-					_sideCfg = call _x;
+					_side = getNumber _sideCfg;
 
-					if (isNumber _sideCfg) then
+					if (_side in [0,1,2] && {_side != _playerSideNum}) then
 					{
-						_side = getNumber _sideCfg;
-
-						if (_side in [0,1,2] && {_side != _playerSideNum}) then
-						{
-							_showItem = false;
-						};
+						_showItem = false;
 					};
-				}
-				forEach
-				[
-					{ _parentCfg >> _weaponClass >> "side" },
-					{ configFile >> "CfgVehicles" >> getText (_parentCfg >> _weaponClass >> "assembleInfo" >> "assembleTo") >> "side" }
-				];
+				};
 			};
 			case "CfgWeapons":
 			{
@@ -186,5 +179,3 @@ _playerSideNum = switch (playerSide) do
 		_itemlist lbSetData [_listIndex, _weaponClass];
 	};
 } forEach _itemsArray;
-
-call getInventory;

@@ -188,13 +188,13 @@ if (isNil "_cheatFlag") then
 
 // diag_log "ANTI-HACK: Starting loop!";
 
-_loopCount = 12; // _loopCount >= 24 means every 2 minutes
+_loopCount = 24; // _loopCount >= 24 means every 2 minutes
 
 while { true } do
 {
 	waitUntil {time > 0};
 
-	if (isNil "_cheatFlag" && _loopCount >= 12) then
+	if (isNil "_cheatFlag" && _loopCount >= 24) then
 	{
 		_loopCount = 0;
 

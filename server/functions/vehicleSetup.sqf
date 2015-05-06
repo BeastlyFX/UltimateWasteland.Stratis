@@ -20,8 +20,7 @@ if !(_class isKindOf "AllVehicles") exitWith {}; // if not actual vehicle, finis
 
 clearBackpackCargoGlobal _vehicle;
 
-// Disable thermal on all manned vehicles
-if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") < 1) then
+if !(_vehicle isKindOf "UAV_02_base_F") then
 {
 	_vehicle disableTIEquipment true;
 };
@@ -62,11 +61,6 @@ _vehicle addEventHandler ["Killed",
 		[objNull, _veh getVariable "A3W_vehicleID"] call fn_manualVehicleDelete;
 	};
 }];
-
-if ({_class isKindOf _x} count ["Air","UGV_01_base_F"] > 0) then
-{
-	[netId _vehicle, "A3W_fnc_setupAntiExplode", true] call A3W_fnc_MP;
-};
 
 // Vehicle customization
 switch (true) do

@@ -49,8 +49,7 @@ if (_packetName == "BIS_fnc_MP_packet") then
 			"startSystemBountyByName",
 			"BIS_fnc_effectKilledAirDestruction",
 			"BIS_fnc_effectKilledAirDestructionStage2",
-			"BIS_fnc_effectKilledSecondaries",
-			"BIS_fnc_objectVar"/*,
+			"BIS_fnc_effectKilledSecondaries"/*,
 			"JTS_FNC_SENT"*/ // PM Compact by JTS
 		];
 

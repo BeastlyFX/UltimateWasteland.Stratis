@@ -1,3 +1,6 @@
+// ******************************************************************************************
+// * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
+// ******************************************************************************************
 //@file Version: 1.0
 //@file Name: deploy.sqf
 //@file Author: MercyfulFate
@@ -39,11 +42,11 @@ if (_success) then {
 	_beacon setVariable ["ownerUID", _uid, true];
 	_beacon setVariable ["packing", false, true];
 	_beacon setVariable ["groupOnly", (playerSide == INDEPENDENT), true];
-	/*{
+	{
 		if (_x getVariable ["ownerUID",""] == _uid) then {
 			pvar_spawn_beacons = pvar_spawn_beacons - [_x];
 		};
-	} forEach pvar_spawn_beacons;*/
+	} forEach pvar_spawn_beacons;
 
 	pvar_spawn_beacons pushBack _beacon;
 	publicVariable "pvar_spawn_beacons";
@@ -52,3 +55,4 @@ if (_success) then {
 	["You placed the Spawn Beacon successfully!", 5] call mf_notify_client;
 };
 _success;
+

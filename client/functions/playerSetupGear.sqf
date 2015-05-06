@@ -39,13 +39,13 @@ _spawnedCustom = 0;
 
 	//Blackbeard (Matt)
 	if (_uid == "76561198136978828") then {
-		_player setFace "WhiteHead_22_l";
-		_player forceAddUniform "U_I_FullGhillie_lsh";
-		_player addHeadgear "H_Shemag_olive_hs";
-        _player addVest "V_PlateCarrierGL_rgr";
+		_player forceAddUniform "UU_B_CTRG_3";
+		_player addHeadgear "H_Helmet_Kerry";
+        _player addVest "V_PlateCarrierIAGL_dgtl";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_oli";
-        _player addGoggles "G_Aviator";
+        _player addGoggles "G_Bandanna_aviator";
+        [_player,"GryffinRegiment"] call bis_fnc_setUnitInsignia;
 	};
     
     //Crazyhallum (Jonas)
@@ -265,12 +265,11 @@ _spawnedCustom = 0;
     
 	//TheGeneral
 	if (_uid == "76561198093798174") then {
-		_player forceAddUniform "U_O_FullGhillie_lsh";
-        _player addHeadgear "H_HelmetLeaderO_ocamo";
-        _player addVest "V_PlateCarrierGL_mtp";
+		_player forceAddUniform "U_O_CombatUniform_ocamo";
+        _player addHeadgear "H_Watchcap_blk";
+        _player addVest "V_TacVest_blk_POLICE";
 		removeBackpack _player;
-		_player addBackpack "B_Carryall_khk";
-		_player addGoggles "G_Bandanna_beast";
+		_player addBackpack "B_Carryall_ocamo";
 	};
 	
     //DoctorProfPatrick
@@ -405,16 +404,6 @@ _spawnedCustom = 0;
         _player addVest "V_PlateCarrier2_rgr";
 		removeBackpack _player;
 		_player addBackpack "B_AssaultPack_blk";
-	};
-	
-	//Ravaidel
-	if (_uid == "76561198066769820") then {
-		_player forceAddUniform "U_B_CTRG_3";
-		_player addHeadgear "H_ShemagOpen_khk";
-        _player addVest "V_TacVest_oli";
-		removeBackpack _player;
-		_player addBackpack "B_AssaultPack_khk";
-		_player addGoggles "G_Bandanna_sport";
 	};
 	
 //##########################################

@@ -1,3 +1,4 @@
+
 //	@file Name: setupServerPVars.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy, [404] Pulse, AgentRev, MercyfulFate
 
@@ -17,6 +18,16 @@ currentInvites = [];
 publicVariable "currentInvites";
 
 #define PVAL (_this select 1)
+
+"itemsDroppedOnDeath" addPublicVariableEventHandler
+{
+	{
+		if (!isNil "_x") then
+		{
+			(objectFromNetId _x) setVariable ["processedDeath", diag_tickTime];
+		};
+	} forEach PVAL;
+};
 
 { (_x select 0) addPublicVariableEventHandler (_x select 1) } forEach
 [
@@ -40,5 +51,5 @@ publicVariable "currentInvites";
 	["pvar_manualVehicleSave", { if (!isNil "fn_manualVehicleSave") then { PVAL call fn_manualVehicleSave } }],
 	["pvar_playerRespawn", { PVAL spawn playerRespawnServer }],
 	["pvar_waitUntilBagTaken", { PVAL spawn waitUntilBagTaken }],
-	["pvar_dropPlayerItems", { PVAL spawn dropPlayerItems }]
+	["pvar_processEventAction", { PVAL spawn processEventAction }]
 ];
