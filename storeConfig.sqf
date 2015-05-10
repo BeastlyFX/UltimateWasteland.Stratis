@@ -753,7 +753,7 @@ helicoptersArray = compileFinal str
 planesArray = compileFinal str
 [
 	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 15000, "vehicle"],
-	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 30000, "vehicle"],
+	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 40000, "vehicle"],
 	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 100000, "vehicle"],
 	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 100000, "vehicle"],
 	["MQ4A Greyhawk ATGM UAV", "B_UAV_02_F", 20000, "vehicle"],
