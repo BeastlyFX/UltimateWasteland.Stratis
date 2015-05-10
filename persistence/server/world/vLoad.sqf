@@ -1,4 +1,3 @@
-
 //	@file Name: vLoad.sqf
 //	@file Author: AgentRev, JoSchaap, Austerror
 
@@ -87,7 +86,7 @@ _exclVehicleIDs = [];
 		if (!isNil "_vehicleID") then
 		{
 			_veh setVariable ["A3W_vehicleID", _vehicleID, true];
-			_vehicleIDs pushBack _vehicleID;
+			A3W_vehicleIDs pushBack _vehicleID;
 		};
 
 		_veh setVariable ["vehSaving_hoursUnused", _hoursUnused];
