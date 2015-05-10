@@ -179,6 +179,21 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 					_isDamageable = false;
 				};
 				
+				if (_object isKindOf "Land_Dome_Big_F") then
+				{
+					_isDamageable = false;
+				};
+				
+				if (_object isKindOf "Land_Dome_Small_F") then
+				{
+					_isDamageable = false;
+				};
+				
+				
+				
+				
+				
+				
 				[_object, false] call vehicleSetup;
 				_object allowDamage _isDamageable;
 				_object setVariable ["allowDamage", _isDamageable];
