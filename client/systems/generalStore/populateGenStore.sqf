@@ -71,6 +71,10 @@ switch(_switch) do
 	};
 	case 6:
 	{
+		_itemsArray = call genCratesArray;
+	};
+	case 7:
+	{
 		_itemsArray = call genObjectsArray;
 		_showPicture = false;
 	};

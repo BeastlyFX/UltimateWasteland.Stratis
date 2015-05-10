@@ -625,12 +625,39 @@ genObjectsArray = compileFinal str
 	["Dome (Large)", "Land_Dome_Big_F", 1000, "object"],
 	["Dome (Small)", "Land_Dome_Small_F", 500, "object"],
 	["Water Source", "Land_Water_source_F", 500, "object"]
-	
-	
-	
 ];
 
-allGenStoreVanillaItems = compileFinal str (call genItemArray + call genObjectsArray + call allStoreGear);
+genCratesArray = compileFinal str
+[
+	["Basic Weapons [NATO]", "Box_NATO_Wps_F", 9500, "object"],
+	["Special Weapons [NATO]", "Box_NATO_WpsSpecial_F", 9500, "object"],
+	["Launchers [NATO]", "Box_NATO_WpsLaunch_F", 9500, "object"],
+	["Basic Ammo [NATO]", "Box_NATO_Ammo_F", 9500, "object"],
+	["Explosives [NATO]", "Box_NATO_AmmoOrd_F", 9500, "object"],
+	["Grenades [NATO]", "Box_NATO_Grenades_F", 9500, "object"],
+	["Support [NATO]", "Box_NATO_Support_F", 9500, "object"],
+	["Basic Weapons [CSAT]", "Box_East_Wps_F", 9500, "object"],
+	["Special Weapons [CSAT]", "Box_East_WpsSpecial_F", 9500, "object"],
+	["Launchers [CSAT]", "Box_East_WpsLaunch_F", 9500, "object"],
+	["Basic Ammo [CSAT]", "Box_East_Ammo_F", 9500, "object"],
+	["Explosives [CSAT]", "Box_East_AmmoOrd_F", 9500, "object"],
+	["Grenades [CSAT]", "Box_East_Grenades_F", 9500, "object"],
+	["Support [CSAT]", "Box_East_Support_F", 9500, "object"],
+	["Basic Weapons [AAF]", "Box_IND_Wps_F", 9500, "object"],
+	["Special Weapons [AAF]", "Box_IND_WpsSpecial_F", 9500, "object"],
+	["Launchers [AAF]", "Box_IND_WpsLaunch_F", 9500, "object"],
+	["Basic Ammo [AAF]", "Box_IND_Ammo_F", 9500, "object"],
+	["Explosives [AAF]", "Box_IND_AmmoOrd_F", 9500, "object"],
+	["Grenades [AAF]", "Box_IND_Grenades_F", 9500, "object"],
+	["Support [AAF]", "Box_IND_Support_F", 9500, "object"],
+	["Ammo Cache [NATO]", "Box_Ammo_F", 9500, "object"],
+	["Weapons Cache [NATO]", "Box_Wps_F", 9500, "object"],
+	["Supply Box [NATO]", "B_supplyCrate_F", 9500, "object"],
+	["Supply Box [CSAT]", "O_supplyCrate_F", 9500, "object"],
+	["Supply Box [AAF]", "IG_supplyCrate_F", 9500, "object"]
+];
+
+allGenStoreVanillaItems = compileFinal str (call genItemArray + call genObjectsArray + call allStoreGear + call genCratesArray);
 
 //Text name, classname, buy cost, spawn type, sell price (selling not implemented) or spawning color
 landArray = compileFinal str
