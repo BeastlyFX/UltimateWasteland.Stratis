@@ -1,3 +1,4 @@
+
 //	@file Version: 1.1
 //	@file Name: init.sqf
 //	@file Author: [404] Deadbeat, [GoT] JoSchaap, AgentRev
@@ -217,28 +218,29 @@ if (_playerSavingOn || _serverSavingOn) then
 		};
 	};
 
-	[_playerSavingOn, _objectSavingOn, _vehicleSavingOn] spawn
+	[_playerSavingOn, _serverSavingOn, _vehicleSavingOn] spawn
 	{
 		_playerSavingOn = _this select 0;
-		_objectSavingOn = _this select 1;
+		_serverSavingOn = _this select 1;
 		_vehicleSavingOn = _this select 2;
 
-		A3W_objectIDs = [];
-		A3W_vehicleIDs = [];
-		if (_objectSavingOn) then
+		_objectIDs = [];
+		_vehicleIDs = [];
+
+		if (_serverSavingOn) then
 		{
-			call compile preprocessFileLineNumbers "persistence\server\world\oLoad.sqf";
+			_objectIDs = call compile preprocessFileLineNumbers "persistence\server\world\oLoad.sqf";
 		};
 
 		if (_vehicleSavingOn) then
 		{
-			call compile preprocessFileLineNumbers "persistence\server\world\vLoad.sqf";
+			_vehicleIDs = call compile preprocessFileLineNumbers "persistence\server\world\vLoad.sqf";
 		};
 
-		if (_objectSavingOn || _vehicleSavingOn || {_playerSavingOn && call A3W_savingMethod == "profile"}) then
+		if (_serverSavingOn || {_playerSavingOn && call A3W_savingMethod == "profile"}) then
 		{
-			execVM "persistence\server\world\oSave.sqf";
-			//waitUntil {!isNil "A3W_oSaveReady"};
+			[_objectIDs, _vehicleIDs] execVM "persistence\server\world\oSave.sqf";
+			waitUntil {!isNil "A3W_oSaveReady"};
 		};
 	};
 
