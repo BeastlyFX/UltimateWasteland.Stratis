@@ -291,6 +291,26 @@ storePurchaseHandle = _this spawn
 	if (isNil "_price") then
 	{
 		{
+			if (_itemText == _x select 0 && _itemData == _x select 1) exitWith
+			{
+				_class = _x select 1;
+				_price = _x select 2;
+
+				// Ensure the player has enough money
+				if (_price > _playerMoney) exitWith
+				{
+					[_itemText] call _showInsufficientFundsError;
+				};
+
+				_requestKey = call A3W_fnc_generateKey;
+				call requestStoreObject;
+			};
+		} forEach (call genCratesArray);
+	};	
+
+	if (isNil "_price") then
+	{
+		{
 			if (_itemData == _x select 1) exitWith
 			{
 				_price = _x select 4;
