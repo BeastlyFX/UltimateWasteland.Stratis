@@ -19,6 +19,8 @@ addMissionEventHandler ["HandleDisconnect",
 	_uid = _this select 2;
 	_name = _this select 3;
 
+	diag_log format ["HandleDisconnect - %1", [_name, _uid]];
+
 	if (alive _unit) then
 	{
 		if ((_unit getVariable ["FAR_isUnconscious", 0] == 0) && {!isNil "isConfigOn" && {["A3W_playerSaving"] call isConfigOn}}) then
@@ -104,7 +106,10 @@ forEach
 	"A3W_atmMaxBalance",
 	"A3W_atmTransferFee",
 	"A3W_atmTransferAllTeams",
-	"A3W_atmEditorPlacedOnly"
+	"A3W_atmEditorPlacedOnly",
+	"A3W_atmMapIcons",
+	"A3W_atmRemoveIfDisabled",
+	"A3W_uavControl"
 ];
 
 ["A3W_join", "onPlayerConnected", { [_id, _uid, _name] spawn fn_onPlayerConnected }] call BIS_fnc_addStackedEventHandler;
@@ -121,13 +126,13 @@ _beaconSavingOn = ["A3W_spawnBeaconSaving"] call isConfigOn;
 _purchasedVehicleSavingOn = ["A3W_purchasedVehicleSaving"] call isConfigOn;
 _missionVehicleSavingOn = ["A3W_missionVehicleSaving"] call isConfigOn;
 
-_serverSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn || _purchasedVehicleSavingOn || _missionVehicleSavingOn);
+_objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn);
 _vehicleSavingOn = (_purchasedVehicleSavingOn || _purchasedVehicleSavingOn);
 
 _setupPlayerDB = scriptNull;
 
 // Do we need any persistence?
-if (_playerSavingOn || _serverSavingOn) then
+if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn) then
 {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -143,8 +148,8 @@ if (_playerSavingOn || _serverSavingOn) then
 		{
 			A3W_savingMethodName = compileFinal "'extDB'";
 			A3W_savingMethodDir = compileFinal "'extDB'";
-			A3W_extDB_ConfigName = compileFinal str (["A3W_extDB_ConfigName", "UltimateWasteland"] call getPublicVar);
-			A3W_extDB_IniName = compileFinal str (["A3W_extDB_IniName", "UltimateWasteland"] call getPublicVar);
+			A3W_extDB_ConfigName = compileFinal str (["A3W_extDB_ConfigName", "A3W"] call getPublicVar);
+			A3W_extDB_IniName = compileFinal str (["A3W_extDB_IniName", "a3wasteland"] call getPublicVar);
 		}
 		else
 		{
@@ -197,11 +202,10 @@ if (_playerSavingOn || _serverSavingOn) then
 	call compile preprocessFileLineNumbers "server\systems\bounties\init.sqf";
 	call compile preprocessFileLineNumbers "server\systems\events\init.sqf";
 	call compile preProcessFileLineNumbers format ["persistence\server\setup\%1\init.sqf", call A3W_savingMethodDir];
-   
-	
+
 	if (_playerSavingOn) then
 	{
-		_setupPlayerDB = [] spawn compile preprocessFileLineNumbers "persistence\server\players\setupPlayerDB.sqf"; // scriptDone stays stuck on false on Linux servers when using execVM
+		_setupPlayerDB = [] spawn compile preprocessFileLineNumbers "persistence\server\players\setupPlayerDB.sqf"; // scriptDone stays stuck on false when using execVM on Linux
 
 		// profileNamespace doesn't save antihack logs
 		if (_savingMethod != "profile") then
@@ -225,6 +229,7 @@ if (_playerSavingOn || _serverSavingOn) then
 
 		A3W_objectIDs = [];
 		A3W_vehicleIDs = [];
+
 		if (_objectSavingOn) then
 		{
 			call compile preprocessFileLineNumbers "persistence\server\world\oLoad.sqf";
@@ -266,7 +271,6 @@ if (isNil "A3W_savingMethod") then
 
 call compile preprocessFileLineNumbers "server\missions\setupMissionArrays.sqf";
 call compile preprocessFileLineNumbers "server\functions\createTownMarkers.sqf";
-
 
 _createTriggers = [] spawn compile preprocessFileLineNumbers "territory\server\createCaptureTriggers.sqf"; // scriptDone stays stuck on false when using execVM on Linux
 
