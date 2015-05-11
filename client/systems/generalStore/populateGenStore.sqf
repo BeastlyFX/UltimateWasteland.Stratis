@@ -72,6 +72,7 @@ switch(_switch) do
 	case 6:
 	{
 		_itemsArray = call genCratesArray;
+		_showPicture = false;
 	};
 	case 7:
 	{

@@ -1,8 +1,6 @@
+
 //	@file Name: oSave.sqf
 //	@file Author: AgentRev, [GoT] JoSchaap
-
-_objectIDs = _this select 0;
-_vehicleIDs = _this select 1;
 
 #include "functions.sqf"
 
@@ -38,7 +36,6 @@ fn_manualObjectSave = [_worldDir, "fn_manualObjectSave.sqf"] call mf_compile;
 fn_manualObjectDelete = [_worldDir, "fn_manualObjectDelete.sqf"] call mf_compile;
 fn_saveObject = [_methodDir, "saveObject.sqf"] call mf_compile;
 fn_postObjectSave = [_methodDir, "postObjectSave.sqf"] call mf_compile;
-fn_deleteObjects = [_methodDir, "deleteObjects.sqf"] call mf_compile;
 fn_saveWarchestMoney = [_methodDir, "saveWarchestMoney.sqf"] call mf_compile;
 
 if (_vehicleSaving) then
@@ -49,7 +46,6 @@ if (_vehicleSaving) then
 	fn_manualVehicleDelete = [_worldDir, "fn_manualVehicleDelete.sqf"] call mf_compile;
 	fn_saveVehicle = [_methodDir, "saveVehicle.sqf"] call mf_compile;
 	fn_postVehicleSave = [_methodDir, "postVehicleSave.sqf"] call mf_compile;
-	fn_deleteVehicles = [_methodDir, "deleteVehicles.sqf"] call mf_compile;
 };
 
 if (_savingMethod == "iniDB") then
@@ -77,6 +73,7 @@ while {true} do
 	uiSleep _savingInterval;
 
 	_objCount = 0;
+	_currObjectIDs = +A3W_objectIDs;
 	_newObjectIDs = [];
 
 	{
@@ -104,9 +101,10 @@ while {true} do
 		call fn_saveWarchestMoney;
 	};
 
-	[_objectIDs - _newObjectIDs, _objCount] call fn_postObjectSave;
+	_oldIDs = _currObjectIDs - _newObjectIDs;
+	A3W_objectIDs = A3W_objectIDs - _oldIDs;
 
-	_objectIDs = _newObjectIDs;
+	[_oldIDs, _objCount] call fn_postObjectSave;
 
 	uiSleep _savingInterval;
 
@@ -114,6 +112,7 @@ while {true} do
 	if (_vehicleSaving) then
 	{
 		_vehCount = 0;
+		_currVehicleIDs = +A3W_vehicleIDs;
 		_newVehicleIDs = [];
 
 		{
@@ -136,8 +135,9 @@ while {true} do
 
 		diag_log format ["A3W - %1 vehicles have been saved with %2", _vehCount, call A3W_savingMethodName];
 
-		[_vehicleIDs - _newVehicleIDs, _vehCount] call fn_postVehicleSave;
+		_oldIDs = _currVehicleIDs - _newVehicleIDs;
+		A3W_vehicleIDs = A3W_vehicleIDs - _oldIDs;
 
-		_vehicleIDs = _newVehicleIDs;
+		[_oldIDs, _vehCount] call fn_postVehicleSave;
 	};
 };

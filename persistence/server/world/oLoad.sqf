@@ -4,7 +4,7 @@
 
 #include "functions.sqf"
 
-private ["_strToSide", "_maxLifetime", "_isWarchestEntry", "_isBeaconEntry", "_worldDir", "_methodDir", "_objCount", "_objects", "_objectIDs", "_exclObjectIDs"];
+private ["_strToSide", "_maxLifetime", "_isWarchestEntry", "_isBeaconEntry", "_worldDir", "_methodDir", "_objCount", "_objects", "_exclObjectIDs"];
 
 _strToSide =
 {
@@ -30,7 +30,6 @@ _methodDir = format ["%1\%2", _worldDir, call A3W_savingMethodDir];
 _objCount = 0;
 _objects = call compile preprocessFileLineNumbers format ["%1\getObjects.sqf", _methodDir];
 
-_objectIDs = [];
 _exclObjectIDs = [];
 
 {
@@ -76,7 +75,7 @@ _exclObjectIDs = [];
 		if (!isNil "_objectID") then
 		{
 			_obj setVariable ["A3W_objectID", _objectID, true];
-			_objectIDs pushBack _objectID;
+			A3W_objectIDs pushBack _objectID;
 		};
 
 		_obj setVariable ["baseSaving_hoursAlive", _hoursAlive];
@@ -204,5 +203,3 @@ diag_log format ["A3Wasteland - world persistence loaded %1 objects from %2", _o
 
 fn_deleteObjects = [_methodDir, "deleteObjects.sqf"] call mf_compile;
 _exclObjectIDs call fn_deleteObjects;
-
-_objectIDs

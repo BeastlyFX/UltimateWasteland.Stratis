@@ -37,8 +37,6 @@ else
 	[
 		"Damage",
 		"HitPoints",
-		"Hunger",
-		"Thirst",
 
 		"LoadedMagazines",
 
@@ -74,6 +72,9 @@ else
 		"BackpackMagazines",
 
 		"WastelandItems",
+
+		"Hunger",
+		"Thirst",
 
 		"Position",
 		"Direction"
