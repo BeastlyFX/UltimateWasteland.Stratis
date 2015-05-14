@@ -357,6 +357,7 @@ _spawnedCustom = 0;
 		_player addBackpack "B_Carryall_oucamo";
         _player addGoggles "G_Bandanna_beast";
 		_player addItemToBackpack "Medikit";
+		_player linkItem "ItemGPS";
 	};
 	
 	//RaidGamer
@@ -435,6 +436,17 @@ _spawnedCustom = 0;
 		_player addBackpack "B_Carryall_mcamo";
 		_player addHeadgear "H_HelmetLeaderO_ocamo";
 		_player addGoggles "G_Bandanna_oli";	
+		
+	};
+	//YayObamaCare
+	if (_uid == "76561198140059770") then {	
+		_player forceAddUniform "U_I_FullGhillie_sard";
+		_player addVest "V_PlateCarrierGL_mtp";
+		removeBackpack _player;
+		_player addBackpack "B_Carryall_oli";
+		_player addHeadgear "H_HelmetLeaderO_ocamo";
+		_player addGoggles "G_Balaclava_oli";	
+		_player linkItem "ItemGPS";
 		
 	};
 
