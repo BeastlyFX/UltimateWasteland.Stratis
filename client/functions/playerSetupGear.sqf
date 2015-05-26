@@ -449,6 +449,29 @@ _spawnedCustom = 0;
 		_player linkItem "ItemGPS";
 		
 	};
+	//BlackPanda
+	if (_uid == "76561198118202717") then {	
+		_player forceAddUniform "U_I_G_resistanceLeader_F";
+		_player addVest "V_PlateCarrierGL_blk";
+		removeBackpack _player;
+		_player addBackpack "B_TacticalPack_blk";
+		_player addHeadgear "H_Watchcap_blk";
+		_player addGoggles "G_Bandanna_aviator";	
+		_player linkItem "ItemGPS";
+		
+	};
+	
+	//Alex 
+	if (_uid == "76561198184132291") then {	
+		_player forceAddUniform "U_O_FullGhillie_lsh";
+		_player addVest "V_PlateCarrier_Kerry";
+		removeBackpack _player;
+		_player addBackpack "B_Carryall_oli";
+		_player addHeadgear "H_Shemag_olive";
+		_player addGoggles "G_Balaclava_oli";	
+		_player linkItem "ItemGPS";
+		
+	};
 
 //##########################################
 //Donator Uniform Gifts - Loadouts END
