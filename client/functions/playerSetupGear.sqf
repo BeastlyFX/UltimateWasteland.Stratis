@@ -472,6 +472,30 @@ _spawnedCustom = 0;
 		_player linkItem "ItemGPS";
 		
 	};
+	
+	//James 
+	if (_uid == "76561198188413825") then {	
+		_player forceAddUniform "U_O_Wetsuit";
+		_player addVest "V_RebreatherIR";
+		removeBackpack _player;
+		_player addBackpack "B_Carryall_oli";
+		_player addHeadgear "H_HelmetLeaderO_ocamo";
+		_player addGoggles "G_O_Diving";	
+		_player linkItem "ItemGPS";
+		
+	};
+	
+	//Koala Man 
+	if (_uid == "76561198053137254") then {	
+		_player forceAddUniform "U_I_FullGhillie_sard";
+		_player addVest "V_PlateCarrierIA1_dgtl";
+		removeBackpack _player;
+		_player addBackpack "B_Carryall_oli";
+		_player addHeadgear "H_HelmetLeaderO_oucamo";
+		_player addGoggles "G_Bandanna_khk";	
+		_player linkItem "ItemGPS";
+		_player addItemToUniform "FirstAidKit";
+	};
 
 //##########################################
 //Donator Uniform Gifts - Loadouts END
