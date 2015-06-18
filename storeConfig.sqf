@@ -860,6 +860,7 @@ colorsArray = compileFinal str
 			["Denim", _texDir + "denim.jpg"],
 			["Psych", _texDir + "psych.jpg"],
 			["Leopard", _texDir + "leopard.jpg"],
+			["Weed", _texDir + "weed.jpg"],
 			["'Murica", _texDir + "murica.jpg"],
 			["Confederate", _texDir + "confederate.jpg"],
 			["Canada", _texDir + "canada.jpg"],

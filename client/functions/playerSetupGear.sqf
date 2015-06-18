@@ -225,12 +225,13 @@ _spawnedCustom = 0;
 	};
     
     //Sim0nSayz
-	if (_uid == "76561198133000469") then {
+	if (_uid == "76561197960397717") then {
 		_player forceAddUniform "U_I_G_Story_Protagonist_F";
-        _player addHeadgear "H_HelmetB_camo";
-        _player addVest "V_PlateCarrierSpec_rgr";
+        _player addHeadgear "H_HelmetSpecB_paint2";
+        _player addVest "V_PlateCarrierH_CTRG";
 		removeBackpack _player;
 		_player addBackpack "B_Carryall_cbr";
+		_player addItemToBackpack "Medikit";
         _player addGoggles "G_Aviator";
 	};
 
