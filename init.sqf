@@ -65,8 +65,9 @@ if (isServer) then
 //init 3rd Party Scripts
 [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 [] execVM "addons\proving_ground\init.sqf";
-[] execVM "addons\JumpMF\init.sqf";
+[] execVM "addons\JumpMF\init.sqf"; //Jumping Mod
 [] execVM "addons\Explosives-To-Vehicle\init.sqf"; //ExplosivesToVehicle Mod
+[] execVM "addons\outlw_magRepack\MagRepack_init_sv.sqf"; //Repacking Mod
 
 while {true} do
 {
