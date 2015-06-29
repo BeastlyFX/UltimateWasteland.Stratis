@@ -131,6 +131,7 @@ A3W_scriptThreads pushBack execVM "client\systems\hud\playerHud.sqf";
 A3W_scriptThreads pushBack execVM "addons\fpsFix\vehicleManager.sqf";
 [] execVM "client\functions\drawPlayerIcons.sqf";
 [] execVM "addons\camera\functions.sqf";
+if(hasInterface) then{[] execVM "addons\statusBar\statusbar.sqf"};
 
 call compile preprocessFileLineNumbers "client\functions\generateAtmArray.sqf";
 [] execVM "client\functions\drawPlayerMarkers.sqf";
