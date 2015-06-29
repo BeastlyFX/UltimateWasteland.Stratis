@@ -66,6 +66,7 @@ if (isServer) then
 [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 [] execVM "addons\proving_ground\init.sqf";
 [] execVM "addons\JumpMF\init.sqf";
+[] execVM "addons\Explosives-To-Vehicle\init.sqf"; //ExplosivesToVehicle Mod
 
 while {true} do
 {
