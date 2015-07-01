@@ -1,3 +1,4 @@
+
 //	@file Version: 1.0
 //	@file Name: vehicleSetup.sqf
 //	@file Author: AgentRev
@@ -10,6 +11,18 @@ _vehicle = _this select 0;
 _class = typeOf _vehicle;
 
 _vehicle setVariable [call vChecksum, true];
+if (vehicleThermalsOn) then
+{
+	_vehicle disableTIEquipment false;
+}
+else
+{
+	if !(_vehicle isKindOf "UAV_02_base_F") then
+	{
+		_vehicle disableTIEquipment true;
+	};
+};
+
 
 clearMagazineCargoGlobal _vehicle;
 clearWeaponCargoGlobal _vehicle;
@@ -20,22 +33,12 @@ if !(_class isKindOf "AllVehicles") exitWith {}; // if not actual vehicle, finis
 clearBackpackCargoGlobal _vehicle;
 
 // Disable thermal on all manned vehicles
-if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") < 1) then
-{
-	_vehicle disableTIEquipment true;
-};
+//if (getNumber (configFile >> "CfgVehicles" >> _class >> "isUav") < 1) then
+//{
+//	_vehicle disableTIEquipment true;
+//};
 
 _vehicle setUnloadInCombat [true, false]; // Prevent AI gunners from getting out of vehicle while in combat if it's in working condition
-if (_vehicle isKindOf "UAV_02_base_F") then
-{
-	_vehicle disableTIEquipment false;
-};
-
-
-if (_vehicle isKindOf "StaticWeapon") then
-{
-	_vehicle disableTIEquipment false;
-};
 
 {
 	_vehicle setVariable ["A3W_hitPoint_" + getText (_x >> "name"), configName _x, true];
@@ -98,6 +101,11 @@ switch (true) do
 	case (_class isKindOf "Plane_Fighter_03_base_F"):
 	{
 		_vehicle addMagazine "300Rnd_20mm_shells";
+		_vehicle removeWeaponTurret ["missiles_SCALPEL",[-1]];
+	};
+	case (_class isKindOf "O_Truck_03_device_F"):
+	{
+		[netId _vehicle, "A3W_fnc_setupServiceVehicle", true] call A3W_fnc_MP;
 	};
 };
 

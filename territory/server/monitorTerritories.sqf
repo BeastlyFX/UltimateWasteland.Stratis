@@ -1,3 +1,4 @@
+
 /*********************************************************#
 # @@ScriptName: monitorTerritories.sqf
 # @@Author: Nick 'Bewilderbeest' Ludlam <bewilder@recoil.org>, AgentRev

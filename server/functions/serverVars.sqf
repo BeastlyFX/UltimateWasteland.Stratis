@@ -16,6 +16,7 @@ currentStaticHelis = []; // Storage for the heli marker numbers so that we don't
 //Civilian Vehicle List - Random Spawns
 civilianVehicles =
 [
+	"C_Quadbike_01_F",
 	"C_Hatchback_01_F",
 	"C_Hatchback_01_sport_F",
 	"C_SUV_01_F",
@@ -32,6 +33,10 @@ lightMilitaryVehicles =
 	"O_Quadbike_01_F",
 	"I_Quadbike_01_F",
 	"I_G_Quadbike_01_F",
+//	"O_Truck_02_covered_F",
+//	"I_Truck_02_covered_F",
+//	"O_Truck_02_transport_F",
+//	"I_Truck_02_transport_F",
 	"I_G_Offroad_01_armed_F"
 ];
 
@@ -50,12 +55,30 @@ mediumMilitaryVehicles =
 //Water Vehicles - Random Spawns
 waterVehicles =
 [
+//	"B_Lifeboat",
+//	"O_Lifeboat",
+//	"C_Rubberboat",
+//	"B_SDV_01_F",
+//	"O_SDV_01_F",
+//	"I_SDV_01_F",
+//	"B_Boat_Transport_01_F",
+//	"O_Boat_Transport_01_F",
+//	"I_Boat_Transport_01_F",
+//	"I_G_Boat_Transport_01_F",
 	"B_Boat_Armed_01_minigun_F",
 	"O_Boat_Armed_01_hmg_F",
 	"I_Boat_Armed_01_minigun_F",
 	"C_Boat_Civil_01_F",
 	"C_Boat_Civil_01_police_F",
 	"C_Boat_Civil_01_rescue_F"
+];
+
+//Essential List - Random Spawns.
+essentialsList =
+[
+	"B_supplyCrate_F",
+	"Land_Sacks_goods_F",
+	"Land_BarrelWater_F"
 ];
 
 //Object List - Random Spawns.
@@ -95,6 +118,8 @@ objectList =
 	"Land_MetalBarrel_F",
 	"Land_Mil_ConcreteWall_F",
 	"Land_Mil_WallBig_4m_F",
+	"Land_Mil_WallBig_4m_F",
+	"Land_Mil_WallBig_4m_F",
 	"Land_Pipes_large_F",
 	"Land_RampConcrete_F",
 	"Land_RampConcreteHigh_F",
@@ -115,10 +140,11 @@ staticWeaponsList =
 //Object List - Random Helis.
 staticHeliList =
 [
-	"B_Heli_Light_01_F",
+	"C_Heli_Light_01_civil_F",
 	"B_Heli_Light_01_F",
 	"O_Heli_Light_02_unarmed_F",
 	"I_Heli_light_03_unarmed_F"
+	// don't put cargo helicopters here, it doesn't make sense to find them in towns; they spawn in the CivHeli mission
 ];
 
 //Object List - Random Planes.
@@ -132,6 +158,10 @@ staticPlaneList =
 //Random Weapon List - Change this to what you want to spawn in cars.
 vehicleWeapons =
 [
+//	"hgun_P07_F",
+//	"hgun_Rook40_F",
+//	"hgun_ACPC2_F",
+//	"arifle_SDAR_F",
 	"SMG_01_F",	// Vermin .45 ACP
 	"SMG_02_F",	// Sting 9mm
 	"hgun_PDW2000_F",

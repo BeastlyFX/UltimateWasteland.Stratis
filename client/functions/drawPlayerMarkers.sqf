@@ -43,6 +43,7 @@ A3W_mapDraw_thread = [] spawn
 
 	_showPlayers = ["A3W_teamPlayersMap"] call isConfigOn;
 	_missionAiDrawLines = ["A3W_missionFarAiDrawLines"] call isConfigOn;
+	_drawAtmIcons = ["A3W_atmMapIcons"] call isConfigOn;
 	_atmIcon = (call currMissionDir) + "client\icons\suatmm_icon.paa";
 	_atmIconSize = {(0.4 / ctrlMapScale (_this select 0)) max 8 min 25};
 
@@ -50,7 +51,7 @@ A3W_mapDraw_thread = [] spawn
 	{
 		_newArrayIcons = [];
 
-		if (!isNil "A3W_atmArray") then
+		if (!isNil "A3W_atmArray" && _drawAtmIcons) then
 		{
 			_deadATMs = [];
 

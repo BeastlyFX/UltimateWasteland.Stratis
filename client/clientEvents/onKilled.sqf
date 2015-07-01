@@ -1,3 +1,4 @@
+
 //	@file Version: 1.0
 //	@file Name: onKilled.sqf
 //	@file Author: [404] Deadbeat, MercyfulFate, AgentRev
@@ -5,9 +6,10 @@
 
 _player = _this select 0;
 _presumedKiller = effectiveCommander (_this select 1);
-_killer = _player getVariable ["FAR_killerPrimeSuspect", objNull];
+_killer = _player getVariable "FAR_killerPrimeSuspect";
 
-if (isNull _killer) then { _killer = _presumedKiller };
+if (isNil "_killer") then { _killer = _player call FAR_findKiller };
+if (isNil "_killer" || {isNull _killer}) then { _killer = _presumedKiller };
 if (_killer == _player) then { _killer = objNull };
 
 [_player, _killer, _presumedKiller] spawn
@@ -36,7 +38,7 @@ if (_player == player) then
 		call loadScoreboard;
 		["A3W_scoreboard", "onEachFrame"] call BIS_fnc_removeStackedEventHandler;
 	}] call BIS_fnc_addStackedEventHandler;
-	
+
 	if (!isNil "savePlayerHandle" && {typeName savePlayerHandle == "SCRIPT" && {!scriptDone savePlayerHandle}}) then
 	{
 		terminate savePlayerHandle;
@@ -44,7 +46,13 @@ if (_player == player) then
 
 	playerData_infoPairs = nil;
 	playerData_savePairs = nil;
+	//combatTimestamp = -1; // Reset abort timer
 };
+
+_player setVariable ["FAR_killerPrimeSuspect", nil];
+_player setVariable ["FAR_killerVehicle", nil];
+_player setVariable ["FAR_killerAmmo", nil];
+_player setVariable ["FAR_killerSuspects", nil];
 
 _player spawn
 {

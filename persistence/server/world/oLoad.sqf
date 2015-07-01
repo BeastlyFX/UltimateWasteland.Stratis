@@ -4,7 +4,7 @@
 
 #include "functions.sqf"
 
-private ["_strToSide", "_maxLifetime", "_isWarchestEntry", "_isBeaconEntry", "_worldDir", "_methodDir", "_objCount", "_objects", "_exclObjectIDs"];
+private ["_strToSide", "_maxLifetime", "_maxLifetimeTier2", "_maxLifetimeTier3", "_isWarchestEntry", "_isBeaconEntry", "_worldDir", "_methodDir", "_objCount", "_objects", "_exclObjectIDs"];
 
 _strToSide =
 {
@@ -20,6 +20,8 @@ _strToSide =
 };
 
 _maxLifetime = ["A3W_objectLifetime", 0] call getPublicVar;
+_maxLifetimeTier2 = ["TOP_objectLifetime_Tier2", 0] call getPublicVar;
+_maxLifetimeTier3 = ["TOP_objectLifetime_Tier3", 0] call getPublicVar;
 
 _isWarchestEntry = { [_variables, "a3w_warchest", false] call fn_getFromPairs };
 _isBeaconEntry = { [_variables, "a3w_spawnBeacon", false] call fn_getFromPairs };

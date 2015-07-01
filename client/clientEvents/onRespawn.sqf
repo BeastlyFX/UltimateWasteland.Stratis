@@ -21,9 +21,6 @@ _player setVariable ["playerSpawning", true, true];
 pvar_playerRespawn = _player;
 publicVariableServer "pvar_playerRespawn";
 
-//Allow a user to spawn an ATV again after dying
-_player setVariable["Neugeladen", 1,true];
-
 _group = _player getVariable ["currentGroupRestore", grpNull];
 
 if (!isNull _group && {group _player != _group}) then

@@ -1,3 +1,4 @@
+
 //	@file Name: setupServerPVars.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy, [404] Pulse, AgentRev, MercyfulFate
 
@@ -5,6 +6,8 @@ pvar_teamSwitchList = [];
 publicVariable "pvar_teamSwitchList";
 pvar_teamKillList = [];
 publicVariable "pvar_teamKillList";
+pvar_voiceBanPlayerArray = [];
+publicVariable "pvar_voiceBanPlayerArray";
 pvar_spawn_beacons = [];
 publicVariable "pvar_spawn_beacons";
 pvar_warchest_funds_east = 0;
@@ -40,6 +43,5 @@ publicVariable "currentInvites";
 	["pvar_manualVehicleSave", { if (!isNil "fn_manualVehicleSave") then { PVAL call fn_manualVehicleSave } }],
 	["pvar_playerRespawn", { PVAL spawn playerRespawnServer }],
 	["pvar_waitUntilBagTaken", { PVAL spawn waitUntilBagTaken }],
-	["pvar_dropPlayerItems", { PVAL spawn dropPlayerItems }],
-	["pvar_processEventAction", { PVAL spawn processEventAction }]
+	["pvar_dropPlayerItems", { PVAL spawn dropPlayerItems }]
 ];

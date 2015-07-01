@@ -1,3 +1,4 @@
+
 //	@file Version: 1.0
 //	@file Name: vehicleInfo.sqf
 //	@file Author: [KoS] His_Shadow, AgentRev

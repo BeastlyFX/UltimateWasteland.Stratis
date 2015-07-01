@@ -1,3 +1,4 @@
+
 //	@file Version: 1.0
 //	@file Name: fn_refilltruck.sqf
 //	@file Author: AgentRev
@@ -30,23 +31,6 @@ _truckItems =
 	["wep", ["srifle_GM6_LRPS_F", "srifle_LRR_LRPS_F"], RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(4,6)],
 	["wep", ["launch_RPG32_F", "launch_Titan_short_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(1,2)],
 	["mag", "HandGrenade", RANDOM_BETWEEN(0,5)],
-	["wep", ["MMG_01_hex_F", "MMG_01_tan_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(2,5)],
-	["wep", ["MMG_02_black_F", "MMG_02_black_F"], RANDOM_BETWEEN(2,5), RANDOM_BETWEEN(2,5)],
-	["wep", ["srifle_DMR_04_F", "srifle_DMR_04_Tan_F"], RANDOM_BETWEEN(3,6), RANDOM_BETWEEN(3,6)],
-	["wep", ["srifle_DMR_06_camo_F", "srifle_DMR_06_camo_F"], RANDOM_BETWEEN(3,6), RANDOM_BETWEEN(3,6)],
-	["mag", "10Rnd_338_Mag", RANDOM_BETWEEN(4,8)],
-	["mag", "130Rnd_338_Mag", RANDOM_BETWEEN(4,8)],
-	["mag", "150Rnd_93x64_Mag", RANDOM_BETWEEN(4,8)],
-	["mag", "10Rnd_762x54_Mag", RANDOM_BETWEEN(4,8)],
-	["mag", "10Rnd_127x54_Mag", RANDOM_BETWEEN(4,8)],
-	["itm", "muzzle_snds_93mmg_tan", RANDOM_BETWEEN(1,3)],
-	["itm", "muzzle_snds_B", RANDOM_BETWEEN(1,3)],
-	["itm", "bipod_02_F_tan", RANDOM_BETWEEN(1,3)],
-	["itm", "bipod_01_F_snd", RANDOM_BETWEEN(1,3)],
-	["itm", "optic_AMS", RANDOM_BETWEEN(1,3)],
-	["itm", "optic_AMS_snd", RANDOM_BETWEEN(1,3)],
-	["itm", "optic_KHS_tan", RANDOM_BETWEEN(1,3)],
-	["itm", "optic_Nightstalker", RANDOM_BETWEEN(1,3)],
 	["mag", ["APERSTripMine_Wire_Mag", "APERSBoundingMine_Range_Mag", "SLAMDirectionalMine_Wire_Mag", "ATMine_Range_Mag"], RANDOM_BETWEEN(2,6)]
 ];
 

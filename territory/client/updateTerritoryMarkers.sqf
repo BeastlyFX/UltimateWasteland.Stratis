@@ -1,3 +1,4 @@
+
 //	@file Name: updateTerritoryMarkers.sqf
 //	@file Author: AgentRev
 

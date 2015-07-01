@@ -57,8 +57,8 @@ waitUntil {!(isNull (findDisplay 46))};
 
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call outlw_MR_keyDown;"];
 
-//systemChat "Mag Repack Initialized";
-//systemChat ("Keybinding: " + (call outlw_MR_keyListToString));
+systemChat "Mag Repack Initialized";
+systemChat ("Keybinding: " + (call outlw_MR_keyListToString));
 
 
 

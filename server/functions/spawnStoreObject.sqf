@@ -1,3 +1,4 @@
+
 //	@file Version: 1.0
 //	@file Name: spawnStoreObject.sqf
 //	@file Author: AgentRev
@@ -169,35 +170,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 			_object setDir (if (_object isKindOf "Plane") then { markerDir _marker } else { random 360 });
 
 			_isDamageable = !(_object isKindOf "ReammoBox_F"); // ({_object isKindOf _x} count ["AllVehicles", "Lamps_base_F", "Cargo_Patrol_base_F", "Cargo_Tower_base_F"] > 0);
-				if (_object isKindOf "Cargo_Tower_base_F") then
-				{
-					_isDamageable = false;
-				};
-				
-				if (_object isKindOf "Land_Cargo_Tower_V1_F") then
-				{
-					_isDamageable = false;
-				};
-				
-				if (_object isKindOf "Land_Dome_Big_F") then
-				{
-					_isDamageable = false;
-				};
-				
-				if (_object isKindOf "Land_Dome_Small_F") then
-				{
-					_isDamageable = false;
-				};
-				
-				
-				
-				
-				
-				
-				[_object, false] call vehicleSetup;
-				_object allowDamage _isDamageable;
-				_object setVariable ["allowDamage", _isDamageable];
-				
+
 			[_object, false] call vehicleSetup;
 			_object allowDamage _isDamageable;
 			_object setVariable ["allowDamage", _isDamageable];
@@ -237,6 +210,13 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				case (_object isKindOf "O_Heli_Transport_04_repair_F"):
 				{
 					_object setRepairCargo 10;
+					
+					case ({_object isKindOf _x} count ["Land_Pod_Heli_Transport_04_ammo_F"] > 0):
+					{
+						_object setVariable ["A3W_resupplyTruck", true, true];
+						_object addAction ["<img image='client\icons\repair.paa'/> Resupply", "client\functions\fn_resupplytruck.sqf", [], 51, true, true, "", "vehicle _this != _this && _this distance _target <= 20"];
+					};
+					
 				};
 
 				case ({_object isKindOf _x} count ["B_Truck_01_Repair_F", "O_Truck_02_box_F", "O_Truck_03_repair_F", "I_Truck_02_box_F"] > 0):

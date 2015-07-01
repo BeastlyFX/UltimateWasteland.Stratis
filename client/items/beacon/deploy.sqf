@@ -1,3 +1,4 @@
+
 //@file Version: 1.0
 //@file Name: deploy.sqf
 //@file Author: MercyfulFate
@@ -52,3 +53,4 @@ if (_success) then {
 	["You placed the Spawn Beacon successfully!", 5] call mf_notify_client;
 };
 _success;
+

@@ -1,3 +1,4 @@
+
 //	@file Version: 1.1
 //	@file Name: boxSpawning.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy, AgentRev

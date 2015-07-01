@@ -24,7 +24,7 @@ A3W_scriptThreads = [];
 
 //init Wasteland Core
 [] execVM "config.sqf";
-[] execVM "storeConfig.sqf";
+[] execVM "storeConfig.sqf"; // Separated as its now v large
 [] execVM "briefing.sqf";
 
 if (!isDedicated) then
@@ -33,9 +33,11 @@ if (!isDedicated) then
 	{
 		if (hasInterface) then // Normal player
 		{
-			9999 cutText ["Welcome to Ultimate Wasteland, please wait for your client to load!", "BLACK", 0.01];
+			9999 cutText ["Welcome to Ultimate Wasteland, please wait for your client to initialize", "BLACK", 0.01];
 
 			waitUntil {!isNull player};
+			player setVariable ["playerSpawning", true, true];
+
 			removeAllWeapons player;
 			client_initEH = player addEventHandler ["Respawn", { removeAllWeapons (_this select 0) }];
 
@@ -59,20 +61,16 @@ if (isServer) then
 {
 	diag_log format ["############################# %1 #############################", missionName];
 	diag_log "WASTELAND SERVER - Initializing Server";
+	// call compile preprocessFile "mapConfig\territories\init_external.sqf";
 	[] execVM "server\init.sqf";
 };
 
 //init 3rd Party Scripts
 [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 [] execVM "addons\proving_ground\init.sqf";
-[] execVM "addons\JumpMF\init.sqf"; //Jumping Mod
-[] execVM "addons\Explosives-To-Vehicle\init.sqf"; //ExplosivesToVehicle Mod
-[] execVM "addons\outlw_magRepack\MagRepack_init_sv.sqf"; //Repacking Mod
+[] execVM "addons\zlt_fastrope\zlt_fastrope.sqf";
+[] execVM "addons\JumpMF\init.sqf";
+[] execVM "addons\EtV\init.sqf";
+[] execVM "addons\outlw_magRepack\MagRepack_init_sv.sqf";
+[] execVM "addons\APOC_Airdrop_Assistance\init.sqf";
 
-while {true} do
-{
-	0 setOvercast 0;
-	0 setRain 0;
-	0 setFog 0;
-	enableEnvironment false;
-};

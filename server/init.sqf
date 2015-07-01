@@ -1,3 +1,4 @@
+
 //	@file Version: 1.1
 //	@file Name: init.sqf
 //	@file Author: [404] Deadbeat, [GoT] JoSchaap, AgentRev
@@ -98,6 +99,7 @@ forEach
 	"A3W_globalVoiceMaxWarns",
 	"A3W_antiHackMinRecoil",
 	"A3W_spawnBeaconCooldown",
+	"A3W_townSpawnCooldown",
 	"A3W_spawnBeaconSpawnHeight",
 	"A3W_purchasedVehicleSaving",
 	"A3W_missionVehicleSaving",
@@ -109,7 +111,19 @@ forEach
 	"A3W_atmEditorPlacedOnly",
 	"A3W_atmMapIcons",
 	"A3W_atmRemoveIfDisabled",
-	"A3W_uavControl"
+	"A3W_uavControl",
+	"A3W_extDB_PlayerSave_ServerID",
+	"A3W_extension",
+	"A3W_vehicleThermals",
+	"A3W_firstPersonCamOnFoot",
+	"A3W_firstPersonCamNotDriver",
+	"A3W_resupplyCostPR",
+	"A3W_territoryAllowed",
+	"A3W_tkAutoKickEnabled",
+	"A3W_tkKickAmount",
+	"A3W_donatorEnabled",
+	"A3W_customUniformEnabled",
+	"A3W_maxLockonDistance"
 ];
 
 ["A3W_join", "onPlayerConnected", { [_id, _uid, _name] spawn fn_onPlayerConnected }] call BIS_fnc_addStackedEventHandler;
@@ -122,6 +136,7 @@ _staticWeaponSavingOn = ["A3W_staticWeaponSaving"] call isConfigOn;
 _warchestSavingOn = ["A3W_warchestSaving"] call isConfigOn;
 _warchestMoneySavingOn = ["A3W_warchestMoneySaving"] call isConfigOn;
 _beaconSavingOn = ["A3W_spawnBeaconSaving"] call isConfigOn;
+vehicleThermalsOn = ["A3W_vehicleThermals"] call isConfigOn;
 
 _purchasedVehicleSavingOn = ["A3W_purchasedVehicleSaving"] call isConfigOn;
 _missionVehicleSavingOn = ["A3W_missionVehicleSaving"] call isConfigOn;
@@ -199,8 +214,7 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn) then
 	publicVariable "A3W_savingMethod";
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	call compile preprocessFileLineNumbers "server\systems\bounties\init.sqf";
-	call compile preprocessFileLineNumbers "server\systems\events\init.sqf";
+
 	call compile preProcessFileLineNumbers format ["persistence\server\setup\%1\init.sqf", call A3W_savingMethodDir];
 
 	if (_playerSavingOn) then
@@ -234,7 +248,6 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn) then
 		{
 			call compile preprocessFileLineNumbers "persistence\server\world\oLoad.sqf";
 		};
-
 		if (_vehicleSavingOn) then
 		{
 			call compile preprocessFileLineNumbers "persistence\server\world\vLoad.sqf";
@@ -321,7 +334,7 @@ if (["A3W_serverSpawning"] call isConfigOn) then
 		call compile preprocessFileLineNumbers "server\functions\boatSpawning.sqf";
 	};
 
-	if (["A3W_baseBuilding"] call isConfigOn) then
+	if (["A3W_baseBuilding"] call isConfigOn || ["A3W_essentialsSpawning"] call isConfigOn) then
 	{
 		call compile preprocessFileLineNumbers "server\functions\objectsSpawning.sqf";
 	};

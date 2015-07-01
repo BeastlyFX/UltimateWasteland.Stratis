@@ -1,3 +1,9 @@
+// ******************************************************************************************
+// * This project is licensed under the GNU Affero GPL v3. Copyright © 2015 A3Wasteland.com *
+// ******************************************************************************************
+//	@file Name: fn_setupAntiExplode.sqf
+//	@file Author: AgentRev
+
 // Attempt at fixing the dreaded explosion bug when you get in heli/planes and when taking control of UAVs
 
 if (isServer) exitWith {};

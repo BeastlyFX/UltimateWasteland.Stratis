@@ -1,35 +1,35 @@
 respawn="BASE";
-respawnDelay=10;
+respawnDelay=15;
 disabledAI=1;
-disableChannels[] = {2};
+disableChannels[] = {2}; // {0} to disable global, {2} for command channel
 joinUnassigned = 0;
 enableItemsDropping = 0;
-forceRotorLibSimulation = 0;
+forceRotorLibSimulation = 0; // if you set this to 1, you deny freedom of choice to the players, which is the very principle this mission is built upon
 weaponPool = 0;
 corpseManagerMode = 1;
-corpseLimit = 5;
-corpseRemovalMinTime = 60;
-corpseRemovalMaxTime = 60;
+corpseRemovalMinTime = 30*60;
+corpseRemovalMaxTime = 30*60;
 wreckManagerMode = 1;
-wreckLimit = 5;
-wreckRemovalMinTime = 60;
-wreckRemovalMaxTime = 60;
+wreckRemovalMinTime = 5*60;
+wreckRemovalMaxTime = 10*60;
 enableDebugConsole = 1;
-respawnDialog = 0;
+respawnDialog = 0; // do not enable this, otherwise the default scoreboard will overlap with the new one
 onPauseScript = "client\clientEvents\onPause.sqf";
 class Header
 {
 	gameType=Sandbox;
 	minPlayers=1;
-	maxPlayers=193; // 144 players, 1 headless client
+	maxPlayers=145; // 144 players, 1 headless client
 };
-author= "Blackbeard";
-onLoadName = "Ultimate Wasteland";
-onLoadMission = "No admin abuse, no hackers and no lag! Be sure to visit www.s3k.us as well as join the Teamspeak at voice.s3k.us!";
-overviewText = "No admin abuse, no hackers and no lag! Be sure to visit www.s3k.us as well as join the Teamspeak at voice.s3k.us!";
-overviewTextLocked = "No admin abuse, no hackers and no lag! Be sure to visit www.s3k.us as well as join the Teamspeak at voice.s3k.us!";
+
+author="Blackbeard, Centrifugal, s3kShUn61";
+onLoadName = "Ultimate Wasteland 3.0";
+onLoadMission = "Website: www.s3k.us Teamspeak: voice.s3k.us";
+overviewText = "Website: www.s3k.us Teamspeak: voice.s3k.us";
+overviewTextLocked = "Website: www.s3k.us Teamspeak: voice.s3k.us";
 overviewPicture = "mapConfig\Loading.jpg";
 loadScreen = "mapConfig\Loading.jpg";
+
 
 //Dialog includes
 
@@ -40,6 +40,7 @@ loadScreen = "mapConfig\Loading.jpg";
 #include "client\items\warchest\dialog.hpp"
 #include "client\items\atm\atm_gui.hpp"
 #include "client\actions\gui.hpp"
+#include "addons\far_revive\revive_gui.hpp"
 #include "client\systems\playerMenu\dialog\player_settings.hpp"
 #include "client\systems\groups\dialog\groupManagement.hpp"
 #include "client\systems\gunStore\dialog\gunshop_settings.hpp"
@@ -55,6 +56,11 @@ loadScreen = "mapConfig\Loading.jpg";
 #include "client\systems\playerMenu\dialog\respawn_dialog.hpp"
 #include "client\systems\playerMenu\dialog\teamkill_dialog.hpp"
 #include "addons\proving_ground\PG_config.hpp"
+#include "addons\infistar\infiSTAR_AdminMenu.hpp"
+
+#include "addons\outlw_magRepack\MagRepack_config.hpp"
+#include "addons\beacondetector\sound\cfgsounds.hpp"
+
 
 class RscTitles
 {
@@ -62,7 +68,6 @@ class RscTitles
 	#include "client\systems\hud\dialog\hud.hpp"
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\scoreboard\score_gui.hpp"
-	#include "addons\statusBar\statusBar.hpp"
 };
 
 class CfgFunctions
@@ -77,15 +82,4 @@ class CfgFunctions
 class CfgNotifications
 {
 	#include "client\CfgNotifications.hpp"
-};
-
-class CfgSounds
-{
-	sounds[] = {};
-	class WelcomeToWasteland
-	{
-		name="WelcomeToWasteland";
-		sound[]={"\sounds\WelcomeToWasteland.ogg",0.9,1};
-		titles[] = {};
-	};
 };

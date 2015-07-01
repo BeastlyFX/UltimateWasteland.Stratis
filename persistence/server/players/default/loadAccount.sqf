@@ -33,6 +33,7 @@ _getValue =
 ["Damage", "NUMBER"] call _getValue;
 ["HitPoints", "ARRAY"] call _getValue;
 
+
 if (["A3W_moneySaving"] call isConfigOn) then
 {
 	["Money", "NUMBER"] call _getValue;

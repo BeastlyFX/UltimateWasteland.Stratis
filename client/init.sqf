@@ -1,3 +1,4 @@
+
 //@file Version: 1.1
 //@file Name: init.sqf
 //@file Author: [404] Deadbeat, [GoT] JoSchaap, AgentRev, [KoS] Bewilderbeest
@@ -22,8 +23,8 @@ groupManagmentActive = false;
 pvar_PlayerTeamKiller = objNull;
 doCancelAction = false;
 
-//Setup ATV Spawning Variables
-player setVariable["Neugeladen", 1,true];
+//AJ Beacondetector
+BeaconScanInProgress = false;
 
 //Initialization Variables
 playerCompiledScripts = false;
@@ -31,6 +32,9 @@ playerSetupComplete = false;
 
 waitUntil {!isNull player};
 waitUntil {time > 0.1};
+
+//disable environmental effects (ambient life + sound)
+enableEnvironment false;
 
 removeAllWeapons player;
 player switchMove "";
@@ -71,6 +75,7 @@ if (["A3W_playerSaving"] call isConfigOn) then
 {
 	call compile preprocessFileLineNumbers "persistence\client\players\setupPlayerDB.sqf";
 	call fn_requestPlayerData;
+	9999 cutText ["Received Player Info", "BLACK", 0.01];
 
 	waitUntil {!isNil "playerData_loaded"};
 
@@ -127,11 +132,14 @@ A3W_scriptThreads pushBack execVM "client\systems\hud\playerHud.sqf";
 };
 
 [] spawn playerSpawn;
+[] spawn playerCustomUniform;
 
 A3W_scriptThreads pushBack execVM "addons\fpsFix\vehicleManager.sqf";
+A3W_scriptThreads pushBack execVM "addons\Lootspawner\LSclientScan.sqf";
 [] execVM "client\functions\drawPlayerIcons.sqf";
+[] execVM "addons\far_revive\FAR_revive_init.sqf";
 [] execVM "addons\camera\functions.sqf";
-if(hasInterface) then{[] execVM "addons\statusBar\statusbar.sqf"};
+[] execVM "addons\UAV_Control\functions.sqf";
 
 call compile preprocessFileLineNumbers "client\functions\generateAtmArray.sqf";
 [] execVM "client\functions\drawPlayerMarkers.sqf";

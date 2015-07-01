@@ -8,7 +8,6 @@
 // For SERVER CONFIG, values are in server\init.sqf
 
 // Towns and cities array
-// Marker Name, Diameter, City Name
 cityList = compileFinal preprocessFileLineNumbers "mapConfig\towns.sqf";
 
 config_items_jerrycans_max = compileFinal "1";

@@ -18,15 +18,13 @@ if ([_uid, 3] call isAdmin) then {
 
 	_panelOptions = ["Player Management",
 					"Vehicle Management",
+					"Spectator Cam",
 					"Player Markers",
 					"Teleport",
 	                "Money",
 	                "Debug Menu",
 					"Object Search",
-	                "Toggle God-mode",
-					"Create Event Arena",
-					"Delete Event Arena",
-					"Teleport To Arena"
+	                "Toggle God-mode"
 	];
 
 	{

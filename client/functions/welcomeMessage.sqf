@@ -46,6 +46,7 @@ _message = format ["<t shadow=""1"">%1<br/>%2<br/>%3<br/></t>",
 
 _control ctrlSetStructuredText (parseText _message);
 
+
 sleep 20;
 
 _control ctrlSetFade 1;
@@ -55,3 +56,5 @@ waitUntil {ctrlCommitted _control};
 
 _control ctrlShow false;
 _control ctrlCommit 0;
+
+uiNamespace setVariable ["BIS_fnc_guiMessage_status", false];

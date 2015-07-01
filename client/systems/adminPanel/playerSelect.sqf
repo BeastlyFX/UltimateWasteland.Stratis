@@ -1,3 +1,4 @@
+
 //	@file Version: 1.0
 //	@file Name: playerSelect.sqf
 //	@file Author: [404] Deadbeat
@@ -87,7 +88,10 @@ if (_uid call isAdmin) then
 			{
 				if(getPlayerUID _x == _targetUID) exitWith
 				{
+					if (!isNil "notifyAdminMenu") then { ["RemoveMoney",format["c%1m%2UID%3",_x getVariable "cmoney",_x getVariable "bmoney",_targetUID]] call notifyAdminMenu };
 					_x setVariable["cmoney",0,true];
+					_x setVariable["bmoney",0,true];
+					
 				};
 			}forEach playableUnits;
 		};

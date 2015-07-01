@@ -1,3 +1,4 @@
+
 //	@file Name: storeOwners.sqf
 //	@file Author: AgentRev, JoSchaap, His_Shadow
 
@@ -7,21 +8,19 @@
 // Name, Building Position, Desk Direction (or [Desk Direction, Front Offset]), Excluded Buttons
 storeOwnerConfig = compileFinal str
 [
-	["GenStore1", 0, 320, []],
-	["GenStore2", 0, 310, []],
-	["GenStore3", 0, 340, []],
+	["GenStore1", 1, 270, []],
+	["GenStore2", 4, 310, []],
+	["GenStore3", 4, 340, []],
 
 	["GunStore1", 0, 5, []],
-	["GunStore2", 0, 205, []],
-	["GunStore3", 0, 85, []],
-	["GunStore4", 0, 165, []],
-    ["GunStore5", 0, 320, []],
+	["GunStore2", 1, 130, []],
+	["GunStore3", 5, 85, []],
+	["GunStore4", 1, [30, 1.5], []],
 
-	["VehStore1", 0, 210, ["Planes"]],
-	["VehStore2", 0, 20, []],
-	["VehStore3", 0, 245, ["Planes"]],
-	["VehStore4", 0, 245, ["Planes"]],
-	["VehStore5", 0, 245, ["Planes","Boats"]]
+	// Buttons you can disable: "Land", "Armored", "Tanks", "Helicopters", "Boats", "Planes"
+	["VehStore1", 0, 195, ["Planes"]],
+	["VehStore2", 2, 285, ["Boats"]],
+	["VehStore3", 1, 245, ["Planes"]]
 ];
 
 // Outfits for store owners
@@ -34,10 +33,9 @@ storeOwnerConfigAppearance = compileFinal str
 	["GunStore1", [["weapon", ""], ["uniform", "U_B_SpecopsUniform_sgg"]]],
 	["GunStore2", [["weapon", ""], ["uniform", "U_O_SpecopsUniform_blk"]]],
 	["GunStore3", [["weapon", ""], ["uniform", "U_I_CombatUniform_tshirt"]]],
+	["GunStore4", [["weapon", ""], ["uniform", "U_IG_Guerilla1_1"]]],
 
 	["VehStore1", [["weapon", ""], ["uniform", "U_Competitor"]]],
 	["VehStore2", [["weapon", ""], ["uniform", "U_Competitor"]]],
-	["VehStore3", [["weapon", ""], ["uniform", "U_Competitor"]]],
-	["VehStore4", [["weapon", ""], ["uniform", "U_Competitor"]]],
-	["VehStore5", [["weapon", ""], ["uniform", "U_Competitor"]]]
+	["VehStore3", [["weapon", ""], ["uniform", "U_Competitor"]]]
 ];

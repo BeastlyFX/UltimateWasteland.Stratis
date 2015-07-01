@@ -16,8 +16,6 @@ _itemlist = _dialog displayCtrl genstore_item_list;
 _itemlisttext = _dialog displayCtrl genstore_item_TEXT;
 _itemDesc = _dialog displayCtrl genstore_item_desc;
 
-[] execVM "client\systems\generalStore\getInventory.sqf";
-
 //Clear the list
 lbClear _itemlist;
 _itemlist lbSetCurSel -1;
@@ -70,11 +68,6 @@ switch(_switch) do
 		};
 	};
 	case 6:
-	{
-		_itemsArray = call genCratesArray;
-		_showPicture = false;
-	};
-	case 7:
 	{
 		_itemsArray = call genObjectsArray;
 		_showPicture = false;

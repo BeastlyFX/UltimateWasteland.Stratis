@@ -1,8 +1,13 @@
+
 //	@file Name: playerSetupGear.sqf
 //	@file Author: [GoT] JoSchaap, AgentRev
 
-private ["_player", "_uniform", "_vest", "_headgear", "_goggles"];
+private ["_player", "_uniform", "_vest", "_headgear", "_goggles", "_donatorLevel"];
 _player = _this;
+
+_donatorEnabled = ["A3W_donatorEnabled"] call isConfigOn;
+_donatorLevel = player getVariable ["donator", 0];
+
 
 // Clothing is now defined in "client\functions\getDefaultClothing.sqf"
 
@@ -21,494 +26,125 @@ sleep 0.1;
 // Remove GPS
 _player unlinkItem "ItemGPS";
 
+// Remove radio
+//_player unlinkItem "ItemRadio";
+
 // Remove NVG
 if (hmd _player != "") then { _player unlinkItem hmd _player };
 
 // Add NVG
 _player linkItem "NVGoggles";
 
-// Add Backpack
-_player addBackpack "B_Kitbag_mcamo";
-
-//##########################################
-//Donator Uniform Gifts - Loadouts START
-//##########################################
-
-_uid = getPlayerUID _player;
-_spawnedCustom = 0;
-
-	//Blackbeard (Matt)
-	if (_uid == "76561198136978828") then {
-		_player setFace "WhiteHead_22_l";
-		_player forceAddUniform "U_I_FullGhillie_lsh";
-		_player addHeadgear "H_Shemag_olive_hs";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-        _player addGoggles "G_Aviator";
+switch (_donatorLevel) do
+{
+	case 1:
+	{
+		_player addBackpack "B_AssaultPack_rgr";
+		if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+		{
+			_player addVest "V_BandollierB_cbr";
+		};
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addWeapon "hgun_Pistol_heavy_01_F";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addItem "FirstAidKit";
+		_player addWeapon "Binocular";
+		_player selectWeapon "hgun_Pistol_heavy_01_F";
 	};
-    
-    //Crazyhallum (Jonas)
-	if (_uid == "76561198063630406") then {
-		_player forceAddUniform "U_I_FullGhillie_lsh";
-		_player addHeadgear "H_HelmetB_paint";
-        _player addVest "V_PlateCarrierSpec_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_khk";
-		_player addGoggles "G_Bandanna_khk";
-	};
-    
-    //Larose R (Ryan)
-	if (_uid == "76561198059394219") then {
-		_player forceAddUniform "U_B_CombatUniform_mcam_vest";
-    	_player addVest "V_PlateCarrierH_CTRG";
-		removeBackpack _player;
-        _player addBackpack "B_Carryall_mcamo";
-	};
-    
-    //Nemesis (Michael)
-	if (_uid == "76561198115796338") then {
-		_player forceAddUniform "U_O_FullGhillie_lsh";
-		_player addHeadgear "H_HelmetLeaderO_oucamo";
-        _player addVest "V_PlateCarrierGL_mtp";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_mcamo";
-        _player addGoggles "G_Bandanna_aviator";
-		_player addItemToBackpack "Medikit";
-	};
-    
-    //Zeppelin (Justin)
-	if (_uid == "76561198050765378") then {
-		if (hmd _player != "") then { _player unlinkItem hmd _player };
-		_player forceAddUniform "U_O_GhillieSuit";
-		_player addHeadgear "H_HelmetSpecB";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-	};
-    
-    //CDSMITH (Chris)
-	if (_uid == "76561198042025926") then {
-		_player forceAddUniform "U_O_GhillieSuit";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_ocamo";
-	};
-    
-    //Marine By God (Edgar)
-	if (_uid == "76561198102097569") then {
-		_player forceAddUniform "U_B_CTRG_3";
-		_player addHeadgear "H_HelmetSpecB_paint2";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_mcamo";
-        _player addGoggles "G_Bandanna_khk";
-	};
-    
-    //Bruh (Ryan)
-	if (_uid == "76561198039459039") then {
-		_player forceAddUniform "U_B_CTRG_1";
-        _player addVest "V_PlateCarrierH_CTRG";
-		removeBackpack _player;
-		_player addBackpack "B_FieldPack_cbr";
-	};
-	
-    //LARRYDAVID (George)
-	if (_uid == "76561197965073283") then {
-		_player forceAddUniform "U_O_FullGhillie_sard";
-        _player addVest "V_PlateCarrierIAGL_oli";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-        _player addGoggles "G_Bandanna_beast";
-		_player addItemToBackpack "Medikit";
-	
-		
-	};
-    
-    //Five Worlds (Jared)
-	if (_uid == "76561198087267808") then {
-		_player forceAddUniform "U_I_CombatUniform";
-		_player addHeadgear "H_Watchcap_blk";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-	};
-    
-    //PairADice
-	if (_uid == "76561198137234715") then {
-		_player forceAddUniform "U_BG_Guerilla3_1";
-		_player addHeadgear "H_Watchcap_blk";
-        _player addVest "V_PlateCarrierH_CTRG";
-		_player addBackpack "B_Carryall_cbr";
-		removeBackpack _player;
-        _player addGoggles "G_Bandanna_beast";
-	};
-    
-    //Everett
-	if (_uid == "76561198042480916") then {
-		_player forceAddUniform "U_IG_Guerilla3_1";
-		_player addHeadgear "H_Bandanna_surfer";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_khk";
-	};
-    
-    //Evan
-	if (_uid == "76561197995272108") then {
-		_player forceAddUniform "U_I_G_resistanceLeader_F";
-		_player addHeadgear "H_HelmetSpecB_blk";
-        _player addVest "V_PlateCarrierGL_blk";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_cbr";
-		_player addItemToVest "SmokeShell";
-		_player addItemToVest "SmokeShellRed";
-		_player addGoggles "G_Bandanna_aviator";
-	};
-    
-    //FutbeleroR10
-	if (_uid == "76561198042047377") then {
-		_player forceAddUniform "U_B_HeliPilotCoveralls";
-		_player addHeadgear "H_CrewHelmetHeli_I";
-        _player addVest "V_PlateCarrierSpec_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_khk";
-	};
-    
-    //Jag648
-	if (_uid == "76561198004293015") then {
-		_player forceAddUniform "U_O_FullGhillie_lsh";
-		_player addHeadgear "H_HelmetLeaderO_oucamo";
-        _player addVest "V_PlateCarrierIAGL_dgtl";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-		_player addGoggles "G_Bandanna_oli";
-		
-	};
-    
-    //Frank648
-	if (_uid == "76561198121217668") then {
-		_player forceAddUniform "U_I_pilotCoveralls";
-		_player addHeadgear "H_HelmetLeaderO_ocamo";
-        _player addVest "V_PlateCarrierIA2_dgtl";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-	};
-    
-    //CDSMITH
-	if (_uid == "76561198042025926") then {
-		_player forceAddUniform "U_O_GhillieSuit";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_ocamo";
-	};
-    
-    //Harry (Harrison)
-	if (_uid == "76561198136758224") then {
-		_player forceAddUniform "U_I_FullGhillie_sard";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-        _player addHeadgear "H_HelmetIA";
-        _player addGoggles "G_Bandanna_oli";
-		_player addItemToUniform "FirstAidKit";
-	};
-    
-    //Howitzer (Matt)
-	if (_uid == "76561197977078167") then {
-		_player forceAddUniform "U_I_FullGhillie_ard";
-        _player addHeadgear "H_StrawHat";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_mcamo";
-        _player addGoggles "G_Shades_Green";
-		_player addItemToBackpack "Medikit";
-	};
-    
-    //Sim0nSayz
-	if (_uid == "76561197960397717") then {
-		_player forceAddUniform "U_I_G_Story_Protagonist_F";
-        _player addHeadgear "H_HelmetSpecB_paint2";
-        _player addVest "V_PlateCarrierH_CTRG";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_cbr";
-		_player addItemToBackpack "Medikit";
-        _player addGoggles "G_Aviator";
-	};
-
-    //Spooky
-	if (_uid == "76561198005431487") then {
-		_player forceAddUniform "U_I_G_Story_Protagonist_F";
-        _player addHeadgear "H_Booniehat_mcamo";
-        _player addVest "V_TacVest_blk_POLICE";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_mcamo";
-        _player addGoggles "G_Tactical_Black";
-	};
-
-    //Gotreaux
-	if (_uid == "76561198067312722") then {
-		_player forceAddUniform "U_I_G_Story_Protagonist_F";
-        _player addHeadgear "H_Booniehat_mcamo";
-        _player addVest "V_TacVest_blk_POLICE";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_mcamo";
-	};
-    
-    //Druid
-	if (_uid == "76561198008340193") then {
-		_player forceAddUniform "U_O_PilotCoveralls";
-        _player addHeadgear "H_Watchcap_khk";
-        _player addVest "V_PlateCarrier_Kerry";
-		removeBackpack _player;
+	case 2:
+	{
 		_player addBackpack "B_FieldPack_khk";
-		_player addItemToBackpack "Medikit";
-        _player addGoggles "G_Squares";
-	};
-    
-    //Pedro
-	if (_uid == "76561198042461431") then {
-		_player forceAddUniform "U_I_GhillieSuit";
-        _player addHeadgear "H_HelmetLeaderO_oucamo";
-        _player addVest "V_Rangemaster_belt";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-	};
-    
-	//TheGeneral
-	if (_uid == "76561198093798174") then {
-		_player forceAddUniform "U_O_FullGhillie_lsh";
-        _player addHeadgear "H_HelmetLeaderO_ocamo";
-        _player addVest "V_PlateCarrierGL_mtp";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_khk";
-		_player addGoggles "G_Bandanna_beast";
-	};
-	
-    //DoctorProfPatrick
-	if (_uid == "76561198048046291") then {
-		_player forceAddUniform "U_I_CombatUniform";
-        _player addHeadgear "H_PilotHelmetHeli_I";
-        _player addVest "V_Rangemaster_belt";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-	};
-	
-    //RC Goon
-	if (_uid == "76561198124622556") then {
-		_player forceAddUniform "U_I_G_resistanceLeader_F";
-        _player addHeadgear "H_Shemag_olive_hs";
-        _player addVest "V_PlateCarrierIA2_dgtl";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-	};
-    
-    //Ninjor
-	if (_uid == "76561197961966022") then {
-		_player forceAddUniform "U_B_GhillieSuit";
-        _player addHeadgear "H_HelmetLeaderO_ocamo";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_khk";
-	};
-	
-	//TRevor
-	if (_uid == "76561198026003663") then {
-		_player forceAddUniform "U_B_CombatUniform_mcam";
-        _player addHeadgear "H_HelmetLeaderO_ocamo";
-        _player addVest "V_PlateCarrierH_CTRG";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_mcamo";
-	};
-	
-	//Voodoo
-	if (_uid == "76561198067036226") then {
-		_player forceAddUniform "U_B_CombatUniform_mcam_worn";
-        _player addHeadgear "H_Booniehat_tan";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Kitbag_cbr";
-		_player addGoggles "G_Bandanna_beast";
-	};
-	
-	//Infamous
-	if (_uid == "76561198077259055") then {
-		_player forceAddUniform "U_BG_Guerrilla_6_1";
-        _player addHeadgear "H_HelmetCrew_B";
-        _player addVest "V_PlateCarrierH_CTRG";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-		_player addGoggles "G_Bandanna_aviator";
-	};
-	
-	//Firestorm
-	if (_uid == "76561198127665431") then {
-		_player forceAddUniform "U_I_GhillieSuit";
-        _player addHeadgear "H_HelmetLeaderO_ocamo";
-        _player addVest "V_PlateCarrierH_CTRG";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-	};
-	
-	//Centrifugal (Rob)
-	if (_uid == "76561197985919742") then {
-		_player forceAddUniform "U_I_FullGhillie_ard";
-		_player addHeadgear "H_HelmetLeaderO_oucamo";
-        _player addVest "V_PlateCarrierIAGL_dgtl";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oucamo";
-        _player addGoggles "G_Bandanna_beast";
-		_player addItemToBackpack "Medikit";
+		if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+		{
+			_player addVest "V_HarnessOGL_brn";
+		};
+		_player addHeadgear "H_HelmetB";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addWeapon "hgun_Pistol_heavy_01_F";
+		_player addHandgunItem "optic_MRD";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addItem "FirstAidKit";
+		_player addWeapon "Rangefinder";
 		_player linkItem "ItemGPS";
+		_player selectWeapon "hgun_Pistol_heavy_01_F";
 	};
-	
-	//RaidGamer
-	if (_uid == "76561198095965942") then {
-		_player forceAddUniform "U_O_CombatUniform_ocamo";
-		_player addHeadgear "H_HelmetSpecB_paint1";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_khk";
-        _player addGoggles "G_Balaclava_lowprofile";
+	case 3:
+	{
+		_player addBackpack "B_Kitbag_rgr";
+		if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+		{
+			_player addVest "V_TacVest_brn";
+		};
+		_player addHeadgear "H_HelmetSpecB_blk";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addWeapon "hgun_Pistol_heavy_01_F";
+		_player addHandgunItem "optic_MRD";
+		_player addHandgunItem "muzzle_snds_acp";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addItem "FirstAidKit";
+		_player addWeapon "Laserdesignator";
+		_player linkItem "ItemGPS";
+		_player selectWeapon "hgun_Pistol_heavy_01_F";
 	};
-	
-	//Chugger
-	if (_uid == "76561198136050413") then {
-		_player forceAddUniform "U_BG_Guerilla2_1";
-		_player addHeadgear "H_Cap_blk";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oucamo";
-        _player addGoggles "G_Aviator";
-	};
-	
-	//Hatntops
-	if (_uid == "76561198058543846") then {
-		_player forceAddUniform "U_O_SpecopsUniform_ocamo";
-		_player addHeadgear "H_HelmetSpecB_paint1";
-        _player addVest "V_PlateCarrierGL_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_khk";
-        _player addGoggles "G_Combat";
-	};
-	
-	//Vux
-	if (_uid == "76561198057557006") then {
-		_player forceAddUniform "U_B_CombatUniform_mcam";
-		_player addHeadgear "H_HelmetB_light_desert";
-        _player addVest "V_PlateCarrier2_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_TacticalPack_mcamo";
-        _player addGoggles "G_Shades_Black";
-	};
-	
-	//Warhalo
-	if (_uid == "76561198046552619") then {
-		_player forceAddUniform "U_O_GhillieSuit";
-		_player addHeadgear "H_HelmetO_ocamo";
-        _player addVest "V_PlateCarrierIA1_dgtl";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_khk";
-	};
-	
-	//AJ Johnson
-	if (_uid == "76561198133165107") then {
-		_player forceAddUniform "U_I_G_Story_Protagonist_F";
-		_player addHeadgear "H_HelmetSpecB_paint2";
-        _player addVest "V_PlateCarrier2_rgr";
-		removeBackpack _player;
-		_player addBackpack "B_AssaultPack_blk";
-	};
-	
-	//Ravaidel
-	if (_uid == "76561198066769820") then {
-		_player forceAddUniform "U_B_CTRG_3";
-		_player addHeadgear "H_ShemagOpen_khk";
-        _player addVest "V_TacVest_oli";
-		removeBackpack _player;
-		_player addBackpack "B_AssaultPack_khk";
-		_player addGoggles "G_Bandanna_sport";
-	};
-	
-	//XRAY
-	if (_uid == "76561197988807693") then {	
-		_player forceAddUniform "U_B_FullGhillie_sard";
-		_player addVest "V_PlateCarrierGL_mtp";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_mcamo";
+	case 4:
+	{
+		_player addBackpack "B_Carryall_oli";
+		if (["_diver_", typeOf _player] call fn_findString != -1) then {} else 
+		{
+			_player addVest "V_PlateCarrier3_rgr";
+		};
 		_player addHeadgear "H_HelmetLeaderO_ocamo";
-		_player addGoggles "G_Bandanna_oli";	
-		
-	};
-	//YayObamaCare
-	if (_uid == "76561198140059770") then {	
-		_player forceAddUniform "U_I_FullGhillie_sard";
-		_player addVest "V_PlateCarrierGL_mtp";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-		_player addHeadgear "H_HelmetLeaderO_ocamo";
-		_player addGoggles "G_Balaclava_oli";	
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addWeapon "hgun_Pistol_heavy_01_F";
+		_player addHandgunItem "optic_MRD";
+		_player addHandgunItem "muzzle_snds_acp";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addMagazine "11Rnd_45ACP_Mag";
+		_player addItem "FirstAidKit";
+		_player addWeapon "Laserdesignator";
 		_player linkItem "ItemGPS";
-		
+		_player selectWeapon "hgun_Pistol_heavy_01_F";	
 	};
-	//BlackPanda
-	if (_uid == "76561198118202717") then {	
-		_player forceAddUniform "U_I_G_resistanceLeader_F";
-		_player addVest "V_PlateCarrierGL_blk";
-		removeBackpack _player;
-		_player addBackpack "B_TacticalPack_blk";
-		_player addHeadgear "H_Watchcap_blk";
-		_player addGoggles "G_Bandanna_aviator";	
-		_player linkItem "ItemGPS";
-		
+	default 
+	{
+		_player addBackpack "B_AssaultPack_rgr";
+		_player addMagazine "9Rnd_45ACP_Mag";
+		_player addWeapon "hgun_ACPC2_F";
+		_player addMagazine "9Rnd_45ACP_Mag";
+		_player addMagazine "9Rnd_45ACP_Mag";
+		_player addMagazine "9Rnd_45ACP_Mag";
+		_player addItem "FirstAidKit";
+		_player selectWeapon "hgun_ACPC2_F";
 	};
 	
-	//Alex 
-	if (_uid == "76561198184132291") then {	
-		_player forceAddUniform "U_O_FullGhillie_lsh";
-		_player addVest "V_PlateCarrier_Kerry";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-		_player addHeadgear "H_Shemag_olive";
-		_player addGoggles "G_Balaclava_oli";	
-		_player linkItem "ItemGPS";
-		
-	};
-	
-	//James 
-	if (_uid == "76561198188413825") then {	
-		_player forceAddUniform "U_O_Wetsuit";
-		_player addVest "V_RebreatherIR";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-		_player addHeadgear "H_HelmetLeaderO_ocamo";
-		_player addGoggles "G_O_Diving";	
-		_player linkItem "ItemGPS";
-		
-	};
-	
-	//Koala Man 
-	if (_uid == "76561198053137254") then {	
-		_player forceAddUniform "U_I_FullGhillie_sard";
-		_player addVest "V_PlateCarrierIA1_dgtl";
-		removeBackpack _player;
-		_player addBackpack "B_Carryall_oli";
-		_player addHeadgear "H_HelmetLeaderO_oucamo";
-		_player addGoggles "G_Bandanna_khk";	
-		_player linkItem "ItemGPS";
-		_player addItemToUniform "FirstAidKit";
-	};
+};
 
-//##########################################
-//Donator Uniform Gifts - Loadouts END
-//##########################################	
+switch (true) do
+{
+	case (["_medic_", typeOf _player] call fn_findString != -1):
+	{
+		_player removeItem "FirstAidKit";
+		_player addItem "Medikit";
+	};
+	case (["_engineer_", typeOf _player] call fn_findString != -1):
+	{
+		_player addItem "MineDetector";
+		_player addItem "Toolkit";
+	};
+	case (["_sniper_", typeOf _player] call fn_findString != -1):
+	{
+		_player addWeapon "Rangefinder";
+	};
+};
 
-_player addMagazine "11Rnd_45ACP_Mag";
-_player addWeapon "hgun_Pistol_heavy_01_F";
-_player addMagazine "11Rnd_45ACP_Mag";
-_player addMagazine "11Rnd_45ACP_Mag";
-_player addMagazine "11Rnd_45ACP_Mag";
-_player addItem "FirstAidKit";
-_player selectWeapon "hgun_Pistol_heavy_01_F";
+
 
 if (_player == player) then
 {

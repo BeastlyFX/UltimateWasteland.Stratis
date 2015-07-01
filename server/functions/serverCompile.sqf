@@ -70,28 +70,12 @@ teamSwitchLock = [_path, "teamSwitchLock.sqf"] call mf_compile;
 teamSwitchUnlock = [_path, "teamSwitchUnlock.sqf"] call mf_compile;
 updateConnectingClients = "territory\client\updateConnectingClients.sqf" call mf_compile;
 vehicleRepair = [_path, "vehicleRepair.sqf"] call mf_compile;
-vehicleRespawnCheck = [_path, "vehicle.sqf"] call mf_compile;
 vehicleSetup = [_path, "vehicleSetup.sqf"] call mf_compile;
 waitUntilBagTaken = [_path, "waitUntilBagTaken.sqf"] call mf_compile;
 weaponDisassembledServer = [_path, "weaponDisassembledServer.sqf"] call mf_compile;
 
 //Player Management
 server_playerDied = [_path, "serverPlayerDied.sqf"] call mf_compile;
-server_BountyDied = [_path, "serverBountyDied.sqf"] call mf_compile;
-
-
-//Bounty System
-_path = "server\systems\bounties";
-onBountySystemPlayerDied = [_path, "onBountySystemPlayerDied.sqf"] call mf_compile;
-startPlayerBounty = [_path, "startPlayerBounty.sqf"] call mf_compile;
-startSystemBounty = [_path, "startSystemBounty.sqf"] call mf_compile;
-startSystemBountyByName = [_path, "startSystemBountyByName.sqf"] call mf_compile;
-
-//Events
-_path = "server\systems\events";
-createEventArena = [_path, "createEventArena.sqf"] call mf_compile;
-processEventAction = [_path, "processEventAction.sqf"] call mf_compile;
-
 
 //Spawning Compiles
 _path = "server\spawning";
