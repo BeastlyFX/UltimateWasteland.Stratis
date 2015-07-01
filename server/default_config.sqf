@@ -1,23 +1,15 @@
-
-// A3Wasteland config file
-// You will need to shutdown the server to edit settings in this file!
-
-// All saving is done via the server's profileNamespace by default; iniDBI will be automatically used if you have if installed
-// if you have any doubts and/or questions about the mission find us at a3wasteland.com 
-// This file is overridden by the external file "A3Wasteland_settings\main_config.sqf" if present
-
 // General settings
-A3W_startHour = 15;                // In-game hour at mission start (0 to 23)
-A3W_timeMultiplierDay = 1.0;       // Sets the speed of time between 5 AM and 8 PM (for example, 6.0 means 6 hours in-game will pass in 1 real hour)
+A3W_startHour = 5;                // In-game hour at mission start (0 to 23)
+A3W_timeMultiplierDay = 2.67;       // Sets the speed of time between 5 AM and 8 PM (for example, 6.0 means 6 hours in-game will pass in 1 real hour)
 A3W_timeMultiplierNight = 1.0;     // Sets the speed of time between 8 PM and 5 AM
 A3W_moonLight = 1;                 // Moon light during night (0 = no, 1 = yes)
 A3W_teamPlayersMap = 1;            // Show all friendly players on the map at all times, regardless of difficulty level (0 = no, 1 = yes)
-A3W_globalVoiceWarnTimer = 5;      // Number of seconds for which global voice chat must be active before triggering a warning (0 = disabled)
+A3W_globalVoiceWarnTimer = 1;      // Number of seconds for which global voice chat must be active before triggering a warning (0 = disabled)
 A3W_globalVoiceMaxWarns = 5;       // Number of global voice warnings after which the player will be killed and crashed (0 = disabled)
 A3W_antiHackMinRecoil = 1.0;       // Mininum recoil coefficient enforced by the antihack (recommended values: default = 1.0, TMR Mod = 0.5, VTS Weapon Resting = 0.25) (minimum: 0.02)
 A3W_townSpawnCooldown = 5*60;		// Number of seconds to wait between each use of a spawn on friends in towns (0 = disabled)
-A3W_spawnBeaconCooldown = 5*60;    // Number of seconds to wait between each use of an individual spawn beacon (0 = disabled)
-A3W_spawnBeaconSpawnHeight = 1500; // Altitude in meters at which players will spawn when using spawn beacons (0 = ground/sea)
+A3W_spawnBeaconCooldown = 60;    // Number of seconds to wait between each use of an individual spawn beacon (0 = disabled)
+A3W_spawnBeaconSpawnHeight = 0; // Altitude in meters at which players will spawn when using spawn beacons (0 = ground/sea)
 A3W_uavControl = "group";          // Restrict connection to UAVs based on ownership ("owner", "group", "side")
 A3W_vehicleThermals = 0;		   // Allow vehicles to use thermals (0 = disabled)
 A3W_resupplyCostPR = 4;			   // Determine resupply cost by vehicle store cost / A3W_resupplyCostPR. (4 = default, %25 percent)
@@ -27,7 +19,7 @@ A3W_donatorEnabled = 1;				// Enable/Disable Donator Features
 A3W_customUniformEnabled = 1;		// Enable/Disable Custom Uniforms
 A3W_tkAutoKickEnabled = 1;			// Enable/Disable Autokick for teamkillers
 A3W_tkKickAmount = 10;			// TeamKill amount needed before Kick.
-A3W_maxLockonDistance = 1000; 	// Max Lockon Distance with Missle
+A3W_maxLockonDistance = 2000; 	// Max Lockon Distance with Missle
 
 // Store settings
 A3W_showGunStoreStatus = 1;        // Show enemy and friendly presence at gunstores on map (0 = no, 1 = yes)
@@ -37,13 +29,13 @@ A3W_vehiclePurchaseCooldown = 60;  // Number of seconds to wait before allowing 
 
 
 // Player settings
-A3W_startingMoney = 100;           // Amount of money that players start with
+A3W_startingMoney = 5000;           // Amount of money that players start with
 A3W_unlimitedStamina = 1;          // Allow unlimited sprinting, jumping, etc. (0 = no, 1 = yes) - this also removes energy drinks from the mission
 A3W_bleedingTime = 60;             // Time in seconds for which to allow revive after a critical injury (minimum 10 seconds)
 
 // ATM settings
 A3W_atmEnabled = 1;                // Enable ATM system (0 = no, 1 = yes)
-A3W_atmMaxBalance = 1000000;       // Maximum amount of money that can be stored in a bank account (recommended: 1 million)
+A3W_atmMaxBalance = 5000000;       // Maximum amount of money that can be stored in a bank account (recommended: 1 million)
 A3W_atmTransferFee = 5;            // Fee in percent charged to players for money transfers to other players (0 to 50)
 A3W_atmTransferAllTeams = 0;       // Allow money transfers between players of all teams/sides (0 = same team only, 1 = all teams)
 A3W_atmEditorPlacedOnly = 0;       // Only allow access via ATMs placed from the mission editor (0 = all ATMs from towns & editor allowed, 1 = ATMs from editor only) Note: Stratis has no town ATMs, only editor ones.
@@ -69,15 +61,15 @@ A3W_vehicleMaxUnusedTime = 2*24;   // Maximum parking time in hours after which 
 A3W_serverSavingInterval = 1*60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
 
 // iniDB settings
-PDB_PlayerFileID = "A3W_";         // Player savefile prefix (if you run multiple servers, keep it the same for all of them)
-PDB_ObjectFileID = "A3W_";         // Object savefile prefix (if you run multiple servers, change it to a unique value for each server)
+PDB_PlayerFileID = "PUW_";         // Player savefile prefix (if you run multiple servers, keep it the same for all of them)
+PDB_ObjectFileID = "OUW_";         // Object savefile prefix (if you run multiple servers, change it to a unique value for each server)
 
 // extDB settings
 A3W_extDB_ServerID = 1;            // Server ID to use in the database for the particular server running off this config file; if you have multiple servers, they all need different IDs
 A3W_extDB_Environment = "normal";  // Value used to separate player & object data from multiple environments running on the same map (e.g. "normal", "hardcore", "dev", etc. can be whatever you want)
-A3W_extDB_SaveUnlockedObjects = 1; // Save and restore unlocked baseparts that were locked at least once during their lifetime (0 = no, 1 = yes)
-A3W_extDB_ConfigName = "A3W";      // Name of the connection config from extdb-conf.ini to be used (the one within [brackets])
-A3W_extDB_IniName = "a3wasteland"; // Name of the INI file in extDB\db_custom to be used
+A3W_extDB_SaveUnlockedObjects = 0; // Save and restore unlocked baseparts that were locked at least once during their lifetime (0 = no, 1 = yes)
+A3W_extDB_ConfigName = "UltimateWasteland";      // Name of the connection config from extdb-conf.ini to be used (the one within [brackets])
+A3W_extDB_IniName = "UltimateWasteland"; // Name of the INI file in extDB\db_custom to be used
 A3W_extDB_Debug = 0;               // Log all queries to server RPT (0 = no, 1 = yes)
 
 // Spawning settings
