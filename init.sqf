@@ -68,7 +68,6 @@ if (isServer) then
 //init 3rd Party Scripts
 [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 [] execVM "addons\proving_ground\init.sqf";
-[] execVM "addons\zlt_fastrope\zlt_fastrope.sqf";
 [] execVM "addons\JumpMF\init.sqf";
 [] execVM "addons\EtV\init.sqf";
 [] execVM "addons\outlw_magRepack\MagRepack_init_sv.sqf";
